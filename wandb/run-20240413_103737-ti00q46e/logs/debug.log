@@ -1,0 +1,34 @@
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_setup.py:_flush():76] Current SDK version is 0.16.6
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_setup.py:_flush():76] Configure stats pid to 21236
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_setup.py:_flush():76] Loading settings from C:\Users\marcb\.config\wandb\settings
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_setup.py:_flush():76] Loading settings from C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\settings
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'cbisddsm_classification_300x500_old.py', 'program_abspath': 'C:\\Users\\marcb\\OneDrive\\Desktop\\mberghouse\\Mammo_classification_scripts\\cbisddsm_classification_300x500_old.py', 'program': 'C:\\Users\\marcb\\OneDrive\\Desktop\\mberghouse\\Mammo_classification_scripts\\cbisddsm_classification_300x500_old.py'}
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_init.py:_log_setup():521] Logging user logs to C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240413_103737-ti00q46e\logs\debug.log
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_init.py:_log_setup():522] Logging internal logs to C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240413_103737-ti00q46e\logs\debug-internal.log
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_init.py:init():561] calling init triggers
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_init.py:init():568] wandb.init called with sweep_config: {}
+config: {'learning_rate': 4e-06, 'architecture': 'davit_tiny.msft_in1k', 'dataset': '600x1000-v6-mass', 'epochs': 100, 'batch size': 13, 'hidden size': 64, 'optimizer_name': 'Adam', 'dropout_rate': 0.2, 'weight decay': 0.001}
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_init.py:init():611] starting backend
+2024-04-13 10:37:37,890 INFO    MainThread:21236 [wandb_init.py:init():615] setting up manager
+2024-04-13 10:37:37,892 INFO    MainThread:21236 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2024-04-13 10:37:37,892 INFO    MainThread:21236 [wandb_init.py:init():623] backend started and connected
+2024-04-13 10:37:37,892 INFO    MainThread:21236 [wandb_init.py:init():715] updated telemetry
+2024-04-13 10:37:37,908 INFO    MainThread:21236 [wandb_init.py:init():748] communicating run to backend with 90.0 second timeout
+2024-04-13 10:37:38,281 INFO    MainThread:21236 [wandb_run.py:_on_init():2357] communicating current version
+2024-04-13 10:37:38,477 INFO    MainThread:21236 [wandb_run.py:_on_init():2366] got version response 
+2024-04-13 10:37:38,477 INFO    MainThread:21236 [wandb_init.py:init():799] starting run threads in backend
+2024-04-13 10:37:38,604 INFO    MainThread:21236 [wandb_run.py:_console_start():2335] atexit reg
+2024-04-13 10:37:38,604 INFO    MainThread:21236 [wandb_run.py:_redirect():2190] redirect: wrap_raw
+2024-04-13 10:37:38,604 INFO    MainThread:21236 [wandb_run.py:_redirect():2255] Wrapping output streams.
+2024-04-13 10:37:38,604 INFO    MainThread:21236 [wandb_run.py:_redirect():2280] Redirects installed.
+2024-04-13 10:37:38,604 INFO    MainThread:21236 [wandb_init.py:init():842] run started, returning control to user process
+2024-04-13 13:08:06,960 INFO    MainThread:21236 [wandb_run.py:_finish():2064] finishing run mammogram_project/Model Testing 8_31/ti00q46e
+2024-04-13 13:08:06,960 INFO    MainThread:21236 [wandb_run.py:_atexit_cleanup():2304] got exitcode: 0
+2024-04-13 13:08:06,960 INFO    MainThread:21236 [wandb_run.py:_restore():2287] restore
+2024-04-13 13:08:06,960 INFO    MainThread:21236 [wandb_run.py:_restore():2293] restore done
+2024-04-13 13:08:14,706 INFO    MainThread:21236 [wandb_run.py:_footer_history_summary_info():3936] rendering history
+2024-04-13 13:08:14,706 INFO    MainThread:21236 [wandb_run.py:_footer_history_summary_info():3968] rendering summary
+2024-04-13 13:08:14,706 INFO    MainThread:21236 [wandb_run.py:_footer_sync_info():3895] logging synced files

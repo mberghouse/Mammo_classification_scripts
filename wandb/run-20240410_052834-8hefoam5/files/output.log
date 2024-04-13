@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\cbisddsm_classification_300x500.py", line 1175, in <module>
+    print (name)
+           ^^^^
+NameError: name 'name' is not defined

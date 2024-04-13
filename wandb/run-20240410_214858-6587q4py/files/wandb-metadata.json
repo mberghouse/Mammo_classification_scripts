@@ -1,0 +1,53 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.11.4",
+    "heartbeatAt": "2024-04-11T04:48:59.481598",
+    "startedAt": "2024-04-11T04:48:58.819582",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:\\Users\\marcb\\OneDrive\\Desktop\\mberghouse\\Mammo_classification_scripts\\cbisddsm_classification_300x500.py",
+    "codePathLocal": "cbisddsm_classification_300x500.py",
+    "codePath": "cbisddsm_classification_300x500.py",
+    "git": {
+        "remote": "https://github.com/mberghouse/Mammo_classification_scripts.git",
+        "commit": "d59dc79d44f1c76da13cb87f081897c34b6e3bad"
+    },
+    "email": "55556564+mberghouse@users.noreply.github.com",
+    "root": "C:/Users/marcb/OneDrive/Desktop/mberghouse/Mammo_classification_scripts",
+    "host": "PC-4090",
+    "username": "marcb",
+    "executable": "C:\\Users\\marcb\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "cpu_count": 24,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 3200.0,
+        "min": 0.0,
+        "max": 3200.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3200.0,
+            "min": 0.0,
+            "max": 3200.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1862.1513633728027,
+            "used": 1148.2840423583984
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 95.81729507446289
+    }
+}

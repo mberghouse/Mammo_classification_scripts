@@ -1,0 +1,65 @@
+wandb_version: 1
+
+learning_rate:
+  desc: null
+  value: 2.0e-05
+architecture:
+  desc: null
+  value: twins_svt_small
+dataset:
+  desc: null
+  value: 600x1000-v6-mass
+epochs:
+  desc: null
+  value: 40
+batch size:
+  desc: null
+  value: 16
+hidden size:
+  desc: null
+  value: 64
+optimizer_name:
+  desc: null
+  value: Adam
+dropout_rate:
+  desc: null
+  value: 0.2
+weight decay:
+  desc: null
+  value: 0.001
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.4
+    cli_version: 0.16.6
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1712892046.0
+    t:
+      1:
+      - 1
+      - 5
+      - 41
+      - 49
+      - 53
+      - 55
+      - 63
+      2:
+      - 1
+      - 5
+      - 41
+      - 49
+      - 53
+      - 55
+      - 63
+      3:
+      - 2
+      - 16
+      - 23
+      4: 3.11.4
+      5: 0.16.6
+      8:
+      - 3
+      - 5
+      13: windows-amd64

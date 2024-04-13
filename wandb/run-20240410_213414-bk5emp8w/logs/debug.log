@@ -1,0 +1,44 @@
+2024-04-10 21:34:14,249 INFO    MainThread:4244 [wandb_setup.py:_flush():76] Current SDK version is 0.16.6
+2024-04-10 21:34:14,249 INFO    MainThread:4244 [wandb_setup.py:_flush():76] Configure stats pid to 4244
+2024-04-10 21:34:14,249 INFO    MainThread:4244 [wandb_setup.py:_flush():76] Loading settings from C:\Users\marcb\.config\wandb\settings
+2024-04-10 21:34:14,249 INFO    MainThread:4244 [wandb_setup.py:_flush():76] Loading settings from C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\settings
+2024-04-10 21:34:14,250 INFO    MainThread:4244 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-04-10 21:34:14,250 INFO    MainThread:4244 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-04-10 21:34:14,250 INFO    MainThread:4244 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'cbisddsm_classification_300x500.py', 'program_abspath': 'C:\\Users\\marcb\\OneDrive\\Desktop\\mberghouse\\Mammo_classification_scripts\\cbisddsm_classification_300x500.py', 'program': 'C:\\Users\\marcb\\OneDrive\\Desktop\\mberghouse\\Mammo_classification_scripts\\cbisddsm_classification_300x500.py'}
+2024-04-10 21:34:14,250 INFO    MainThread:4244 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-04-10 21:34:14,250 INFO    MainThread:4244 [wandb_init.py:_log_setup():521] Logging user logs to C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_213414-bk5emp8w\logs\debug.log
+2024-04-10 21:34:14,250 INFO    MainThread:4244 [wandb_init.py:_log_setup():522] Logging internal logs to C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_213414-bk5emp8w\logs\debug-internal.log
+2024-04-10 21:34:14,250 INFO    MainThread:4244 [wandb_init.py:init():561] calling init triggers
+2024-04-10 21:34:14,250 INFO    MainThread:4244 [wandb_init.py:init():568] wandb.init called with sweep_config: {}
+config: {'learning_rate': 6e-05, 'architecture': 'davit_small.msft_in1k', 'dataset': '300x500-v6-mass', 'epochs': 24, 'batch size': 16, 'hidden size': 64, 'optimizer_name': 'Adam', 'dropout_rate': 0.2, 'weight decay': 0.001}
+2024-04-10 21:34:14,250 INFO    MainThread:4244 [wandb_init.py:init():611] starting backend
+2024-04-10 21:34:14,250 INFO    MainThread:4244 [wandb_init.py:init():615] setting up manager
+2024-04-10 21:34:14,251 INFO    MainThread:4244 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2024-04-10 21:34:14,251 INFO    MainThread:4244 [wandb_init.py:init():623] backend started and connected
+2024-04-10 21:34:14,253 INFO    MainThread:4244 [wandb_init.py:init():715] updated telemetry
+2024-04-10 21:34:14,270 INFO    MainThread:4244 [wandb_init.py:init():748] communicating run to backend with 90.0 second timeout
+2024-04-10 21:34:14,636 WARNING MainThread:4244 [wandb_init.py:init():1203] interrupted
+Traceback (most recent call last):
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\wandb_init.py", line 1181, in init
+    run = wi.init()
+          ^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\wandb_init.py", line 751, in init
+    result = run_init_handle.wait(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\mailbox.py", line 283, in wait
+    found, abandoned = self._slot._get_and_clear(timeout=wait_timeout)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\mailbox.py", line 130, in _get_and_clear
+    if self._wait(timeout=timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\mailbox.py", line 126, in _wait
+    return self._event.wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 622, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+2024-04-10 21:34:17,962 WARNING MsgRouterThr:4244 [router.py:message_loop():77] message_loop has been closed

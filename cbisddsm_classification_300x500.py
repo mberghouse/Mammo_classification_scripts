@@ -2,8 +2,8 @@ from __future__ import print_function, division
 import numpy as np
 import pandas as pd
 import os
-
-
+#python cbisddsm_classification_300x500_old.py
+#cd OneDrive/Desktop/mberghouse/Mammo_classification_scripts
 import torch
 from skimage import io, transform
 import matplotlib.pyplot as plt
@@ -50,7 +50,7 @@ warnings.filterwarnings('ignore')
 
 augmentator = transforms.Compose([
     transforms.ToPILImage(),
-    transforms.ColorJitter(brightness=(.6,1.2)),
+    transforms.ColorJitter(brightness=(.8,1.2)),
     transforms.RandomHorizontalFlip(0.5),
     transforms.RandomVerticalFlip(0.5),
     transforms.RandomRotation(10),
@@ -173,8 +173,8 @@ def train_model(model, model_name,criterion, optimizer, scheduler, num_epochs=25
 
                 running_loss += loss.item()
                 # collect any unused memmory
-                gc.collect()
-                torch.cuda.empty_cache()           
+            gc.collect()
+            torch.cuda.empty_cache()           
             # statistics
             epoch_loss = running_loss / len(dataloaders[phase])            
             # find true positive and false positive rates for ROC curve
@@ -211,8 +211,8 @@ def train_model(model, model_name,criterion, optimizer, scheduler, num_epochs=25
                 val_metrics['auc'].append(epoch_auc)
 
             # deep copy the model
-                if val_metrics['f1'][-1] > best_f1:
-                    best_f1 = val_metrics['f1'][-1]
+                if val_metrics['auc'][-1] > best_f1:
+                    best_f1 = val_metrics['auc'][-1]
                     best_model_wts = model.state_dict()
                     checkpoint['threshold'] = threshold
                     torch.save(checkpoint, 'checkpoint.pth')
@@ -225,12 +225,8 @@ def train_model(model, model_name,criterion, optimizer, scheduler, num_epochs=25
         print(f'Train Loss: {tr_loss:.4f}, Train Acc: {tr_acc:.4f}, Train f1: {tr_f1:.4f}, Train Precision: {tr_prec:.4f}, Train Recall: {tr_rec:.4f}, Train AUC: {tr_auc:.4f}')
         print(f'Valitadion Loss: {val_loss:.4f}, Validation Acc: {val_acc:.4f}, Vall f1: {val_f1:.4f}, Val Precision: {val_prec:.4f}, Val Recall: {val_rec:.4f}, Val AUC: {val_auc:.4f}')       
 
-        # if (tr_loss<.45)&(val_loss < .44):
-            # break
-        # elif (tr_loss<.41)&(val_loss < .42):
-            # break
-        # if (tr_loss<.35):
-            # break
+        if val_auc>.816:
+            break
     
         
             # val_f1_best=val_f1
@@ -250,7 +246,7 @@ def train_model(model, model_name,criterion, optimizer, scheduler, num_epochs=25
     print(f'Training complete in {time_elapsed // 60:.0f}m {time_elapsed % 60:.0f}s')
     print(f'Best val auc: {best_f1:4f}')
     # load best model weights
-    #model.load_state_dict(best_model_wts)
+    model.load_state_dict(best_model_wts)
     return model
     
     
@@ -338,10 +334,10 @@ import numpy as np
 model_scores=[]
 
 for i in range(20):
-  if i>=0:
-    if i<20:
-        metadata_list=['calc_case_description_test_set','calc_case_description_train_set']
-        im_set = "300x500_v6"
+  # if i>=0:
+    # if i<20:
+    metadata_list=['mass_case_description_test_set','mass_case_description_train_set']
+    im_set = "600x1000_v6"
     # elif i <12:
         # metadata_list=['calc_case_description_test_set','calc_case_description_train_set']
         # im_set = "300x500_v6"
@@ -398,7 +394,7 @@ for i in range(20):
     df_list=[]
     for j in range(len(metadata_list)):
         print (metadata_list[j])
-        df=pd.read_csv('/home/mbadhan/Desktop/mberghouse/'+metadata_list[j]+'.csv')
+        df=pd.read_csv('../'+metadata_list[j]+'.csv')
         print (len(df))
         
         fname=[]
@@ -417,7 +413,7 @@ for i in range(20):
 
         for k in range(len(df)):
     ### For whole images
-            df.filename.iloc[k]='/home/mbadhan/Desktop/mberghouse/CBIS-DDSM-preprocessed/'+im_set+'/'+df.filename.iloc[k].rsplit('/',3)[0]+'/1-1.png'
+            df.filename.iloc[k]='../CBIS-DDSM-preprocessed/'+im_set+'/'+df.filename.iloc[k].rsplit('/',3)[0]+'/1-1.png'
             if 'MALIGNANT' in df['class'].iloc[k]:
                 df['class'].iloc[k]=1
             else:
@@ -454,61 +450,61 @@ for i in range(20):
     test_size =  len(test_dataset)
     train_size = len(train_dataset)
 
-    
+
     # if i <48:
         # batch_size = 10
     # else:
         # batch_size = 16
-    batch_size=20
+    batch_size=16
 
-    test_dataloader = DataLoader(test_dataset, batch_size=batch_size,shuffle=False)
-    train_dataloader = DataLoader(train_dataset, batch_size=batch_size,shuffle=True, pin_memory = True,num_workers=batch_size )
-    val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle = True, pin_memory = True,num_workers=batch_size )
-    
+    test_dataloader = DataLoader(test_dataset, batch_size=batch_size,shuffle=False,num_workers=0 )
+    batch_size=8
+    train_dataloader = DataLoader(train_dataset, batch_size=batch_size,shuffle=True,num_workers=0 )
+    batch_size=16
+    val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle = True, num_workers=0 )
+
 
 
         
     #if i%2 == 0:
-   # 	epochs = 6
-   # else:
+    # 	epochs = 6
+    # else:
     #epochs=36
-    
-    if i%2 == 0:
-        epochs = 12
-    else:
-        epochs = 8
+
+    epochs=12
     #epochs =14
-    
-  
+
+
     #epochs = np.random.randint(35,40)
     hidden_size = 64
     dropout = .01
-    lr = 2.0e-5#np.random.uniform(2e-5,4e-5)
+    lr = 2.5e-5#np.random.uniform(2e-5,4e-5)
     #if i11:
     #    model_name = 'CECAresnet50'
     #    model = timm.create_model(model_name, pretrained=True)
     #    lr = np.random.uniform(4e-5,8e-5)
     #    dataset = "300x500-v6-calc"  
-    
-#Hi, do you need to use the computer right now?
+
+    #Hi, do you need to use the computer right now?
 
        
       
-#################   
+    #################   
      ### Regnetx ###
      #################  
- ###########################              
- ######### Mass ############
- ###########################      
- 
-    if i<20:
-        model_name = 'twins_svt_small'
-        #baseline_name
-        epochs = 17
-        #lr = 4e-5
-        dropout = .2#np.random.uniform(0.05,.25)
-        model = timm.create_model(model_name, pretrained=True,  attn_drop_rate=.5)
-        dataset = "300x500-v6-calc"   
+    ###########################              
+    ######### Mass ############
+    ###########################      
+
+    #if i<20:
+    model_name = 'davit_small.msft_in1k'
+    #baseline_name
+    epochs = 200
+    #lr = 4e-5
+    print(timm.list_models())
+    dropout = .2#np.random.uniform(0.05,.25)
+    model = nn.Sequential(timm.create_model('davit_small.msft_in1k', drop_path_rate=.2,num_classes=1,pretrained=True), nn.Sigmoid())
+    dataset = "600x1000-v6-mass"   
         
             
     # elif i<4:
@@ -1103,7 +1099,7 @@ for i in range(20):
     print (im_set)
     print (dataset)
         
-    
+
     #Initiate Weights and Biases Tracking
     wandb.init(
         # set the wandb project where this run will be logged
@@ -1123,66 +1119,66 @@ for i in range(20):
     )
         
     dropout_rate = dropout
-    num_in_features = model.get_classifier().in_features
-    
-    for name, param in model.named_parameters():
-        ijk=0
-        print (name)
+        # num_in_features = model.get_classifier().in_features
         
-    # Replace the existing classifier. It's named: classifier
-    if "head.fc" in name:
-        model.head.fc = nn.Sequential(
-        nn.Dropout(dropout_rate),
-        nn.Linear(in_features=num_in_features, out_features=hidden_size, bias=False),
-        nn.LeakyReLU(.1,inplace=True),
-        #nn.Dropout(dropout_rate),
-        nn.Linear(in_features=hidden_size, out_features=1, bias=False),
-        nn.Sigmoid())
-    elif "fc" in name:
-        model.fc = nn.Sequential(
-        nn.Dropout(dropout_rate),
-        nn.Linear(in_features=num_in_features, out_features=hidden_size, bias=False),
-        nn.LeakyReLU(.1,inplace=True),
-        #nn.Dropout(dropout_rate),
-        nn.Linear(in_features=hidden_size, out_features=1, bias=False),
-        nn.Sigmoid())
-    elif "classifier" in name:
-        model.classifier = nn.Sequential(
-        nn.Dropout(dropout_rate),
-        nn.Linear(in_features=num_in_features, out_features=hidden_size, bias=False),
-        nn.LeakyReLU(.1,inplace=True),
-        #nn.Dropout(dropout_rate),
-        nn.Linear(in_features=hidden_size, out_features=1, bias=False),
-        nn.Sigmoid())
-    elif "head" in name:
-        model.head = nn.Sequential(
-        nn.Dropout(dropout_rate),
-        nn.Linear(in_features=num_in_features, out_features=hidden_size, bias=False),
-        nn.GELU(),
-        #nn.LeakyReLU(.1,inplace=True),
-        #nn.Dropout(dropout_rate),
-        nn.Linear(in_features=hidden_size, out_features=1, bias=False),
-        nn.Sigmoid())
-    #elif "neck" in name:
-    #    model.head = nn.Sequential(
-    #    nn.AdaptiveAvgPool2d((64,1)),
-    #    nn.Dropout(dropout_rate),
-    #    nn.Linear(in_features=1, out_features=64, bias=False),
-        #nn.LeakyReLU(.1,inplace=True),
-        #nn.Dropout(dropout_rate),
-        #nn.Linear(in_features=hidden_size, out_features=1, bias=False),
-        #nn.Sigmoid())
-    print (name)
+        # for name, param in model.named_parameters():
+            # ijk=0
+            # print (name)
+            
+        # # Replace the existing classifier. It's named: classifier
+        # if "head.fc" in name:
+            # model.head.fc = nn.Sequential(
+            # nn.Dropout(dropout_rate),
+            # nn.Linear(in_features=num_in_features, out_features=hidden_size, bias=False),
+            # nn.LeakyReLU(.1,inplace=True),
+            # #nn.Dropout(dropout_rate),
+            # nn.Linear(in_features=hidden_size, out_features=1, bias=False),
+            # nn.Sigmoid())
+        # elif "fc" in name:
+            # model.fc = nn.Sequential(
+            # nn.Dropout(dropout_rate),
+            # nn.Linear(in_features=num_in_features, out_features=hidden_size, bias=False),
+            # nn.LeakyReLU(.1,inplace=True),
+            # #nn.Dropout(dropout_rate),
+            # nn.Linear(in_features=hidden_size, out_features=1, bias=False),
+            # nn.Sigmoid())
+        # elif "classifier" in name:
+            # model.classifier = nn.Sequential(
+            # nn.Dropout(dropout_rate),
+            # nn.Linear(in_features=num_in_features, out_features=hidden_size, bias=False),
+            # nn.LeakyReLU(.1,inplace=True),
+            # #nn.Dropout(dropout_rate),
+            # nn.Linear(in_features=hidden_size, out_features=1, bias=False),
+            # nn.Sigmoid())
+        # elif "head" in name:
+            # model.head = nn.Sequential(
+            # nn.Dropout(dropout_rate),
+            # nn.Linear(in_features=num_in_features, out_features=hidden_size, bias=False),
+            # nn.GELU(),
+            # #nn.LeakyReLU(.1,inplace=True),
+            # #nn.Dropout(dropout_rate),
+            # nn.Linear(in_features=hidden_size, out_features=1, bias=False),
+            # nn.Sigmoid())
+        # #elif "neck" in name:
+        # #    model.head = nn.Sequential(
+        # #    nn.AdaptiveAvgPool2d((64,1)),
+        # #    nn.Dropout(dropout_rate),
+        # #    nn.Linear(in_features=1, out_features=64, bias=False),
+            # #nn.LeakyReLU(.1,inplace=True),
+            # #nn.Dropout(dropout_rate),
+            # #nn.Linear(in_features=hidden_size, out_features=1, bias=False),
+            # #nn.Sigmoid())
+        #print (name)
     print (model)
 
-    device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
-    if torch.cuda.is_available():
-        torch.backends.cuda.matmul.allow_tf32 = True
-        torch.backends.cudnn.benchmark = True
+    device = "cuda" #if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
+    # if torch.cuda.is_available():
+        # torch.backends.cuda.matmul.allow_tf32 = True
+        # torch.backends.cudnn.benchmark = True
     model.to(device)
 
-    optimizer = torch.optim.Adam(model.parameters(), weight_decay=1e-4,lr=lr)
-    scheduler=torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, 1600, T_mult=2, eta_min=1e-12, last_epoch=- 1, verbose=False)
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    scheduler=torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, 1200, T_mult=2, eta_min=1e-12, last_epoch=- 1, verbose=False)
     # if i <48:
         # scheduler=torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, 1700, T_mult=2, eta_min=1e-12, last_epoch=- 1, verbose=False)
     # else:
@@ -1197,36 +1193,35 @@ for i in range(20):
               'state_dict': model.state_dict(),
               'optimizer' : optimizer.state_dict(),
                  'threshold' : 0.5}
-    
-    
-    
+
+
+
     model = train_model(model, model_name, criterion, optimizer, scheduler, num_epochs=epochs)
 
     test_metrics = test_model(model,  criterion,test_dataloader, threshold = .4)
     wandb.finish() 
     #model_scores.append(test_metrics.auc)
-    
+
     # rem = i%3
-    
+
     # if rem == 0:
-    	# best_f1 = test_metrics['f1']
-    	# best_model = model
+        # best_f1 = test_metrics['f1']
+        # best_model = model
     # else:
-    	# if best_f1 < test_metrics['f1']:
-    	   # best_f1 = test_metrics['f1']
-    	   # best_model = model
- 
+        # if best_f1 < test_metrics['f1']:
+           # best_f1 = test_metrics['f1']
+           # best_model = model
+
 
     gc.collect()
     torch.cuda.empty_cache()  
     
     
- 
     # if i%3 == 2:
-    #PATH='/home/mbadhan/Desktop/mberghouse/pytorch_models/weights/6_29/'+model_name+metadata_list[0][0:3]+dataset[0:6]+str(i)+'_weights'
-    #torch.save(model.state_dict(), PATH)
-    #PATH='/home/mbadhan/Desktop/mberghouse/pytorch_models/models/6_29/'+model_name+metadata_list[0][0:3]+dataset[0:6]+str(i)+'_model'
-   # torch.save(model, PATH)
+    PATH='C:/Users/marcb/OneDrive/Desktop/mberghouse/pytorch_models/weights/4_10/'+model_name+metadata_list[0][0:3]+dataset[0:6]+str(i)+'_weights'
+    torch.save(model.state_dict(), PATH)
+    # PATH='../mberghouse/pytorch_models/models/4_10/'+model_name+metadata_list[0][0:3]+dataset[0:6]+str(i)+'_model'
+    # torch.save(model, PATH)
     
     
 

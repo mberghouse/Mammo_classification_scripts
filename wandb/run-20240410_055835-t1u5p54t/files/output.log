@@ -1,0 +1,788 @@
+
+  4%|███▍                                                                               | 3/73 [00:01<00:28,  2.43it/s]
+Sequential(
+  (0): Twins(
+    (patch_embeds): ModuleList(
+      (0): PatchEmbed(
+        (proj): Conv2d(3, 64, kernel_size=(4, 4), stride=(4, 4))
+        (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): PatchEmbed(
+        (proj): Conv2d(64, 128, kernel_size=(2, 2), stride=(2, 2))
+        (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): PatchEmbed(
+        (proj): Conv2d(128, 256, kernel_size=(2, 2), stride=(2, 2))
+        (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): PatchEmbed(
+        (proj): Conv2d(256, 512, kernel_size=(2, 2), stride=(2, 2))
+        (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (pos_drops): ModuleList(
+      (0-3): 4 x Dropout(p=0.0, inplace=False)
+    )
+    (blocks): ModuleList(
+      (0): ModuleList(
+        (0): Block(
+          (norm1): LayerNorm((64,), eps=1e-06, elementwise_affine=True)
+          (attn): LocallyGroupedAttn(
+            (qkv): Linear(in_features=64, out_features=192, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=64, out_features=64, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (drop_path): Identity()
+          (norm2): LayerNorm((64,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=64, out_features=256, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=256, out_features=64, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (1): Block(
+          (norm1): LayerNorm((64,), eps=1e-06, elementwise_affine=True)
+          (attn): GlobalSubSampleAttn(
+            (q): Linear(in_features=64, out_features=64, bias=True)
+            (kv): Linear(in_features=64, out_features=128, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=64, out_features=64, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+            (sr): Conv2d(64, 64, kernel_size=(8, 8), stride=(8, 8))
+            (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          )
+          (drop_path): DropPath(drop_prob=0.012)
+          (norm2): LayerNorm((64,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=64, out_features=256, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=256, out_features=64, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+      )
+      (1): ModuleList(
+        (0): Block(
+          (norm1): LayerNorm((128,), eps=1e-06, elementwise_affine=True)
+          (attn): LocallyGroupedAttn(
+            (qkv): Linear(in_features=128, out_features=384, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=128, out_features=128, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (drop_path): DropPath(drop_prob=0.024)
+          (norm2): LayerNorm((128,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=128, out_features=512, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=512, out_features=128, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (1): Block(
+          (norm1): LayerNorm((128,), eps=1e-06, elementwise_affine=True)
+          (attn): GlobalSubSampleAttn(
+            (q): Linear(in_features=128, out_features=128, bias=True)
+            (kv): Linear(in_features=128, out_features=256, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=128, out_features=128, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+            (sr): Conv2d(128, 128, kernel_size=(4, 4), stride=(4, 4))
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+          (drop_path): DropPath(drop_prob=0.035)
+          (norm2): LayerNorm((128,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=128, out_features=512, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=512, out_features=128, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+      )
+      (2): ModuleList(
+        (0): Block(
+          (norm1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (attn): LocallyGroupedAttn(
+            (qkv): Linear(in_features=256, out_features=768, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=256, out_features=256, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (drop_path): DropPath(drop_prob=0.047)
+          (norm2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=256, out_features=1024, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=1024, out_features=256, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (1): Block(
+          (norm1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (attn): GlobalSubSampleAttn(
+            (q): Linear(in_features=256, out_features=256, bias=True)
+            (kv): Linear(in_features=256, out_features=512, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=256, out_features=256, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+            (sr): Conv2d(256, 256, kernel_size=(2, 2), stride=(2, 2))
+            (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          )
+          (drop_path): DropPath(drop_prob=0.059)
+          (norm2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=256, out_features=1024, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=1024, out_features=256, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (2): Block(
+          (norm1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (attn): LocallyGroupedAttn(
+            (qkv): Linear(in_features=256, out_features=768, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=256, out_features=256, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (drop_path): DropPath(drop_prob=0.071)
+          (norm2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=256, out_features=1024, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=1024, out_features=256, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (3): Block(
+          (norm1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (attn): GlobalSubSampleAttn(
+            (q): Linear(in_features=256, out_features=256, bias=True)
+            (kv): Linear(in_features=256, out_features=512, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=256, out_features=256, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+            (sr): Conv2d(256, 256, kernel_size=(2, 2), stride=(2, 2))
+            (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          )
+          (drop_path): DropPath(drop_prob=0.082)
+          (norm2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=256, out_features=1024, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=1024, out_features=256, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (4): Block(
+          (norm1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (attn): LocallyGroupedAttn(
+            (qkv): Linear(in_features=256, out_features=768, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=256, out_features=256, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (drop_path): DropPath(drop_prob=0.094)
+          (norm2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=256, out_features=1024, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=1024, out_features=256, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (5): Block(
+          (norm1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (attn): GlobalSubSampleAttn(
+            (q): Linear(in_features=256, out_features=256, bias=True)
+            (kv): Linear(in_features=256, out_features=512, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=256, out_features=256, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+            (sr): Conv2d(256, 256, kernel_size=(2, 2), stride=(2, 2))
+            (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          )
+          (drop_path): DropPath(drop_prob=0.106)
+          (norm2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=256, out_features=1024, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=1024, out_features=256, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (6): Block(
+          (norm1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (attn): LocallyGroupedAttn(
+            (qkv): Linear(in_features=256, out_features=768, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=256, out_features=256, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (drop_path): DropPath(drop_prob=0.118)
+          (norm2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=256, out_features=1024, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=1024, out_features=256, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (7): Block(
+          (norm1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (attn): GlobalSubSampleAttn(
+            (q): Linear(in_features=256, out_features=256, bias=True)
+            (kv): Linear(in_features=256, out_features=512, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=256, out_features=256, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+            (sr): Conv2d(256, 256, kernel_size=(2, 2), stride=(2, 2))
+            (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          )
+          (drop_path): DropPath(drop_prob=0.129)
+          (norm2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=256, out_features=1024, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=1024, out_features=256, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (8): Block(
+          (norm1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (attn): LocallyGroupedAttn(
+            (qkv): Linear(in_features=256, out_features=768, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=256, out_features=256, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (drop_path): DropPath(drop_prob=0.141)
+          (norm2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=256, out_features=1024, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=1024, out_features=256, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (9): Block(
+          (norm1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (attn): GlobalSubSampleAttn(
+            (q): Linear(in_features=256, out_features=256, bias=True)
+            (kv): Linear(in_features=256, out_features=512, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=256, out_features=256, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+            (sr): Conv2d(256, 256, kernel_size=(2, 2), stride=(2, 2))
+            (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          )
+          (drop_path): DropPath(drop_prob=0.153)
+          (norm2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=256, out_features=1024, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=1024, out_features=256, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+      )
+      (3): ModuleList(
+        (0): Block(
+          (norm1): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (attn): LocallyGroupedAttn(
+            (qkv): Linear(in_features=512, out_features=1536, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=512, out_features=512, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (drop_path): DropPath(drop_prob=0.165)
+          (norm2): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=512, out_features=2048, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=2048, out_features=512, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (1): Block(
+          (norm1): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (attn): GlobalSubSampleAttn(
+            (q): Linear(in_features=512, out_features=512, bias=True)
+            (kv): Linear(in_features=512, out_features=1024, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=512, out_features=512, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (drop_path): DropPath(drop_prob=0.176)
+          (norm2): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=512, out_features=2048, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=2048, out_features=512, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (2): Block(
+          (norm1): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (attn): LocallyGroupedAttn(
+            (qkv): Linear(in_features=512, out_features=1536, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=512, out_features=512, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (drop_path): DropPath(drop_prob=0.188)
+          (norm2): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=512, out_features=2048, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=2048, out_features=512, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+        (3): Block(
+          (norm1): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (attn): GlobalSubSampleAttn(
+            (q): Linear(in_features=512, out_features=512, bias=True)
+            (kv): Linear(in_features=512, out_features=1024, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=512, out_features=512, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (drop_path): DropPath(drop_prob=0.200)
+          (norm2): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=512, out_features=2048, bias=True)
+            (act): GELU(approximate='none')
+            (drop1): Dropout(p=0.0, inplace=False)
+            (fc2): Linear(in_features=2048, out_features=512, bias=True)
+            (drop2): Dropout(p=0.0, inplace=False)
+          )
+        )
+      )
+    )
+    (pos_block): ModuleList(
+      (0): PosConv(
+        (proj): Sequential(
+          (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64)
+        )
+      )
+      (1): PosConv(
+        (proj): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128)
+        )
+      )
+      (2): PosConv(
+        (proj): Sequential(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256)
+        )
+      )
+      (3): PosConv(
+        (proj): Sequential(
+          (0): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+        )
+      )
+    )
+    (norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+    (head): Linear(in_features=512, out_features=1, bias=True)
+  )
+  (1): Sigmoid()
+)
+Starting training...
+--------------------
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:25<00:00,  2.69it/s]
+New threshold is 0.43391361832618713
+train F1 is 0.4483775794506073
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.81it/s]
+
+ 72%|███████████████████████████████████████████████████████████▏                      | 13/18 [00:03<00:01,  3.84it/s]
+New threshold is 0.3922235369682312
+val F1 is 0.5118110179901123
+Epoch 1/17, learning rate: 1.989745091059581e-05
+Train Loss: 0.6852, Train Acc: 0.5189, Train f1: 0.4484, Train Precision: 0.4326, Train Recall: 0.4653, Train AUC: 0.5049
+Valitadion Loss: 0.6762, Validation Acc: 0.5664, Vall f1: 0.5118, Val Precision: 0.4815, Val Recall: 0.5462, Val AUC: 0.5711
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:04<00:00,  3.96it/s]
+
+
+
+
+
+
+
+
+
+
+ 93%|████████████████████████████████████████████████████████████████████████████▍     | 68/73 [00:20<00:01,  3.36it/s]
+New threshold is 0.40058204531669617
+train F1 is 0.5213522911071777
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:22<00:00,  3.26it/s]
+
+ 83%|████████████████████████████████████████████████████████████████████▎             | 15/18 [00:02<00:00,  5.94it/s]
+New threshold is 0.4618784189224243
+val F1 is 0.5083333253860474
+Epoch 2/17, learning rate: 1.9591906905635932e-05
+Train Loss: 0.6732, Train Acc: 0.5386, Train f1: 0.5214, Train Precision: 0.4621, Train Recall: 0.5980, Train AUC: 0.5678
+Valitadion Loss: 0.6712, Validation Acc: 0.5874, Vall f1: 0.5083, Val Precision: 0.5041, Val Recall: 0.5126, Val AUC: 0.5838
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:02<00:00,  6.04it/s]
+
+
+
+
+
+
+
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:21<00:00,  3.38it/s]
+New threshold is 0.4090299904346466
+train F1 is 0.559440553188324
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.37it/s]
+ 61%|██████████████████████████████████████████████████                                | 11/18 [00:01<00:01,  6.13it/s]
+New threshold is 0.37017032504081726
+val F1 is 0.5787546038627625
+Epoch 3/17, learning rate: 1.908963463733e-05
+Train Loss: 0.6678, Train Acc: 0.5678, Train f1: 0.5594, Train Precision: 0.4893, Train Recall: 0.6531, Train AUC: 0.5929
+Valitadion Loss: 0.6596, Validation Acc: 0.5979, Vall f1: 0.5788, Val Precision: 0.5130, Val Recall: 0.6639, Val AUC: 0.6368
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:02<00:00,  6.10it/s]
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:20<00:00,  3.41it/s]
+New threshold is 0.42479342222213745
+train F1 is 0.601123571395874
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.37it/s]
+ 39%|████████████████████████████████▎                                                  | 7/18 [00:01<00:01,  6.26it/s]
+New threshold is 0.4945297837257385
+val F1 is 0.6147859692573547
+Epoch 4/17, learning rate: 1.8400935618942642e-05
+Train Loss: 0.6315, Train Acc: 0.6346, Train f1: 0.6011, Train Precision: 0.5554, Train Recall: 0.6551, Train AUC: 0.6856
+Valitadion Loss: 0.6528, Validation Acc: 0.6538, Vall f1: 0.6148, Val Precision: 0.5725, Val Recall: 0.6639, Val AUC: 0.6643
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:02<00:00,  6.06it/s]
+
+
+
+
+
+
+
+
+
+
+ 92%|███████████████████████████████████████████████████████████████████████████▎      | 67/73 [00:19<00:01,  3.37it/s]
+New threshold is 0.4004259407520294
+train F1 is 0.6198723912239075
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.37it/s]
+
+ 83%|████████████████████████████████████████████████████████████████████▎             | 15/18 [00:02<00:00,  6.06it/s]
+New threshold is 0.5439696907997131
+val F1 is 0.5959183573722839
+Epoch 5/17, learning rate: 1.7539934942621955e-05
+Train Loss: 0.6340, Train Acc: 0.6424, Train f1: 0.6199, Train Precision: 0.5601, Train Recall: 0.6939, Train AUC: 0.6808
+Valitadion Loss: 0.6517, Validation Acc: 0.6538, Vall f1: 0.5959, Val Precision: 0.5794, Val Recall: 0.6134, Val AUC: 0.6956
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:02<00:00,  6.15it/s]
+
+
+
+
+
+
+
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:21<00:00,  3.30it/s]
+New threshold is 0.4351753890514374
+train F1 is 0.6375969052314758
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.36it/s]
+ 61%|██████████████████████████████████████████████████                                | 11/18 [00:01<00:01,  5.99it/s]
+New threshold is 0.5348935127258301
+val F1 is 0.6274510025978088
+Epoch 6/17, learning rate: 1.65242915763175e-05
+Train Loss: 0.6123, Train Acc: 0.6792, Train f1: 0.6376, Train Precision: 0.6070, Train Recall: 0.6714, Train AUC: 0.7131
+Valitadion Loss: 0.6276, Validation Acc: 0.6678, Vall f1: 0.6275, Val Precision: 0.5882, Val Recall: 0.6723, Val AUC: 0.7007
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:03<00:00,  5.97it/s]
+
+
+
+
+
+
+
+
+
+
+ 95%|█████████████████████████████████████████████████████████████████████████████▌    | 69/73 [00:20<00:01,  3.23it/s]
+New threshold is 0.43197187781333923
+train F1 is 0.6494464874267578
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.35it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:02<00:00,  6.05it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.5146222114562988
+val F1 is 0.6178861856460571
+Epoch 7/17, learning rate: 1.5374836181545594e-05
+Train Loss: 0.6040, Train Acc: 0.6741, Train f1: 0.6494, Train Precision: 0.5926, Train Recall: 0.7184, Train AUC: 0.7174
+Valitadion Loss: 0.6161, Validation Acc: 0.6713, Vall f1: 0.6179, Val Precision: 0.5984, Val Recall: 0.6387, Val AUC: 0.7162
+
+
+
+
+
+
+
+
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.32it/s]
+  0%|                                                                                           | 0/18 [00:00<?, ?it/s]
+New threshold is 0.4598446786403656
+train F1 is 0.6504217386245728
+
+ 67%|██████████████████████████████████████████████████████▋                           | 12/18 [00:01<00:01,  5.99it/s]
+New threshold is 0.4988991916179657
+val F1 is 0.6245059370994568
+Epoch 8/17, learning rate: 1.411514388029391e-05
+Train Loss: 0.6044, Train Acc: 0.6801, Train f1: 0.6504, Train Precision: 0.6014, Train Recall: 0.7082, Train AUC: 0.7182
+Valitadion Loss: 0.6046, Validation Acc: 0.6678, Vall f1: 0.6245, Val Precision: 0.5896, Val Recall: 0.6639, Val AUC: 0.7218
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:03<00:00,  5.98it/s]
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:21<00:00,  3.29it/s]
+New threshold is 0.44614511728286743
+train F1 is 0.671546220779419
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.33it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:03<00:00,  5.96it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.4893393814563751
+val F1 is 0.6516854166984558
+Epoch 9/17, learning rate: 1.277105073353882e-05
+Train Loss: 0.5830, Train Acc: 0.6921, Train f1: 0.6715, Train Precision: 0.6086, Train Recall: 0.7490, Train AUC: 0.7417
+Valitadion Loss: 0.6024, Validation Acc: 0.6748, Vall f1: 0.6517, Val Precision: 0.5878, Val Recall: 0.7311, Val AUC: 0.7218
+
+
+
+
+
+
+
+
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:21<00:00,  3.35it/s]
+New threshold is 0.4638689458370209
+train F1 is 0.6527116894721985
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:22<00:00,  3.30it/s]
+ 61%|██████████████████████████████████████████████████                                | 11/18 [00:01<00:01,  5.96it/s]
+New threshold is 0.6298279166221619
+val F1 is 0.5975103974342346
+Epoch 10/17, learning rate: 1.137012384831351e-05
+Train Loss: 0.5771, Train Acc: 0.6870, Train f1: 0.6527, Train Precision: 0.6114, Train Recall: 0.7000, Train AUC: 0.7519
+Valitadion Loss: 0.6808, Validation Acc: 0.6608, Vall f1: 0.5975, Val Precision: 0.5902, Val Recall: 0.6050, Val AUC: 0.6827
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:03<00:00,  5.91it/s]
+
+
+
+
+
+
+
+
+
+
+ 95%|█████████████████████████████████████████████████████████████████████████████▌    | 69/73 [00:20<00:01,  3.35it/s]
+New threshold is 0.451936274766922
+train F1 is 0.6685341000556946
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.34it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:02<00:00,  6.03it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.5826218128204346
+val F1 is 0.6341463327407837
+Epoch 11/17, learning rate: 9.941095981334956e-06
+Train Loss: 0.5726, Train Acc: 0.6955, Train f1: 0.6685, Train Precision: 0.6162, Train Recall: 0.7306, Train AUC: 0.7607
+Valitadion Loss: 0.6073, Validation Acc: 0.6853, Vall f1: 0.6341, Val Precision: 0.6142, Val Recall: 0.6555, Val AUC: 0.7305
+
+
+
+
+
+
+
+
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.32it/s]
+  0%|                                                                                           | 0/18 [00:00<?, ?it/s]
+New threshold is 0.5195786952972412
+train F1 is 0.667976438999176
+
+ 67%|██████████████████████████████████████████████████████▋                           | 12/18 [00:01<00:00,  6.06it/s]
+New threshold is 0.5873702168464661
+val F1 is 0.6274510025978088
+Epoch 12/17, learning rate: 8.513276235366988e-06
+Train Loss: 0.5657, Train Acc: 0.7101, Train f1: 0.6680, Train Precision: 0.6439, Train Recall: 0.6939, Train AUC: 0.7694
+Valitadion Loss: 0.6135, Validation Acc: 0.6678, Vall f1: 0.6275, Val Precision: 0.5882, Val Recall: 0.6723, Val AUC: 0.7259
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:03<00:00,  5.99it/s]
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:20<00:00,  3.40it/s]
+New threshold is 0.45881378650665283
+train F1 is 0.682330846786499
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.34it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:03<00:00,  5.74it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.5573813319206238
+val F1 is 0.6390977501869202
+Epoch 13/17, learning rate: 7.115948934830289e-06
+Train Loss: 0.5555, Train Acc: 0.7101, Train f1: 0.6823, Train Precision: 0.6324, Train Recall: 0.7408, Train AUC: 0.7811
+Valitadion Loss: 0.6039, Validation Acc: 0.6643, Vall f1: 0.6391, Val Precision: 0.5782, Val Recall: 0.7143, Val AUC: 0.7302
+
+
+
+
+
+
+
+
+
+
+ 90%|██████████████████████████████████████████████████████████████████████████▏       | 66/73 [00:19<00:02,  3.39it/s]
+New threshold is 0.4560938775539398
+train F1 is 0.6828811764717102
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.34it/s]
+
+ 72%|███████████████████████████████████████████████████████████▏                      | 13/18 [00:02<00:00,  5.83it/s]
+New threshold is 0.5031270980834961
+val F1 is 0.6507936716079712
+Epoch 14/17, learning rate: 5.777773009611733e-06
+Train Loss: 0.5577, Train Acc: 0.7093, Train f1: 0.6829, Train Precision: 0.6304, Train Recall: 0.7449, Train AUC: 0.7760
+Valitadion Loss: 0.6076, Validation Acc: 0.6923, Vall f1: 0.6508, Val Precision: 0.6165, Val Recall: 0.6891, Val AUC: 0.7302
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:03<00:00,  5.92it/s]
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:21<00:00,  3.33it/s]
+New threshold is 0.4461814761161804
+train F1 is 0.7057745456695557
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.35it/s]
+ 44%|████████████████████████████████████▉                                              | 8/18 [00:01<00:01,  6.10it/s]
+New threshold is 0.5323821306228638
+val F1 is 0.6341463327407837
+Epoch 15/17, learning rate: 4.526194205602367e-06
+Train Loss: 0.5296, Train Acc: 0.7247, Train f1: 0.7058, Train Precision: 0.6406, Train Recall: 0.7857, Train AUC: 0.7987
+Valitadion Loss: 0.6024, Validation Acc: 0.6853, Vall f1: 0.6341, Val Precision: 0.6142, Val Recall: 0.6555, Val AUC: 0.7392
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:03<00:00,  5.82it/s]
+
+
+
+
+
+
+
+
+
+
+ 92%|███████████████████████████████████████████████████████████████████████████▎      | 67/73 [00:20<00:01,  3.36it/s]
+New threshold is 0.45368802547454834
+train F1 is 0.69532710313797
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.34it/s]
+
+ 83%|████████████████████████████████████████████████████████████████████▎             | 15/18 [00:02<00:00,  5.95it/s]
+New threshold is 0.44845888018608093
+val F1 is 0.6399999856948853
+Epoch 16/17, learning rate: 3.3868821774194157e-06
+Train Loss: 0.5388, Train Acc: 0.7204, Train f1: 0.6953, Train Precision: 0.6414, Train Recall: 0.7592, Train AUC: 0.7956
+Valitadion Loss: 0.5990, Validation Acc: 0.6853, Vall f1: 0.6400, Val Precision: 0.6107, Val Recall: 0.6723, Val AUC: 0.7438
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:02<00:00,  6.11it/s]
+
+
+
+
+
+
+
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:21<00:00,  3.37it/s]
+New threshold is 0.48670297861099243
+train F1 is 0.7178502678871155
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.36it/s]
+ 56%|█████████████████████████████████████████████▌                                    | 10/18 [00:01<00:01,  6.00it/s]
+New threshold is 0.43807467818260193
+val F1 is 0.6511628031730652
+Epoch 17/17, learning rate: 2.383204008438719e-06
+Train Loss: 0.5163, Train Acc: 0.7479, Train f1: 0.7179, Train Precision: 0.6775, Train Recall: 0.7633, Train AUC: 0.8228
+Valitadion Loss: 0.5965, Validation Acc: 0.6853, Vall f1: 0.6512, Val Precision: 0.6043, Val Recall: 0.7059, Val AUC: 0.7420
+Training complete in 7m 9s
+Best val auc: 0.651685
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:03<00:00,  5.92it/s]
+
+ 67%|██████████████████████████████████████████████████████▋                           | 12/18 [00:02<00:01,  5.42it/s]
+New threshold is 0.43807467818260193
+Inference complete in 0m 4s
+F1 Score = : 0.651163
+AUC Score = : 0.742012
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:03<00:00,  4.77it/s]

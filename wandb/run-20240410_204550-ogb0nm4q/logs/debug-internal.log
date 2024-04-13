@@ -1,0 +1,1037 @@
+2024-04-10 20:45:50,440 INFO    StreamThr :20028 [internal.py:wandb_internal():86] W&B internal server running at pid: 20028, started at: 2024-04-10 20:45:50.440470
+2024-04-10 20:45:50,440 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status
+2024-04-10 20:45:50,442 INFO    WriterThread:20028 [datastore.py:open_for_write():87] open: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\run-ogb0nm4q.wandb
+2024-04-10 20:45:50,442 DEBUG   SenderThread:20028 [sender.py:send():379] send: header
+2024-04-10 20:45:50,466 DEBUG   SenderThread:20028 [sender.py:send():379] send: run
+2024-04-10 20:45:50,821 INFO    SenderThread:20028 [dir_watcher.py:__init__():211] watching files in: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files
+2024-04-10 20:45:50,821 INFO    SenderThread:20028 [sender.py:_start_run_threads():1124] run started: ogb0nm4q with start time 1712807150.44074
+2024-04-10 20:45:50,826 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: check_version
+2024-04-10 20:45:50,826 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: check_version
+2024-04-10 20:45:51,018 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: run_start
+2024-04-10 20:45:51,033 DEBUG   HandlerThread:20028 [system_info.py:__init__():26] System info init
+2024-04-10 20:45:51,033 DEBUG   HandlerThread:20028 [system_info.py:__init__():41] System info init done
+2024-04-10 20:45:51,033 INFO    HandlerThread:20028 [system_monitor.py:start():194] Starting system monitor
+2024-04-10 20:45:51,033 INFO    SystemMonitor:20028 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-10 20:45:51,033 INFO    HandlerThread:20028 [system_monitor.py:probe():214] Collecting system info
+2024-04-10 20:45:51,036 INFO    SystemMonitor:20028 [interfaces.py:start():190] Started cpu monitoring
+2024-04-10 20:45:51,036 INFO    SystemMonitor:20028 [interfaces.py:start():190] Started disk monitoring
+2024-04-10 20:45:51,037 INFO    SystemMonitor:20028 [interfaces.py:start():190] Started gpu monitoring
+2024-04-10 20:45:51,042 INFO    SystemMonitor:20028 [interfaces.py:start():190] Started memory monitoring
+2024-04-10 20:45:51,049 INFO    SystemMonitor:20028 [interfaces.py:start():190] Started network monitoring
+2024-04-10 20:45:51,053 DEBUG   HandlerThread:20028 [system_info.py:probe():150] Probing system
+2024-04-10 20:45:51,054 DEBUG   HandlerThread:20028 [system_info.py:_probe_git():135] Probing git
+2024-04-10 20:45:51,088 DEBUG   HandlerThread:20028 [system_info.py:_probe_git():143] Probing git done
+2024-04-10 20:45:51,088 DEBUG   HandlerThread:20028 [system_info.py:probe():198] Probing system done
+2024-04-10 20:45:51,088 DEBUG   HandlerThread:20028 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.22631-SP0', 'python': '3.11.4', 'heartbeatAt': '2024-04-11T03:45:51.053860', 'startedAt': '2024-04-11T03:45:50.436818', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'C:\\Users\\marcb\\OneDrive\\Desktop\\mberghouse\\Mammo_classification_scripts\\cbisddsm_classification_300x500.py', 'codePathLocal': 'cbisddsm_classification_300x500.py', 'codePath': 'cbisddsm_classification_300x500.py', 'git': {'remote': 'https://github.com/mberghouse/Mammo_classification_scripts.git', 'commit': 'd59dc79d44f1c76da13cb87f081897c34b6e3bad'}, 'email': '55556564+mberghouse@users.noreply.github.com', 'root': 'C:/Users/marcb/OneDrive/Desktop/mberghouse/Mammo_classification_scripts', 'host': 'PC-4090', 'username': 'marcb', 'executable': 'C:\\Users\\marcb\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'cpu_count': 24, 'cpu_count_logical': 32, 'cpu_freq': {'current': 3200.0, 'min': 0.0, 'max': 3200.0}, 'cpu_freq_per_core': [{'current': 3200.0, 'min': 0.0, 'max': 3200.0}], 'disk': {'/': {'total': 1862.1513633728027, 'used': 1148.2655067443848}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 95.81729507446289}}
+2024-04-10 20:45:51,088 INFO    HandlerThread:20028 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-10 20:45:51,088 INFO    HandlerThread:20028 [system_monitor.py:probe():227] Publishing system info
+2024-04-10 20:45:51,088 INFO    HandlerThread:20028 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-10 20:45:51,090 DEBUG   SenderThread:20028 [sender.py:send():379] send: files
+2024-04-10 20:45:51,091 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-04-10 20:45:51,152 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-10 20:45:51,152 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: python_packages
+2024-04-10 20:45:51,153 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:45:51,153 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:45:51,154 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:45:51,392 DEBUG   SenderThread:20028 [sender.py:send():379] send: telemetry
+2024-04-10 20:45:51,644 INFO    wandb-upload_0:20028 [upload_job.py:push():131] Uploaded file C:\Users\marcb\AppData\Local\Temp\tmpyxa0nhw2wandb\4uyuc1jn-wandb-metadata.json
+2024-04-10 20:45:51,829 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\requirements.txt
+2024-04-10 20:45:51,829 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-metadata.json
+2024-04-10 20:45:51,829 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:45:53,842 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:45:55,535 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:45:55,860 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:45:57,866 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:45:59,888 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:00,912 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:46:01,890 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:03,907 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:05,921 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:06,119 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:46:06,153 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:46:06,153 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:46:06,153 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:46:07,936 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:09,955 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:11,419 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:46:11,956 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:13,985 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:15,401 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:46:15,402 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:46:15,402 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:46:15,402 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:46:16,001 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:16,001 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:46:16,513 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:46:18,020 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:18,416 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:46:18,416 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:46:18,416 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:46:18,417 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:46:19,025 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:46:20,041 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:21,158 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:46:21,158 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:46:21,158 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:46:21,744 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:46:22,061 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:22,061 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\config.yaml
+2024-04-10 20:46:24,083 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:26,085 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:27,121 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:46:28,112 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:30,123 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:32,138 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:32,427 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:46:34,158 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:36,169 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:46:36,169 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:46:36,169 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:46:36,169 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:37,788 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:46:38,188 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:40,190 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:42,214 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:42,808 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:46:43,039 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:46:43,039 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:46:43,039 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:46:43,040 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:46:43,220 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:46:44,230 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:45,878 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:46:45,878 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:46:45,879 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:46:45,879 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:46:46,244 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:46,244 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:46:47,880 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:46:48,263 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:50,279 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:51,061 DEBUG   SystemMonitor:20028 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-04-10 20:46:51,061 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:46:51,184 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:46:51,184 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:46:51,184 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:46:52,295 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:53,147 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:46:54,306 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:56,322 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:46:58,243 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:46:58,338 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:00,352 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:02,368 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:03,541 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:47:04,380 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:06,182 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:47:06,182 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:47:06,197 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:47:06,400 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:08,418 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:08,828 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:47:10,202 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:47:10,202 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:47:10,202 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:47:10,203 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:47:10,437 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:10,437 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:47:12,440 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:13,482 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:47:13,482 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:47:13,482 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:47:13,483 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:47:14,222 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:47:14,449 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:14,449 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:47:15,460 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:17,476 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:19,499 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:19,521 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:47:21,063 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:47:21,186 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:47:21,186 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:47:21,202 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:47:21,514 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:23,537 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:24,808 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:47:25,541 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:27,563 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:29,564 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:29,831 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:47:31,579 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:33,603 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:35,105 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:47:35,626 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:36,213 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:47:36,213 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:47:36,213 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:47:37,506 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:47:37,507 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:47:37,507 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:47:37,507 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:47:37,634 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:37,634 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:47:39,644 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:40,165 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:47:40,344 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:47:40,345 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:47:40,345 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:47:40,345 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:47:40,655 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:47:41,660 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:43,678 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:45,293 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:47:45,688 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:47,714 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:49,730 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:50,569 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:47:51,066 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:47:51,221 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:47:51,221 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:47:51,221 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:47:51,750 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:53,765 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:55,787 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:55,838 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:47:57,798 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:47:59,823 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:01,202 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:48:01,833 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:03,843 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:04,837 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:48:04,837 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:48:04,837 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:48:04,837 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:48:04,857 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:48:05,869 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:06,230 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:48:06,230 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:48:06,230 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:48:06,418 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:48:07,694 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:48:07,694 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:48:07,695 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:48:07,695 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:48:07,888 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:07,888 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:48:09,912 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:11,564 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:48:11,927 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:13,944 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:15,963 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:16,843 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:48:17,988 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:20,003 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:21,075 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:48:21,245 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:48:21,245 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:48:21,245 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:48:21,887 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:48:22,018 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:24,039 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:26,055 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:26,889 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:48:28,066 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:30,085 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:31,795 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:48:31,795 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:48:31,795 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:48:31,795 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:48:31,948 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:48:32,095 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:32,095 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:48:34,109 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:34,655 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:48:34,655 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:48:34,655 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:48:34,655 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:48:35,112 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:48:36,121 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:36,256 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:48:36,256 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:48:36,256 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:48:37,020 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:48:38,141 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:40,163 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:42,168 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:42,336 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:48:44,181 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:46,186 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:47,638 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:48:48,211 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:50,228 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:51,080 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:48:51,266 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:48:51,267 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:48:51,267 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:48:52,240 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:53,000 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:48:54,247 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:56,265 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:58,272 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:48:58,306 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:48:59,462 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:48:59,462 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:48:59,462 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:48:59,463 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:49:00,288 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:00,288 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:49:02,302 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:02,326 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:49:02,326 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:49:02,326 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:49:02,327 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:49:03,308 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:49:03,381 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:49:04,311 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:06,278 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:49:06,278 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:49:06,278 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:49:06,324 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:08,333 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:08,674 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:49:10,348 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:12,360 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:13,701 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:49:14,374 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:16,396 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:18,425 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:18,984 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:49:20,452 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:21,081 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:49:21,268 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:49:21,284 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:49:21,284 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:49:22,470 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:24,261 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:49:24,490 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:25,492 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:26,360 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:49:26,360 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:49:26,361 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:49:26,361 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:49:26,503 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:49:27,509 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:29,378 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:49:29,530 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:29,729 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:49:29,729 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:49:29,729 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:49:29,729 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:49:30,533 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:49:31,538 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:33,547 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:34,560 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:49:35,565 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:36,280 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:49:36,296 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:49:36,296 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:49:37,577 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:39,596 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:39,842 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:49:41,617 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:43,631 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:44,910 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:49:45,650 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:47,662 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:49,669 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:50,211 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:49:51,091 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:49:51,290 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:49:51,321 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:49:51,321 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:49:51,690 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:53,701 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:53,866 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:49:53,866 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:49:53,866 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:49:53,866 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:49:54,710 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:49:55,226 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:49:55,717 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:56,732 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:49:56,733 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:49:56,733 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:49:56,733 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:49:57,729 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:49:57,729 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:49:59,741 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:00,337 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:50:01,764 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:03,781 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:05,353 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:50:05,796 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:06,295 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:50:06,325 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:50:06,325 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:50:07,820 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:09,825 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:10,648 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:50:11,843 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:13,853 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:15,675 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:50:15,864 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:17,876 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:19,897 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:20,703 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:50:20,959 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:50:20,959 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:50:20,959 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:50:20,959 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:50:21,092 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:50:21,311 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:50:21,322 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:50:21,322 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:50:21,904 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:21,904 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:50:23,907 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:24,088 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:50:24,088 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:50:24,088 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:50:24,089 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:50:24,919 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:50:25,779 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:50:25,920 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:27,931 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:29,949 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:31,089 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:50:31,965 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:33,983 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:35,998 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:36,324 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:50:36,324 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:50:36,324 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:50:36,443 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:50:38,015 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:40,040 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:41,478 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:50:42,064 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:44,091 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:46,106 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:46,780 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:50:48,126 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:48,273 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:50:48,273 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:50:48,273 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:50:48,274 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:50:49,135 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:50:50,141 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:51,093 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:50:51,142 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:50:51,142 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:50:51,143 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:50:51,143 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:50:51,155 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:50:51,325 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:50:51,325 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:50:51,340 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:50:51,954 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:50:52,170 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:54,198 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:56,218 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:50:56,969 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:50:58,232 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:00,241 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:02,262 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:02,264 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:51:04,280 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:06,291 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:06,337 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:51:06,337 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:51:06,353 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:51:07,554 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:51:08,302 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:10,314 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:12,326 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:12,851 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:51:14,343 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:14,944 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:51:14,944 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:51:14,944 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:51:14,944 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:51:15,349 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:51:16,359 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:17,827 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:51:17,828 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:51:17,828 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:51:17,828 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:51:18,322 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:51:18,385 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:18,385 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:51:20,404 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:21,104 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:51:21,345 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:51:21,345 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:51:21,361 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:51:22,422 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:23,330 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:51:24,448 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:26,457 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:28,386 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:51:28,482 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:30,501 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:32,514 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:33,387 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:51:34,532 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:35,540 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:36,353 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:51:36,353 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:51:36,369 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:51:37,547 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:38,688 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:51:39,558 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:41,575 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:41,742 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:51:41,742 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:51:41,742 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:51:41,742 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:51:42,585 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:51:43,599 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:43,724 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:51:44,639 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:51:44,640 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:51:44,640 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:51:44,640 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:51:45,609 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:45,610 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:51:47,633 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:48,906 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:51:49,647 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:51,105 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:51:51,347 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:51:51,347 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:51:51,379 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:51:51,655 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:53,675 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:53,911 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:51:55,681 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:57,693 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:51:59,207 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:51:59,709 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:01,734 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:03,757 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:04,263 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:52:05,775 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:06,367 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:52:06,367 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:52:06,382 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:52:07,790 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:08,560 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:52:08,561 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:52:08,561 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:52:08,561 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:52:08,800 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:52:09,325 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:52:09,803 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:11,436 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:52:11,437 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:52:11,437 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:52:11,437 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:52:11,817 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:11,817 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:52:13,826 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:14,428 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:52:15,844 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:17,858 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:19,721 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:52:19,885 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:21,108 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:52:21,378 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:52:21,378 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:52:21,398 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:52:21,889 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:23,903 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:24,776 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:52:25,922 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:27,939 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:29,783 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:52:29,947 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:31,967 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:33,986 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:35,084 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:52:35,313 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:52:35,313 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:52:35,313 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:52:35,314 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:52:35,998 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:35,998 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:52:36,389 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:52:36,389 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:52:36,404 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:52:38,014 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:38,192 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:52:38,192 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:52:38,192 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:52:38,193 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:52:39,016 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:52:40,025 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:40,245 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:52:42,044 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:44,066 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:45,249 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:52:46,072 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:48,086 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:50,106 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:50,559 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:52:51,114 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:52:51,404 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:52:51,405 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:52:51,420 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:52:52,129 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:54,144 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:55,833 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:52:56,167 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:52:58,181 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:00,203 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:00,910 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:53:02,074 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:53:02,074 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:53:02,074 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:53:02,074 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:53:02,217 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:02,217 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:53:04,234 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:04,967 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:53:04,969 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:53:04,969 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:53:04,969 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:53:05,244 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:53:06,089 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:53:06,258 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:06,414 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:53:06,414 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:53:06,429 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:53:08,284 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:10,311 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:11,396 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:53:12,324 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:14,339 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:16,360 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:16,403 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:53:18,383 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:20,403 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:21,119 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:53:21,429 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:53:21,429 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:53:21,445 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:53:21,575 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:53:22,428 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:24,450 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:26,464 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:26,685 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:53:28,176 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:53:28,176 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:53:28,176 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:53:28,176 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:53:28,490 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:28,490 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:53:30,508 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:31,525 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:53:31,525 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:53:31,525 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:53:31,525 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:53:32,090 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:53:32,527 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:32,528 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:53:34,551 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:36,448 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:53:36,448 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:53:36,448 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:53:36,573 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:37,131 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:53:37,584 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:39,597 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:41,612 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:42,427 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:53:43,631 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:45,652 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:47,667 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:47,740 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:53:49,688 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:51,133 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:53:51,444 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:53:51,444 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:53:51,459 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:53:51,715 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:53,049 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:53:53,736 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:54,834 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:53:54,834 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:53:54,834 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:53:54,835 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:53:55,755 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:55,756 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:53:57,715 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:53:57,715 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:53:57,715 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:53:57,716 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:53:57,775 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:53:57,775 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:53:58,201 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:53:59,782 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:01,794 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:03,510 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:54:03,809 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:05,820 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:06,456 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:54:06,456 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:54:06,462 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:54:07,837 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:08,561 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:54:09,854 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:11,877 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:13,859 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:54:13,899 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:15,909 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:17,926 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:19,150 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:54:19,938 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:21,136 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:54:21,464 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:54:21,464 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:54:21,464 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:54:21,689 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:54:21,689 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:54:21,689 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:54:21,689 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:54:21,948 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:21,948 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:54:23,962 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:24,248 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:54:25,035 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:54:25,036 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:54:25,036 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:54:25,036 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:54:25,982 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:25,983 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:54:27,993 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:29,270 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:54:30,010 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:32,020 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:34,037 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:34,571 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:54:36,055 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:36,464 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:54:36,464 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:54:36,473 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:54:38,068 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:39,578 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:54:40,081 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:42,096 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:44,116 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:44,874 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:54:46,123 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:48,144 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:48,238 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:54:48,239 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:54:48,239 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:54:48,239 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:54:49,158 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:54:49,975 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:54:50,171 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:51,139 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:54:51,144 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:54:51,144 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:54:51,145 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:54:51,145 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:54:51,185 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:54:51,475 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:54:51,475 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:54:51,476 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:54:52,200 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:54,217 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:55,093 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:54:56,235 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:54:58,260 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:00,177 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:55:00,262 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:02,287 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:04,306 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:05,206 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:55:06,312 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:06,483 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:55:06,483 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:55:06,483 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:55:08,327 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:10,343 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:10,511 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:55:12,360 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:14,373 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:15,095 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:55:15,095 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:55:15,095 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:55:15,097 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:55:15,375 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:55:15,623 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:55:16,379 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:18,017 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:55:18,017 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:55:18,017 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:55:18,017 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:55:18,398 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:18,399 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:55:20,417 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:20,694 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:55:21,146 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:55:21,485 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:55:21,506 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:55:21,506 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:55:22,424 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:24,444 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:25,996 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:55:26,455 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:28,478 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:30,497 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:31,275 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:55:32,506 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:34,532 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:36,365 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:55:36,496 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:55:36,511 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:55:36,511 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:55:36,557 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:38,562 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:40,578 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:41,420 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:55:41,960 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:55:41,960 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:55:41,960 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:55:41,961 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:55:42,581 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:42,581 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:55:43,590 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:44,593 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:44,865 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:55:44,866 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:55:44,866 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:55:44,866 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:55:45,598 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:45,598 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:55:46,606 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:46,607 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:55:48,619 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:49,626 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:51,155 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:55:51,500 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:55:51,516 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:55:51,516 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:55:51,640 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:51,665 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:55:53,653 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:55,662 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:56,919 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:55:57,680 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:55:59,697 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:01,711 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:02,233 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:56:03,730 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:05,742 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:06,502 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:56:06,531 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:56:06,531 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:56:07,600 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:56:07,755 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:08,766 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:56:08,766 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:56:08,766 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:56:08,766 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:56:09,759 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:09,759 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:56:11,692 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:56:11,693 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:56:11,693 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:56:11,693 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:56:11,765 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:11,765 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:56:12,812 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:56:13,781 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:15,787 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:17,813 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:17,844 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:56:19,831 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:21,169 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:56:21,503 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:56:21,551 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:56:21,551 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:56:21,859 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:23,171 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:56:23,874 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:25,889 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:27,899 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:28,220 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:56:29,914 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:31,933 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:33,487 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:56:33,946 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:35,567 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:56:35,567 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:56:35,567 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:56:35,567 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:56:35,958 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:35,958 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:56:36,515 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:56:36,561 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:56:36,561 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:56:37,969 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:38,407 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-10 20:56:38,407 DEBUG   SenderThread:20028 [sender.py:send():379] send: history
+2024-04-10 20:56:38,407 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: summary_record
+2024-04-10 20:56:38,408 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:56:38,897 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:56:38,979 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:56:39,993 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:42,002 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:44,017 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:44,190 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:56:46,039 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:48,051 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:49,205 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:56:50,069 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:51,181 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:56:51,528 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:56:51,574 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 20:56:51,574 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 20:56:52,085 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:54,104 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:54,509 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:56:56,120 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:58,124 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:56:58,658 DEBUG   SenderThread:20028 [sender.py:send():379] send: exit
+2024-04-10 20:56:58,658 INFO    SenderThread:20028 [sender.py:send_exit():586] handling exit code: 255
+2024-04-10 20:56:58,658 INFO    SenderThread:20028 [sender.py:send_exit():588] handling runtime: 667
+2024-04-10 20:56:58,658 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:56:58,658 INFO    SenderThread:20028 [sender.py:send_exit():594] send defer
+2024-04-10 20:56:58,658 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:56:58,658 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 0
+2024-04-10 20:56:58,659 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:56:58,659 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-04-10 20:56:58,659 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 1
+2024-04-10 20:56:58,659 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:56:58,659 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 1
+2024-04-10 20:56:58,659 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:56:58,659 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-04-10 20:56:58,659 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 2
+2024-04-10 20:56:58,659 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:56:58,659 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 2
+2024-04-10 20:56:58,659 INFO    HandlerThread:20028 [system_monitor.py:finish():203] Stopping system monitor
+2024-04-10 20:56:58,659 DEBUG   SystemMonitor:20028 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-04-10 20:56:58,659 DEBUG   SystemMonitor:20028 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-04-10 20:56:58,663 INFO    HandlerThread:20028 [interfaces.py:finish():202] Joined cpu monitor
+2024-04-10 20:56:58,663 INFO    HandlerThread:20028 [interfaces.py:finish():202] Joined disk monitor
+2024-04-10 20:56:58,732 INFO    HandlerThread:20028 [interfaces.py:finish():202] Joined gpu monitor
+2024-04-10 20:56:58,732 INFO    HandlerThread:20028 [interfaces.py:finish():202] Joined memory monitor
+2024-04-10 20:56:58,732 INFO    HandlerThread:20028 [interfaces.py:finish():202] Joined network monitor
+2024-04-10 20:56:58,732 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:56:58,732 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-04-10 20:56:58,732 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 3
+2024-04-10 20:56:58,732 DEBUG   SenderThread:20028 [sender.py:send():379] send: stats
+2024-04-10 20:56:58,734 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:56:58,734 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 3
+2024-04-10 20:56:58,734 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:56:58,734 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-04-10 20:56:58,734 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 4
+2024-04-10 20:56:58,734 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:56:58,734 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 4
+2024-04-10 20:56:58,734 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:56:58,734 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-04-10 20:56:58,734 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 5
+2024-04-10 20:56:58,734 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:56:58,734 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 5
+2024-04-10 20:56:58,734 DEBUG   SenderThread:20028 [sender.py:send():379] send: summary
+2024-04-10 20:56:58,735 INFO    SenderThread:20028 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-10 20:56:58,735 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:56:58,735 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-04-10 20:56:58,735 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 6
+2024-04-10 20:56:58,735 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:56:58,735 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 6
+2024-04-10 20:56:58,735 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:56:58,735 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-04-10 20:56:58,735 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 7
+2024-04-10 20:56:58,735 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 20:56:58,735 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:56:58,735 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 7
+2024-04-10 20:56:58,735 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:56:58,735 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-04-10 20:56:59,138 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:56:59,668 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-10 20:56:59,724 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 8
+2024-04-10 20:56:59,724 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: poll_exit
+2024-04-10 20:56:59,724 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:56:59,724 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 8
+2024-04-10 20:56:59,724 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:56:59,724 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-04-10 20:56:59,724 INFO    SenderThread:20028 [job_builder.py:build():318] Attempting to build job artifact
+2024-04-10 20:56:59,724 INFO    SenderThread:20028 [job_builder.py:_get_source_type():455] is repo sourced job
+2024-04-10 20:56:59,745 INFO    SenderThread:20028 [job_builder.py:build():431] adding wandb-job metadata file
+2024-04-10 20:56:59,748 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 9
+2024-04-10 20:56:59,748 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:56:59,748 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 9
+2024-04-10 20:56:59,748 DEBUG   SenderThread:20028 [sender.py:send():379] send: artifact
+2024-04-10 20:57:00,142 INFO    Thread-16 :20028 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:57:00,308 INFO    SenderThread:20028 [sender.py:send_artifact():1468] sent artifact job-https___github.com_mberghouse_Mammo_classification_scripts.git_cbisddsm_classification_300x500.py - {'id': 'QXJ0aWZhY3Q6NzkxOTAzOTcy', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MTI2MjI0OA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NzkxOTAzOTcy', 'versionIndex': 2}}}
+2024-04-10 20:57:00,308 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:57:00,308 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 9
+2024-04-10 20:57:00,308 INFO    SenderThread:20028 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-04-10 20:57:00,681 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-10 20:57:01,155 INFO    SenderThread:20028 [dir_watcher.py:finish():388] scan: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files
+2024-04-10 20:57:01,155 INFO    SenderThread:20028 [dir_watcher.py:finish():402] scan save: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\config.yaml config.yaml
+2024-04-10 20:57:01,155 INFO    SenderThread:20028 [dir_watcher.py:finish():402] scan save: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log output.log
+2024-04-10 20:57:01,156 INFO    SenderThread:20028 [dir_watcher.py:finish():402] scan save: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\requirements.txt requirements.txt
+2024-04-10 20:57:01,157 INFO    SenderThread:20028 [dir_watcher.py:finish():402] scan save: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-metadata.json wandb-metadata.json
+2024-04-10 20:57:01,157 INFO    SenderThread:20028 [dir_watcher.py:finish():402] scan save: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json wandb-summary.json
+2024-04-10 20:57:01,159 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 10
+2024-04-10 20:57:01,159 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: poll_exit
+2024-04-10 20:57:01,160 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:57:01,160 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 10
+2024-04-10 20:57:01,161 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:57:01,161 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 10
+2024-04-10 20:57:01,161 INFO    SenderThread:20028 [file_pusher.py:finish():172] shutting down file pusher
+2024-04-10 20:57:01,611 INFO    wandb-upload_0:20028 [upload_job.py:push():131] Uploaded file C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\config.yaml
+2024-04-10 20:57:01,694 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-10 20:57:01,694 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: poll_exit
+2024-04-10 20:57:01,739 INFO    wandb-upload_2:20028 [upload_job.py:push():131] Uploaded file C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\requirements.txt
+2024-04-10 20:57:01,769 INFO    wandb-upload_3:20028 [upload_job.py:push():131] Uploaded file C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\wandb-summary.json
+2024-04-10 20:57:01,843 INFO    wandb-upload_1:20028 [upload_job.py:push():131] Uploaded file C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\files\output.log
+2024-04-10 20:57:02,051 INFO    Thread-15 (_thread_body):20028 [sender.py:transition_state():614] send defer: 11
+2024-04-10 20:57:02,051 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:57:02,051 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 11
+2024-04-10 20:57:02,051 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:57:02,051 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 11
+2024-04-10 20:57:02,051 INFO    SenderThread:20028 [file_pusher.py:join():178] waiting for file pusher
+2024-04-10 20:57:02,052 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 12
+2024-04-10 20:57:02,052 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:57:02,052 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 12
+2024-04-10 20:57:02,052 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:57:02,052 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 12
+2024-04-10 20:57:02,052 INFO    SenderThread:20028 [file_stream.py:finish():614] file stream finish called
+2024-04-10 20:57:02,399 INFO    SenderThread:20028 [file_stream.py:finish():618] file stream finish is done
+2024-04-10 20:57:02,399 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 13
+2024-04-10 20:57:02,399 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:57:02,399 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 13
+2024-04-10 20:57:02,400 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:57:02,400 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 13
+2024-04-10 20:57:02,400 INFO    SenderThread:20028 [sender.py:transition_state():614] send defer: 14
+2024-04-10 20:57:02,400 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: defer
+2024-04-10 20:57:02,400 INFO    HandlerThread:20028 [handler.py:handle_request_defer():172] handle defer: 14
+2024-04-10 20:57:02,400 DEBUG   SenderThread:20028 [sender.py:send():379] send: final
+2024-04-10 20:57:02,400 DEBUG   SenderThread:20028 [sender.py:send():379] send: footer
+2024-04-10 20:57:02,400 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: defer
+2024-04-10 20:57:02,400 INFO    SenderThread:20028 [sender.py:send_request_defer():610] handle sender defer: 14
+2024-04-10 20:57:02,400 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-10 20:57:02,400 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: poll_exit
+2024-04-10 20:57:02,401 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-10 20:57:02,402 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: server_info
+2024-04-10 20:57:02,402 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: get_summary
+2024-04-10 20:57:02,402 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: sampled_history
+2024-04-10 20:57:02,402 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 20:57:02,402 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: poll_exit
+2024-04-10 20:57:02,402 DEBUG   SenderThread:20028 [sender.py:send_request():406] send_request: server_info
+2024-04-10 20:57:02,509 INFO    MainThread:20028 [wandb_run.py:_footer_history_summary_info():3936] rendering history
+2024-04-10 20:57:02,509 INFO    MainThread:20028 [wandb_run.py:_footer_history_summary_info():3968] rendering summary
+2024-04-10 20:57:02,509 INFO    MainThread:20028 [wandb_run.py:_footer_sync_info():3895] logging synced files
+2024-04-10 20:57:02,510 DEBUG   HandlerThread:20028 [handler.py:handle_request():146] handle_request: shutdown
+2024-04-10 20:57:02,510 INFO    HandlerThread:20028 [handler.py:finish():866] shutting down handler
+2024-04-10 20:57:03,403 INFO    WriterThread:20028 [datastore.py:close():296] close: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\run-ogb0nm4q.wandb
+2024-04-10 20:57:03,512 INFO    SenderThread:20028 [sender.py:finish():1546] shutting down sender
+2024-04-10 20:57:03,512 INFO    SenderThread:20028 [file_pusher.py:finish():172] shutting down file pusher
+2024-04-10 20:57:03,512 INFO    SenderThread:20028 [file_pusher.py:join():178] waiting for file pusher

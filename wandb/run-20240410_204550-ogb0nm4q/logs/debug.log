@@ -1,0 +1,28 @@
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_setup.py:_flush():76] Current SDK version is 0.16.6
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_setup.py:_flush():76] Configure stats pid to 10348
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_setup.py:_flush():76] Loading settings from C:\Users\marcb\.config\wandb\settings
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_setup.py:_flush():76] Loading settings from C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\settings
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'cbisddsm_classification_300x500.py', 'program_abspath': 'C:\\Users\\marcb\\OneDrive\\Desktop\\mberghouse\\Mammo_classification_scripts\\cbisddsm_classification_300x500.py', 'program': 'C:\\Users\\marcb\\OneDrive\\Desktop\\mberghouse\\Mammo_classification_scripts\\cbisddsm_classification_300x500.py'}
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_init.py:_log_setup():521] Logging user logs to C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\logs\debug.log
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_init.py:_log_setup():522] Logging internal logs to C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_204550-ogb0nm4q\logs\debug-internal.log
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_init.py:init():561] calling init triggers
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_init.py:init():568] wandb.init called with sweep_config: {}
+config: {'learning_rate': 6e-05, 'architecture': 'davit_small.msft_in1k', 'dataset': '300x500-v6-mass', 'epochs': 50, 'batch size': 16, 'hidden size': 64, 'optimizer_name': 'Adam', 'dropout_rate': 0.2, 'weight decay': 0.001}
+2024-04-10 20:45:50,437 INFO    MainThread:10348 [wandb_init.py:init():611] starting backend
+2024-04-10 20:45:50,438 INFO    MainThread:10348 [wandb_init.py:init():615] setting up manager
+2024-04-10 20:45:50,438 INFO    MainThread:10348 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2024-04-10 20:45:50,440 INFO    MainThread:10348 [wandb_init.py:init():623] backend started and connected
+2024-04-10 20:45:50,442 INFO    MainThread:10348 [wandb_init.py:init():715] updated telemetry
+2024-04-10 20:45:50,465 INFO    MainThread:10348 [wandb_init.py:init():748] communicating run to backend with 90.0 second timeout
+2024-04-10 20:45:50,826 INFO    MainThread:10348 [wandb_run.py:_on_init():2357] communicating current version
+2024-04-10 20:45:51,014 INFO    MainThread:10348 [wandb_run.py:_on_init():2366] got version response 
+2024-04-10 20:45:51,015 INFO    MainThread:10348 [wandb_init.py:init():799] starting run threads in backend
+2024-04-10 20:45:51,153 INFO    MainThread:10348 [wandb_run.py:_console_start():2335] atexit reg
+2024-04-10 20:45:51,153 INFO    MainThread:10348 [wandb_run.py:_redirect():2190] redirect: wrap_raw
+2024-04-10 20:45:51,153 INFO    MainThread:10348 [wandb_run.py:_redirect():2255] Wrapping output streams.
+2024-04-10 20:45:51,153 INFO    MainThread:10348 [wandb_run.py:_redirect():2280] Redirects installed.
+2024-04-10 20:45:51,154 INFO    MainThread:10348 [wandb_init.py:init():842] run started, returning control to user process
+2024-04-10 20:57:03,785 WARNING MsgRouterThr:10348 [router.py:message_loop():77] message_loop has been closed

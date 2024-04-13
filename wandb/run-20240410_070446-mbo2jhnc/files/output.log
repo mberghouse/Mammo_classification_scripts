@@ -1,0 +1,572 @@
+Sequential(
+  (0): NormFreeNet(
+    (stem): Sequential(
+      (conv1): ScaledStdConv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      (act2): GELU()
+      (conv2): ScaledStdConv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (act3): GELU()
+      (conv3): ScaledStdConv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (act4): GELU()
+      (conv4): ScaledStdConv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    )
+    (stages): Sequential(
+      (0): Sequential(
+        (0): NormFreeBlock(
+          (downsample): DownsampleAvg(
+            (pool): Identity()
+            (conv): ScaledStdConv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+          )
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): Identity()
+        )
+        (1): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.009)
+        )
+      )
+      (1): Sequential(
+        (0): NormFreeBlock(
+          (downsample): DownsampleAvg(
+            (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+            (conv): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          )
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(256, 256, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=2)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.017)
+        )
+        (1): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.026)
+        )
+        (2): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.035)
+        )
+        (3): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.043)
+        )
+      )
+      (2): Sequential(
+        (0): NormFreeBlock(
+          (downsample): DownsampleAvg(
+            (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+            (conv): ScaledStdConv2d(512, 1536, kernel_size=(1, 1), stride=(1, 1))
+          )
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(512, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.052)
+        )
+        (1): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.061)
+        )
+        (2): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.070)
+        )
+        (3): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.078)
+        )
+        (4): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.087)
+        )
+        (5): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.096)
+        )
+        (6): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.104)
+        )
+        (7): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.113)
+        )
+        (8): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.122)
+        )
+        (9): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.130)
+        )
+        (10): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.139)
+        )
+        (11): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.148)
+        )
+      )
+      (3): Sequential(
+        (0): NormFreeBlock(
+          (downsample): DownsampleAvg(
+            (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+            (conv): ScaledStdConv2d(1536, 1536, kernel_size=(1, 1), stride=(1, 1))
+          )
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.157)
+        )
+        (1): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.165)
+        )
+        (2): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.174)
+        )
+        (3): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.183)
+        )
+        (4): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.191)
+        )
+        (5): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.200)
+        )
+      )
+    )
+    (final_conv): ScaledStdConv2d(1536, 3072, kernel_size=(1, 1), stride=(1, 1))
+    (final_act): GELU()
+    (head): ClassifierHead(
+      (global_pool): SelectAdaptivePool2d (pool_type=avg, flatten=Flatten(start_dim=1, end_dim=-1))
+      (fc): Linear(in_features=3072, out_features=1, bias=True)
+      (flatten): Identity()
+    )
+  )
+  (1): Sigmoid()
+)
+Starting training...
+--------------------
+train for epoch 1
+
+
+
+
+
+
+
+
+
+ 92%|███████████████████████████████████████████████████████████████████████████▎      | 67/73 [00:19<00:01,  3.56it/s]
+New threshold is 0.479085773229599
+train F1 is 0.4778420031070709
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21<00:00,  3.46it/s]
+ 11%|█████████▏                                                                         | 2/18 [00:00<00:01,  9.33it/s]
+New threshold is 0.3984406292438507
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:01<00:00,  9.83it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+Epoch 1/40, learning rate: 2.9995720001722038e-05
+Train Loss: 0.6826, Train Acc: 0.5352, Train f1: 0.4778, Train Precision: 0.4452, Train Recall: 0.5156, Train AUC: 0.5220
+Valitadion Loss: 0.6822, Validation Acc: 0.5490, Vall f1: 0.4267, Val Precision: 0.4528, Val Recall: 0.4034, Val AUC: 0.4785
+
+ 18%|██████████████▌                                                                   | 13/73 [00:03<00:17,  3.44it/s]
+Traceback (most recent call last):
+  File "C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\cbisddsm_classification_300x500.py", line 1201, in <module>
+    model = train_model(model, model_name, criterion, optimizer, scheduler, num_epochs=epochs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\cbisddsm_classification_300x500.py", line 160, in train_model
+    outputs = model(inputs)
+              ^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\timm\models\nfnet.py", line 583, in forward
+    x = self.forward_features(x)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\timm\models\nfnet.py", line 574, in forward_features
+    x = self.stages(x)
+        ^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\timm\models\nfnet.py", line 354, in forward
+    out = self.conv2(self.act2(out))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\timm\models\layers\std_conv.py", line 98, in forward
+    weight = F.batch_norm(
+             ^^^^^^^^^^^^^
+  File "C:\Users\marcb\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

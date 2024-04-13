@@ -1,0 +1,119 @@
+2024-04-10 06:13:50,635 INFO    StreamThr :11544 [internal.py:wandb_internal():86] W&B internal server running at pid: 11544, started at: 2024-04-10 06:13:50.635147
+2024-04-10 06:13:50,637 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status
+2024-04-10 06:13:50,637 INFO    WriterThread:11544 [datastore.py:open_for_write():87] open: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_061350-3okqvvzz\run-3okqvvzz.wandb
+2024-04-10 06:13:50,638 DEBUG   SenderThread:11544 [sender.py:send():379] send: header
+2024-04-10 06:13:50,658 DEBUG   SenderThread:11544 [sender.py:send():379] send: run
+2024-04-10 06:13:51,041 INFO    SenderThread:11544 [dir_watcher.py:__init__():211] watching files in: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_061350-3okqvvzz\files
+2024-04-10 06:13:51,041 INFO    SenderThread:11544 [sender.py:_start_run_threads():1124] run started: 3okqvvzz with start time 1712754830.635147
+2024-04-10 06:13:51,044 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: check_version
+2024-04-10 06:13:51,044 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: check_version
+2024-04-10 06:13:51,244 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: run_start
+2024-04-10 06:13:51,260 DEBUG   HandlerThread:11544 [system_info.py:__init__():26] System info init
+2024-04-10 06:13:51,260 DEBUG   HandlerThread:11544 [system_info.py:__init__():41] System info init done
+2024-04-10 06:13:51,260 INFO    HandlerThread:11544 [system_monitor.py:start():194] Starting system monitor
+2024-04-10 06:13:51,260 INFO    SystemMonitor:11544 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-10 06:13:51,260 INFO    HandlerThread:11544 [system_monitor.py:probe():214] Collecting system info
+2024-04-10 06:13:51,263 INFO    SystemMonitor:11544 [interfaces.py:start():190] Started cpu monitoring
+2024-04-10 06:13:51,263 INFO    SystemMonitor:11544 [interfaces.py:start():190] Started disk monitoring
+2024-04-10 06:13:51,264 INFO    SystemMonitor:11544 [interfaces.py:start():190] Started gpu monitoring
+2024-04-10 06:13:51,268 INFO    SystemMonitor:11544 [interfaces.py:start():190] Started memory monitoring
+2024-04-10 06:13:51,273 INFO    SystemMonitor:11544 [interfaces.py:start():190] Started network monitoring
+2024-04-10 06:13:51,276 DEBUG   HandlerThread:11544 [system_info.py:probe():150] Probing system
+2024-04-10 06:13:51,276 DEBUG   HandlerThread:11544 [system_info.py:_probe_git():135] Probing git
+2024-04-10 06:13:51,308 DEBUG   HandlerThread:11544 [system_info.py:_probe_git():143] Probing git done
+2024-04-10 06:13:51,309 DEBUG   HandlerThread:11544 [system_info.py:probe():198] Probing system done
+2024-04-10 06:13:51,309 DEBUG   HandlerThread:11544 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.22631-SP0', 'python': '3.11.4', 'heartbeatAt': '2024-04-10T13:13:51.276137', 'startedAt': '2024-04-10T13:13:50.630404', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'C:\\Users\\marcb\\OneDrive\\Desktop\\mberghouse\\Mammo_classification_scripts\\cbisddsm_classification_300x500.py', 'codePathLocal': 'cbisddsm_classification_300x500.py', 'codePath': 'cbisddsm_classification_300x500.py', 'git': {'remote': 'https://github.com/mberghouse/Mammo_classification_scripts.git', 'commit': 'd59dc79d44f1c76da13cb87f081897c34b6e3bad'}, 'email': '55556564+mberghouse@users.noreply.github.com', 'root': 'C:/Users/marcb/OneDrive/Desktop/mberghouse/Mammo_classification_scripts', 'host': 'PC-4090', 'username': 'marcb', 'executable': 'C:\\Users\\marcb\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'cpu_count': 24, 'cpu_count_logical': 32, 'cpu_freq': {'current': 3200.0, 'min': 0.0, 'max': 3200.0}, 'cpu_freq_per_core': [{'current': 3200.0, 'min': 0.0, 'max': 3200.0}], 'disk': {'/': {'total': 1862.1513633728027, 'used': 1145.0178413391113}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 95.81729507446289}}
+2024-04-10 06:13:51,309 INFO    HandlerThread:11544 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-10 06:13:51,309 INFO    HandlerThread:11544 [system_monitor.py:probe():227] Publishing system info
+2024-04-10 06:13:51,309 INFO    HandlerThread:11544 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-10 06:13:51,311 DEBUG   SenderThread:11544 [sender.py:send():379] send: files
+2024-04-10 06:13:51,311 INFO    SenderThread:11544 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-04-10 06:13:51,371 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-10 06:13:51,371 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: python_packages
+2024-04-10 06:13:51,371 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:13:51,371 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:13:51,372 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:13:51,594 DEBUG   SenderThread:11544 [sender.py:send():379] send: telemetry
+2024-04-10 06:13:51,862 INFO    wandb-upload_0:11544 [upload_job.py:push():131] Uploaded file C:\Users\marcb\AppData\Local\Temp\tmpydd0lntcwandb\rsynvpxg-wandb-metadata.json
+2024-04-10 06:13:52,054 INFO    Thread-16 :11544 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_061350-3okqvvzz\files\requirements.txt
+2024-04-10 06:13:52,054 INFO    Thread-16 :11544 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_061350-3okqvvzz\files\wandb-metadata.json
+2024-04-10 06:13:52,054 INFO    Thread-16 :11544 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_061350-3okqvvzz\files\output.log
+2024-04-10 06:13:54,077 INFO    Thread-16 :11544 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_061350-3okqvvzz\files\output.log
+2024-04-10 06:13:55,821 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:14:00,878 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:14:05,911 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:14:06,388 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:14:06,388 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:14:06,388 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:14:11,547 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:14:16,582 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:14:21,401 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:14:21,401 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:14:21,401 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:14:22,521 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:14:23,325 INFO    Thread-16 :11544 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_061350-3okqvvzz\files\config.yaml
+2024-04-10 06:14:27,670 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:14:32,713 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:14:36,404 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:14:36,420 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:14:36,420 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:14:38,568 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:14:43,614 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:14:48,654 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:14:51,278 DEBUG   SystemMonitor:11544 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-04-10 06:14:51,278 DEBUG   SenderThread:11544 [sender.py:send():379] send: stats
+2024-04-10 06:14:51,416 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:14:51,424 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:14:51,424 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:14:54,609 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:14:59,630 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:15:04,648 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:15:06,431 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:15:06,431 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:15:06,431 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:15:10,606 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:15:15,661 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:15:20,687 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:15:21,288 DEBUG   SenderThread:11544 [sender.py:send():379] send: stats
+2024-04-10 06:15:21,421 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:15:21,421 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:15:21,444 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:15:26,654 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:15:31,717 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:15:36,425 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:15:36,425 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:15:36,450 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:15:37,549 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:15:42,571 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:15:47,607 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:15:51,294 DEBUG   SenderThread:11544 [sender.py:send():379] send: stats
+2024-04-10 06:15:51,423 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:15:51,423 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:15:51,456 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:15:53,580 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:15:58,618 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:16:03,657 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:16:06,434 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:16:06,434 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:16:06,458 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:16:09,637 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:16:14,671 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:16:19,707 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:16:21,305 DEBUG   SenderThread:11544 [sender.py:send():379] send: stats
+2024-04-10 06:16:21,457 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:16:21,457 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:16:21,473 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:16:25,683 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:16:30,706 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:16:35,739 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:16:36,476 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:16:36,476 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:16:36,476 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:16:41,694 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:16:46,748 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:16:51,308 DEBUG   SenderThread:11544 [sender.py:send():379] send: stats
+2024-04-10 06:16:51,490 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-10 06:16:51,490 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-10 06:16:51,490 DEBUG   SenderThread:11544 [sender.py:send_request():406] send_request: stop_status
+2024-04-10 06:16:52,634 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report
+2024-04-10 06:16:57,679 DEBUG   HandlerThread:11544 [handler.py:handle_request():146] handle_request: status_report

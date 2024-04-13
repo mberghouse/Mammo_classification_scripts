@@ -1,0 +1,2557 @@
+Sequential(
+  (0): NormFreeNet(
+    (stem): Sequential(
+      (conv1): ScaledStdConv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      (act2): GELU()
+      (conv2): ScaledStdConv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (act3): GELU()
+      (conv3): ScaledStdConv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (act4): GELU()
+      (conv4): ScaledStdConv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    )
+    (stages): Sequential(
+      (0): Sequential(
+        (0): NormFreeBlock(
+          (downsample): DownsampleAvg(
+            (pool): Identity()
+            (conv): ScaledStdConv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+          )
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): Identity()
+        )
+        (1): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.004)
+        )
+        (2): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.009)
+        )
+        (3): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.013)
+        )
+      )
+      (1): Sequential(
+        (0): NormFreeBlock(
+          (downsample): DownsampleAvg(
+            (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+            (conv): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          )
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(256, 256, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=2)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.017)
+        )
+        (1): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.021)
+        )
+        (2): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.026)
+        )
+        (3): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.030)
+        )
+        (4): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.034)
+        )
+        (5): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.038)
+        )
+        (6): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.043)
+        )
+        (7): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.047)
+        )
+      )
+      (2): Sequential(
+        (0): NormFreeBlock(
+          (downsample): DownsampleAvg(
+            (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+            (conv): ScaledStdConv2d(512, 1536, kernel_size=(1, 1), stride=(1, 1))
+          )
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(512, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.051)
+        )
+        (1): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.055)
+        )
+        (2): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.060)
+        )
+        (3): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.064)
+        )
+        (4): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.068)
+        )
+        (5): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.072)
+        )
+        (6): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.077)
+        )
+        (7): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.081)
+        )
+        (8): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.085)
+        )
+        (9): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.089)
+        )
+        (10): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.094)
+        )
+        (11): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.098)
+        )
+        (12): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.102)
+        )
+        (13): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.106)
+        )
+        (14): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.111)
+        )
+        (15): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.115)
+        )
+        (16): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.119)
+        )
+        (17): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.123)
+        )
+        (18): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.128)
+        )
+        (19): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.132)
+        )
+        (20): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.136)
+        )
+        (21): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.140)
+        )
+        (22): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.145)
+        )
+        (23): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.149)
+        )
+      )
+      (3): Sequential(
+        (0): NormFreeBlock(
+          (downsample): DownsampleAvg(
+            (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+            (conv): ScaledStdConv2d(1536, 1536, kernel_size=(1, 1), stride=(1, 1))
+          )
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.153)
+        )
+        (1): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.157)
+        )
+        (2): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.162)
+        )
+        (3): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.166)
+        )
+        (4): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.170)
+        )
+        (5): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.174)
+        )
+        (6): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.179)
+        )
+        (7): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.183)
+        )
+        (8): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.187)
+        )
+        (9): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.191)
+        )
+        (10): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.196)
+        )
+        (11): NormFreeBlock(
+          (act1): GELU()
+          (conv1): ScaledStdConv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+          (act2): GELU()
+          (conv2): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act2b): GELU()
+          (conv2b): ScaledStdConv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=6)
+          (act3): GELU()
+          (conv3): ScaledStdConv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+          (attn_last): SEModule(
+            (fc1): Conv2d(1536, 768, kernel_size=(1, 1), stride=(1, 1))
+            (bn): Identity()
+            (act): LeakyReLU(negative_slope=0.1, inplace=True)
+            (fc2): Conv2d(768, 1536, kernel_size=(1, 1), stride=(1, 1))
+            (gate): Sigmoid()
+          )
+          (drop_path): DropPath(drop_prob=0.200)
+        )
+      )
+    )
+    (final_conv): ScaledStdConv2d(1536, 3072, kernel_size=(1, 1), stride=(1, 1))
+    (final_act): GELU()
+    (head): ClassifierHead(
+      (global_pool): SelectAdaptivePool2d (pool_type=avg, flatten=Flatten(start_dim=1, end_dim=-1))
+      (fc): Linear(in_features=3072, out_features=1, bias=True)
+      (flatten): Identity()
+    )
+  )
+  (1): Sigmoid()
+)
+Starting training...
+--------------------
+train for epoch 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 98%|████████████████████████████████████████████████████████████████████████████████▎ | 96/98 [00:59<00:01,  1.60it/s]
+New threshold is 0.4244838058948517
+train F1 is 0.4790307581424713
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [01:00<00:00,  1.62it/s]
+
+ 62%|███████████████████████████████████████████████████▎                              | 15/24 [00:03<00:01,  5.04it/s]
+New threshold is 0.40428560972213745
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  4.96it/s]
+Epoch 1/40, learning rate: 3.9630876686748735e-05
+Train Loss: 0.6822, Train Acc: 0.5206, Train f1: 0.4790, Train Precision: 0.4363, Train Recall: 0.5310, Train AUC: 0.5237
+Valitadion Loss: 0.6804, Validation Acc: 0.4825, Vall f1: 0.4676, Val Precision: 0.4088, Val Recall: 0.5462, Val AUC: 0.4772
+train for epoch 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 94/98 [00:57<00:02,  1.66it/s]
+New threshold is 0.41298022866249084
+train F1 is 0.44246208667755127
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:59<00:00,  1.65it/s]
+
+
+ 83%|████████████████████████████████████████████████████████████████████▎             | 20/24 [00:04<00:00,  4.99it/s]
+New threshold is 0.41837844252586365
+val F1 is 0.4848484992980957
+Epoch 2/40, learning rate: 3.8537131949374116e-05
+Train Loss: 0.6818, Train Acc: 0.4640, Train f1: 0.4425, Train Precision: 0.3893, Train Recall: 0.5124, Train AUC: 0.4452
+Valitadion Loss: 0.6799, Validation Acc: 0.5245, Vall f1: 0.4848, Val Precision: 0.4414, Val Recall: 0.5378, Val AUC: 0.5093
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  4.85it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:58<00:01,  1.62it/s]
+New threshold is 0.42499563097953796
+train F1 is 0.4695177376270294
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:59<00:00,  1.64it/s]
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  4.85it/s]
+  0%|                                                                                           | 0/98 [00:00<?, ?it/s]
+New threshold is 0.41154956817626953
+val F1 is 0.44541484117507935
+Epoch 3/40, learning rate: 3.675913845701657e-05
+Train Loss: 0.6785, Train Acc: 0.5000, Train f1: 0.4695, Train Precision: 0.4195, Train Recall: 0.5331, Train AUC: 0.4978
+Valitadion Loss: 0.6799, Validation Acc: 0.5559, Vall f1: 0.4454, Val Precision: 0.4636, Val Recall: 0.4286, Val AUC: 0.5248
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:57<00:01,  1.65it/s]
+New threshold is 0.4063664972782135
+train F1 is 0.4670874774456024
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:59<00:00,  1.65it/s]
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  4.95it/s]
+New threshold is 0.4352368116378784
+val F1 is 0.5123966932296753
+Epoch 4/40, learning rate: 3.4362526096200635e-05
+Train Loss: 0.6805, Train Acc: 0.4931, Train f1: 0.4671, Train Precision: 0.4144, Train Recall: 0.5351, Train AUC: 0.4962
+Valitadion Loss: 0.6798, Validation Acc: 0.5874, Vall f1: 0.5124, Val Precision: 0.5041, Val Recall: 0.5210, Val AUC: 0.5689
+train for epoch 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 94/98 [00:57<00:02,  1.64it/s]
+New threshold is 0.4380202889442444
+train F1 is 0.46820276975631714
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:59<00:00,  1.66it/s]
+
+
+ 88%|███████████████████████████████████████████████████████████████████████▊          | 21/24 [00:04<00:00,  5.16it/s]
+New threshold is 0.41831833124160767
+val F1 is 0.5503876209259033
+Epoch 5/40, learning rate: 3.143575941865827e-05
+Train Loss: 0.6802, Train Acc: 0.5051, Train f1: 0.4682, Train Precision: 0.4226, Train Recall: 0.5248, Train AUC: 0.4956
+Valitadion Loss: 0.6792, Validation Acc: 0.5944, Vall f1: 0.5504, Val Precision: 0.5108, Val Recall: 0.5966, Val AUC: 0.6020
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.10it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 94/98 [00:56<00:02,  1.64it/s]
+New threshold is 0.4218025207519531
+train F1 is 0.41553398966789246
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+
+ 88%|███████████████████████████████████████████████████████████████████████▊          | 21/24 [00:04<00:00,  5.06it/s]
+New threshold is 0.4130663573741913
+val F1 is 0.5433070659637451
+Epoch 6/40, learning rate: 2.80868722084031e-05
+Train Loss: 0.6800, Train Acc: 0.4837, Train f1: 0.4155, Train Precision: 0.3919, Train Recall: 0.4421, Train AUC: 0.4697
+Valitadion Loss: 0.6792, Validation Acc: 0.5944, Vall f1: 0.5433, Val Precision: 0.5111, Val Recall: 0.5798, Val AUC: 0.6098
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.03it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:57<00:01,  1.66it/s]
+New threshold is 0.4236971437931061
+train F1 is 0.4934152662754059
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 62%|███████████████████████████████████████████████████▎                              | 15/24 [00:02<00:01,  5.16it/s]
+New threshold is 0.43216508626937866
+val F1 is 0.5232067704200745
+Epoch 7/40, learning rate: 2.4439479702800937e-05
+Train Loss: 0.6814, Train Acc: 0.5051, Train f1: 0.4934, Train Precision: 0.4290, Train Recall: 0.5806, Train AUC: 0.5061
+Valitadion Loss: 0.6796, Validation Acc: 0.6049, Vall f1: 0.5232, Val Precision: 0.5254, Val Recall: 0.5210, Val AUC: 0.6066
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.05it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 98%|████████████████████████████████████████████████████████████████████████████████▎ | 96/98 [00:57<00:01,  1.67it/s]
+New threshold is 0.4183889329433441
+train F1 is 0.4777183532714844
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 75%|█████████████████████████████████████████████████████████████▌                    | 18/24 [00:03<00:01,  5.07it/s]
+New threshold is 0.4341937303543091
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.04it/s]
+  0%|                                                                                           | 0/98 [00:00<?, ?it/s]
+Epoch 8/40, learning rate: 2.0628215665857185e-05
+Train Loss: 0.6808, Train Acc: 0.4974, Train f1: 0.4777, Train Precision: 0.4201, Train Recall: 0.5537, Train AUC: 0.4932
+Valitadion Loss: 0.6798, Validation Acc: 0.6119, Vall f1: 0.5811, Val Precision: 0.5274, Val Recall: 0.6471, Val AUC: 0.6161
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 98%|████████████████████████████████████████████████████████████████████████████████▎ | 96/98 [00:57<00:01,  1.66it/s]
+New threshold is 0.4343031942844391
+train F1 is 0.40043526887893677
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 71%|██████████████████████████████████████████████████████████                        | 17/24 [00:03<00:01,  5.01it/s]
+New threshold is 0.4232960343360901
+val F1 is 0.5691699385643005
+Epoch 9/40, learning rate: 1.6793762741988127e-05
+Train Loss: 0.6797, Train Acc: 0.5274, Train f1: 0.4004, Train Precision: 0.4230, Train Recall: 0.3802, Train AUC: 0.4890
+Valitadion Loss: 0.6791, Validation Acc: 0.6189, Vall f1: 0.5692, Val Precision: 0.5373, Val Recall: 0.6050, Val AUC: 0.6207
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.04it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 98%|████████████████████████████████████████████████████████████████████████████████▎ | 96/98 [00:57<00:01,  1.66it/s]
+New threshold is 0.421027809381485
+train F1 is 0.4318618178367615
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 75%|█████████████████████████████████████████████████████████████▌                    | 18/24 [00:03<00:01,  5.09it/s]
+New threshold is 0.41074857115745544
+val F1 is 0.5276595950126648
+Epoch 10/40, learning rate: 1.307765953150867e-05
+Train Loss: 0.6780, Train Acc: 0.4923, Train f1: 0.4319, Train Precision: 0.4032, Train Recall: 0.4649, Train AUC: 0.4920
+Valitadion Loss: 0.6787, Validation Acc: 0.6119, Vall f1: 0.5277, Val Precision: 0.5345, Val Recall: 0.5210, Val AUC: 0.6020
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.06it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 94/98 [00:56<00:02,  1.66it/s]
+New threshold is 0.4109172523021698
+train F1 is 0.43435341119766235
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+
+ 88%|███████████████████████████████████████████████████████████████████████▊          | 21/24 [00:04<00:00,  5.10it/s]
+New threshold is 0.4180339276790619
+val F1 is 0.5228216052055359
+Epoch 11/40, learning rate: 9.617076070791655e-06
+Train Loss: 0.6794, Train Acc: 0.5086, Train f1: 0.4344, Train Precision: 0.4159, Train Recall: 0.4545, Train AUC: 0.4884
+Valitadion Loss: 0.6783, Validation Acc: 0.5979, Vall f1: 0.5228, Val Precision: 0.5164, Val Recall: 0.5294, Val AUC: 0.5972
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.05it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:57<00:01,  1.67it/s]
+New threshold is 0.41704481840133667
+train F1 is 0.4784172773361206
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 58%|███████████████████████████████████████████████▊                                  | 14/24 [00:02<00:01,  5.07it/s]
+New threshold is 0.41392093896865845
+val F1 is 0.5375494360923767
+Epoch 12/40, learning rate: 6.539750566310788e-06
+Train Loss: 0.6786, Train Acc: 0.5026, Train f1: 0.4784, Train Precision: 0.4236, Train Recall: 0.5496, Train AUC: 0.5121
+Valitadion Loss: 0.6781, Validation Acc: 0.5909, Vall f1: 0.5375, Val Precision: 0.5075, Val Recall: 0.5714, Val AUC: 0.5919
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.07it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|█████████████████████████████████████████████████████████████████████████████████▏| 97/98 [00:58<00:00,  1.67it/s]
+New threshold is 0.4144175946712494
+train F1 is 0.4924444556236267
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.68it/s]
+
+ 79%|████████████████████████████████████████████████████████████████▉                 | 19/24 [00:03<00:00,  5.12it/s]
+New threshold is 0.4163499176502228
+val F1 is 0.5338645577430725
+Epoch 13/40, learning rate: 3.959274279522506e-06
+Train Loss: 0.6769, Train Acc: 0.5103, Train f1: 0.4924, Train Precision: 0.4321, Train Recall: 0.5723, Train AUC: 0.5286
+Valitadion Loss: 0.6779, Validation Acc: 0.5909, Vall f1: 0.5339, Val Precision: 0.5076, Val Recall: 0.5630, Val AUC: 0.5878
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.08it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 94/98 [00:56<00:02,  1.67it/s]
+New threshold is 0.41068002581596375
+train F1 is 0.43651625514030457
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+
+ 92%|███████████████████████████████████████████████████████████████████████████▏      | 22/24 [00:04<00:00,  5.07it/s]
+New threshold is 0.41457170248031616
+val F1 is 0.5338645577430725
+Epoch 14/40, learning rate: 1.9708986084826424e-06
+Train Loss: 0.6800, Train Acc: 0.5395, Train f1: 0.4365, Train Precision: 0.4435, Train Recall: 0.4298, Train AUC: 0.5326
+Valitadion Loss: 0.6778, Validation Acc: 0.5909, Vall f1: 0.5339, Val Precision: 0.5076, Val Recall: 0.5630, Val AUC: 0.5873
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.07it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:57<00:01,  1.66it/s]
+New threshold is 0.4125482439994812
+train F1 is 0.48158639669418335
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 62%|███████████████████████████████████████████████████▎                              | 15/24 [00:03<00:01,  5.00it/s]
+New threshold is 0.41653507947921753
+val F1 is 0.5338645577430725
+Epoch 15/40, learning rate: 6.48019136594351e-07
+Train Loss: 0.6786, Train Acc: 0.5292, Train f1: 0.4816, Train Precision: 0.4435, Train Recall: 0.5269, Train AUC: 0.5307
+Valitadion Loss: 0.6778, Validation Acc: 0.5909, Vall f1: 0.5339, Val Precision: 0.5076, Val Recall: 0.5630, Val AUC: 0.5889
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.03it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|█████████████████████████████████████████████████████████████████████████████████▏| 97/98 [00:58<00:00,  1.66it/s]
+New threshold is 0.41271331906318665
+train F1 is 0.49478673934936523
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 79%|████████████████████████████████████████████████████████████████▉                 | 19/24 [00:03<00:00,  5.14it/s]
+New threshold is 0.4171137511730194
+val F1 is 0.5338645577430725
+Epoch 16/40, learning rate: 3.9466430447933034e-08
+Train Loss: 0.6800, Train Acc: 0.5429, Train f1: 0.4948, Train Precision: 0.4571, Train Recall: 0.5393, Train AUC: 0.5438
+Valitadion Loss: 0.6778, Validation Acc: 0.5909, Vall f1: 0.5339, Val Precision: 0.5076, Val Recall: 0.5630, Val AUC: 0.5884
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.08it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 94/98 [00:56<00:02,  1.67it/s]
+New threshold is 0.41655197739601135
+train F1 is 0.4888093173503876
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▌   | 23/24 [00:04<00:00,  5.08it/s]
+New threshold is 0.43438345193862915
+val F1 is 0.5333333611488342
+Epoch 17/40, learning rate: 3.99580303162092e-05
+Train Loss: 0.6788, Train Acc: 0.5103, Train f1: 0.4888, Train Precision: 0.4313, Train Recall: 0.5640, Train AUC: 0.5045
+Valitadion Loss: 0.6786, Validation Acc: 0.5839, Vall f1: 0.5333, Val Precision: 0.5000, Val Recall: 0.5714, Val AUC: 0.5999
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.09it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 98%|████████████████████████████████████████████████████████████████████████████████▎ | 96/98 [00:57<00:01,  1.65it/s]
+New threshold is 0.4176446497440338
+train F1 is 0.45604395866394043
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 67%|██████████████████████████████████████████████████████▋                           | 16/24 [00:03<00:01,  5.11it/s]
+New threshold is 0.404973566532135
+val F1 is 0.527999997138977
+Epoch 18/40, learning rate: 3.974132820203411e-05
+Train Loss: 0.6783, Train Acc: 0.4906, Train f1: 0.4560, Train Precision: 0.4095, Train Recall: 0.5145, Train AUC: 0.4929
+Valitadion Loss: 0.6767, Validation Acc: 0.5874, Vall f1: 0.5280, Val Precision: 0.5038, Val Recall: 0.5546, Val AUC: 0.5843
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.07it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|█████████████████████████████████████████████████████████████████████████████████▏| 97/98 [00:58<00:00,  1.67it/s]
+New threshold is 0.4042566418647766
+train F1 is 0.4741533100605011
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 79%|████████████████████████████████████████████████████████████████▉                 | 19/24 [00:03<00:00,  5.07it/s]
+New threshold is 0.45567065477371216
+val F1 is 0.5120000243186951
+Epoch 19/40, learning rate: 3.934202924500912e-05
+Train Loss: 0.6792, Train Acc: 0.4940, Train f1: 0.4742, Train Precision: 0.4169, Train Recall: 0.5496, Train AUC: 0.5103
+Valitadion Loss: 0.6790, Validation Acc: 0.5734, Vall f1: 0.5120, Val Precision: 0.4885, Val Recall: 0.5378, Val AUC: 0.5656
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.05it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:57<00:01,  1.66it/s]
+New threshold is 0.41428902745246887
+train F1 is 0.4491771459579468
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▌   | 23/24 [00:04<00:00,  5.04it/s]
+New threshold is 0.4610973298549652
+val F1 is 0.5147679448127747
+Epoch 20/40, learning rate: 3.8763826749354023e-05
+Train Loss: 0.6793, Train Acc: 0.5120, Train f1: 0.4492, Train Precision: 0.4226, Train Recall: 0.4793, Train AUC: 0.5109
+Valitadion Loss: 0.6798, Validation Acc: 0.5979, Vall f1: 0.5148, Val Precision: 0.5169, Val Recall: 0.5126, Val AUC: 0.6051
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.05it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:57<00:01,  1.58it/s]
+New threshold is 0.43254294991493225
+train F1 is 0.5013723969459534
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 54%|████████████████████████████████████████████▍                                     | 13/24 [00:02<00:02,  4.96it/s]
+New threshold is 0.4203528165817261
+val F1 is 0.52173912525177
+Epoch 21/40, learning rate: 3.8012068782424155e-05
+Train Loss: 0.6769, Train Acc: 0.5326, Train f1: 0.5014, Train Precision: 0.4499, Train Recall: 0.5661, Train AUC: 0.5403
+Valitadion Loss: 0.6694, Validation Acc: 0.5769, Vall f1: 0.5217, Val Precision: 0.4925, Val Recall: 0.5546, Val AUC: 0.5870
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.06it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 98%|████████████████████████████████████████████████████████████████████████████████▎ | 96/98 [00:57<00:01,  1.66it/s]
+New threshold is 0.41055116057395935
+train F1 is 0.46348586678504944
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 71%|██████████████████████████████████████████████████████████                        | 17/24 [00:03<00:01,  5.00it/s]
+New threshold is 0.42545267939567566
+val F1 is 0.529644250869751
+Epoch 22/40, learning rate: 3.709370870791524e-05
+Train Loss: 0.6792, Train Acc: 0.5274, Train f1: 0.4635, Train Precision: 0.4383, Train Recall: 0.4917, Train AUC: 0.5164
+Valitadion Loss: 0.6720, Validation Acc: 0.5839, Vall f1: 0.5296, Val Precision: 0.5000, Val Recall: 0.5630, Val AUC: 0.6024
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.02it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 94/98 [00:56<00:02,  1.67it/s]
+New threshold is 0.4182978868484497
+train F1 is 0.5198237895965576
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+
+ 88%|███████████████████████████████████████████████████████████████████████▊          | 21/24 [00:04<00:00,  4.98it/s]
+New threshold is 0.46009063720703125
+val F1 is 0.5044247508049011
+Epoch 23/40, learning rate: 3.601724087092585e-05
+Train Loss: 0.6763, Train Acc: 0.5326, Train f1: 0.5198, Train Precision: 0.4531, Train Recall: 0.6095, Train AUC: 0.5362
+Valitadion Loss: 0.6725, Validation Acc: 0.6084, Vall f1: 0.5044, Val Precision: 0.5327, Val Recall: 0.4790, Val AUC: 0.5883
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.06it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:57<00:01,  1.67it/s]
+New threshold is 0.42802155017852783
+train F1 is 0.4415055811405182
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 58%|███████████████████████████████████████████████▊                                  | 14/24 [00:02<00:01,  5.04it/s]
+New threshold is 0.4407154619693756
+val F1 is 0.5501858592033386
+Epoch 24/40, learning rate: 3.479262202975665e-05
+Train Loss: 0.6780, Train Acc: 0.5292, Train f1: 0.4415, Train Precision: 0.4349, Train Recall: 0.4483, Train AUC: 0.5205
+Valitadion Loss: 0.6734, Validation Acc: 0.5769, Vall f1: 0.5502, Val Precision: 0.4933, Val Recall: 0.6218, Val AUC: 0.6000
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.07it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 98%|████████████████████████████████████████████████████████████████████████████████▎ | 96/98 [00:57<00:01,  1.66it/s]
+New threshold is 0.4262067973613739
+train F1 is 0.47497546672821045
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 75%|█████████████████████████████████████████████████████████████▌                    | 18/24 [00:03<00:01,  5.00it/s]
+New threshold is 0.43178480863571167
+val F1 is 0.5275590419769287
+Epoch 25/40, learning rate: 3.343117926116089e-05
+Train Loss: 0.6785, Train Acc: 0.5412, Train f1: 0.4750, Train Precision: 0.4523, Train Recall: 0.5000, Train AUC: 0.5248
+Valitadion Loss: 0.6690, Validation Acc: 0.5804, Vall f1: 0.5276, Val Precision: 0.4963, Val Recall: 0.5630, Val AUC: 0.5816
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.04it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 94/98 [00:56<00:02,  1.66it/s]
+New threshold is 0.4044530689716339
+train F1 is 0.4977210462093353
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+
+ 88%|███████████████████████████████████████████████████████████████████████▊          | 21/24 [00:04<00:00,  5.06it/s]
+New threshold is 0.4731638431549072
+val F1 is 0.5447761416435242
+Epoch 26/40, learning rate: 3.194550519087372e-05
+Train Loss: 0.6765, Train Acc: 0.5274, Train f1: 0.4977, Train Precision: 0.4454, Train Recall: 0.5640, Train AUC: 0.5404
+Valitadion Loss: 0.6838, Validation Acc: 0.5734, Vall f1: 0.5448, Val Precision: 0.4899, Val Recall: 0.6134, Val AUC: 0.5727
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.03it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:57<00:01,  1.66it/s]
+New threshold is 0.4209468960762024
+train F1 is 0.5113739967346191
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.08it/s]
+  0%|                                                                                           | 0/98 [00:00<?, ?it/s]
+New threshold is 0.42283737659454346
+val F1 is 0.5454545617103577
+Epoch 27/40, learning rate: 3.0349341518482555e-05
+Train Loss: 0.6765, Train Acc: 0.5395, Train f1: 0.5114, Train Precision: 0.4569, Train Recall: 0.5806, Train AUC: 0.5497
+Valitadion Loss: 0.6661, Validation Acc: 0.5804, Vall f1: 0.5455, Val Precision: 0.4966, Val Recall: 0.6050, Val AUC: 0.6093
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 98%|████████████████████████████████████████████████████████████████████████████████▎ | 96/98 [00:57<00:01,  1.65it/s]
+New threshold is 0.40934863686561584
+train F1 is 0.5311418771743774
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 71%|██████████████████████████████████████████████████████████                        | 17/24 [00:03<00:01,  4.94it/s]
+New threshold is 0.45040163397789
+val F1 is 0.5735294222831726
+Epoch 28/40, learning rate: 2.865745191397199e-05
+Train Loss: 0.6746, Train Acc: 0.5352, Train f1: 0.5311, Train Precision: 0.4568, Train Recall: 0.6343, Train AUC: 0.5494
+Valitadion Loss: 0.6692, Validation Acc: 0.5944, Vall f1: 0.5735, Val Precision: 0.5098, Val Recall: 0.6555, Val AUC: 0.6263
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.04it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+  0%|                                                                                           | 0/24 [00:00<?, ?it/s]
+New threshold is 0.41636916995048523
+train F1 is 0.4879460036754608
+
+
+ 83%|████████████████████████████████████████████████████████████████████▎             | 20/24 [00:04<00:00,  5.07it/s]
+New threshold is 0.47515085339546204
+val F1 is 0.5365853905677795
+Epoch 29/40, learning rate: 2.688548546158281e-05
+Train Loss: 0.6764, Train Acc: 0.5446, Train f1: 0.4879, Train Precision: 0.4575, Train Recall: 0.5227, Train AUC: 0.5380
+Valitadion Loss: 0.6729, Validation Acc: 0.6014, Vall f1: 0.5366, Val Precision: 0.5197, Val Recall: 0.5546, Val AUC: 0.6188
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.02it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+  8%|██████▉                                                                            | 2/24 [00:00<00:04,  4.81it/s]
+New threshold is 0.4178047180175781
+train F1 is 0.5269672870635986
+
+
+ 92%|███████████████████████████████████████████████████████████████████████████▏      | 22/24 [00:04<00:00,  5.03it/s]
+New threshold is 0.4830400049686432
+val F1 is 0.5482625365257263
+Epoch 30/40, learning rate: 2.5049831914057374e-05
+Train Loss: 0.6748, Train Acc: 0.5412, Train f1: 0.5270, Train Precision: 0.4606, Train Recall: 0.6157, Train AUC: 0.5519
+Valitadion Loss: 0.6750, Validation Acc: 0.5909, Vall f1: 0.5483, Val Precision: 0.5071, Val Recall: 0.5966, Val AUC: 0.6216
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  4.99it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:57<00:01,  1.66it/s]
+New threshold is 0.4113980233669281
+train F1 is 0.524163544178009
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.00it/s]
+  0%|                                                                                           | 0/98 [00:00<?, ?it/s]
+New threshold is 0.4965607225894928
+val F1 is 0.5671641826629639
+Epoch 31/40, learning rate: 2.3167470096092953e-05
+Train Loss: 0.6702, Train Acc: 0.5609, Train f1: 0.5242, Train Precision: 0.4764, Train Recall: 0.5826, Train AUC: 0.5740
+Valitadion Loss: 0.6783, Validation Acc: 0.5944, Vall f1: 0.5672, Val Precision: 0.5101, Val Recall: 0.6387, Val AUC: 0.6236
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:57<00:01,  1.65it/s]
+New threshold is 0.4168858230113983
+train F1 is 0.523430585861206
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.66it/s]
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  4.97it/s]
+  0%|                                                                                           | 0/98 [00:00<?, ?it/s]
+New threshold is 0.44049328565597534
+val F1 is 0.5579710006713867
+Epoch 32/40, learning rate: 2.125581085919101e-05
+Train Loss: 0.6741, Train Acc: 0.5377, Train f1: 0.5234, Train Precision: 0.4575, Train Recall: 0.6116, Train AUC: 0.5479
+Valitadion Loss: 0.6647, Validation Acc: 0.5734, Vall f1: 0.5580, Val Precision: 0.4904, Val Recall: 0.6471, Val AUC: 0.6136
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 98%|████████████████████████████████████████████████████████████████████████████████▎ | 96/98 [00:57<00:01,  1.66it/s]
+New threshold is 0.4261630177497864
+train F1 is 0.4886699616909027
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 67%|██████████████████████████████████████████████████████▋                           | 16/24 [00:03<00:01,  5.00it/s]
+New threshold is 0.4654146730899811
+val F1 is 0.5543071031570435
+Epoch 33/40, learning rate: 1.933253604048689e-05
+Train Loss: 0.6760, Train Acc: 0.5549, Train f1: 0.4887, Train Precision: 0.4670, Train Recall: 0.5124, Train AUC: 0.5505
+Valitadion Loss: 0.6710, Validation Acc: 0.5839, Vall f1: 0.5543, Val Precision: 0.5000, Val Recall: 0.6218, Val AUC: 0.6205
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.05it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|█████████████████████████████████████████████████████████████████████████████████▏| 97/98 [00:58<00:00,  1.66it/s]
+New threshold is 0.4259800612926483
+train F1 is 0.506091833114624
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 79%|████████████████████████████████████████████████████████████████▉                 | 19/24 [00:03<00:01,  4.98it/s]
+New threshold is 0.41867581009864807
+val F1 is 0.5756457448005676
+Epoch 34/40, learning rate: 1.7415434915105786e-05
+Train Loss: 0.6720, Train Acc: 0.5480, Train f1: 0.5061, Train Precision: 0.4631, Train Recall: 0.5579, Train AUC: 0.5574
+Valitadion Loss: 0.6632, Validation Acc: 0.5979, Vall f1: 0.5756, Val Precision: 0.5132, Val Recall: 0.6555, Val AUC: 0.6236
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  4.98it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.66it/s]
+  0%|                                                                                           | 0/24 [00:00<?, ?it/s]
+New threshold is 0.41160860657691956
+train F1 is 0.5166666507720947
+
+
+ 83%|████████████████████████████████████████████████████████████████████▎             | 20/24 [00:04<00:00,  4.80it/s]
+New threshold is 0.4541983902454376
+val F1 is 0.5672727227210999
+Epoch 35/40, learning rate: 1.5522239654774058e-05
+Train Loss: 0.6695, Train Acc: 0.5523, Train f1: 0.5167, Train Precision: 0.4681, Train Recall: 0.5764, Train AUC: 0.5720
+Valitadion Loss: 0.6665, Validation Acc: 0.5839, Vall f1: 0.5673, Val Precision: 0.5000, Val Recall: 0.6555, Val AUC: 0.6236
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  4.95it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 94/98 [00:56<00:02,  1.66it/s]
+New threshold is 0.4174695909023285
+train F1 is 0.5105162262916565
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.66it/s]
+
+
+ 88%|███████████████████████████████████████████████████████████████████████▊          | 21/24 [00:04<00:00,  4.95it/s]
+New threshold is 0.43667060136795044
+val F1 is 0.5617977380752563
+Epoch 36/40, learning rate: 1.367046131460676e-05
+Train Loss: 0.6713, Train Acc: 0.5609, Train f1: 0.5105, Train Precision: 0.4751, Train Recall: 0.5517, Train AUC: 0.5723
+Valitadion Loss: 0.6629, Validation Acc: 0.5909, Vall f1: 0.5618, Val Precision: 0.5068, Val Recall: 0.6303, Val AUC: 0.6223
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  4.98it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:57<00:01,  1.65it/s]
+New threshold is 0.4174668788909912
+train F1 is 0.511984646320343
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.66it/s]
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▌   | 23/24 [00:04<00:00,  4.89it/s]
+New threshold is 0.4332866370677948
+val F1 is 0.5498008131980896
+Epoch 37/40, learning rate: 1.1877227865107e-05
+Train Loss: 0.6712, Train Acc: 0.5635, Train f1: 0.5120, Train Precision: 0.4776, Train Recall: 0.5517, Train AUC: 0.5746
+Valitadion Loss: 0.6615, Validation Acc: 0.6049, Vall f1: 0.5498, Val Precision: 0.5227, Val Recall: 0.5798, Val AUC: 0.6216
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  4.99it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▍  | 95/98 [00:57<00:01,  1.65it/s]
+New threshold is 0.40939369797706604
+train F1 is 0.5436543822288513
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.66it/s]
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  4.97it/s]
+  0%|                                                                                           | 0/98 [00:00<?, ?it/s]
+New threshold is 0.44468268752098083
+val F1 is 0.5734767317771912
+Epoch 38/40, learning rate: 1.0159125767495296e-05
+Train Loss: 0.6721, Train Acc: 0.5652, Train f1: 0.5437, Train Precision: 0.4817, Train Recall: 0.6240, Train AUC: 0.5785
+Valitadion Loss: 0.6651, Validation Acc: 0.5839, Vall f1: 0.5735, Val Precision: 0.5000, Val Recall: 0.6723, Val AUC: 0.6208
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 98%|████████████████████████████████████████████████████████████████████████████████▎ | 96/98 [00:57<00:01,  1.65it/s]
+New threshold is 0.4087841808795929
+train F1 is 0.5234159827232361
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.67it/s]
+
+ 71%|██████████████████████████████████████████████████████████                        | 17/24 [00:03<00:01,  5.03it/s]
+New threshold is 0.43949684500694275
+val F1 is 0.5734767317771912
+Epoch 39/40, learning rate: 8.532046557713548e-06
+Train Loss: 0.6664, Train Acc: 0.5549, Train f1: 0.5234, Train Precision: 0.4711, Train Recall: 0.5888, Train AUC: 0.5847
+Valitadion Loss: 0.6637, Validation Acc: 0.5839, Vall f1: 0.5735, Val Precision: 0.5000, Val Recall: 0.6723, Val AUC: 0.6214
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.03it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|█████████████████████████████████████████████████████████████████████████████████▏| 97/98 [00:58<00:00,  1.66it/s]
+New threshold is 0.42147284746170044
+train F1 is 0.501953125
+100%|██████████████████████████████████████████████████████████████████████████████████| 98/98 [00:58<00:00,  1.66it/s]
+
+ 79%|████████████████████████████████████████████████████████████████▉                 | 19/24 [00:03<00:00,  5.04it/s]
+New threshold is 0.442885160446167
+val F1 is 0.5845070481300354
+Epoch 40/40, learning rate: 7.011039858120354e-06
+Train Loss: 0.6691, Train Acc: 0.5626, Train f1: 0.5020, Train Precision: 0.4759, Train Recall: 0.5310, Train AUC: 0.5777
+Valitadion Loss: 0.6649, Validation Acc: 0.5874, Vall f1: 0.5845, Val Precision: 0.5030, Val Recall: 0.6975, Val AUC: 0.6227
+Training complete in 42m 28s
+Best val auc: 0.584507
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:04<00:00,  5.02it/s]
+
+
+
+ 88%|███████████████████████████████████████████████████████████████████████▊          | 21/24 [00:08<00:00,  4.91it/s]
+New threshold is 0.442885160446167
+Inference complete in 0m 9s
+F1 Score = : 0.584507
+AUC Score = : 0.622704
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 24/24 [00:08<00:00,  2.67it/s]

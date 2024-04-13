@@ -1,0 +1,2156 @@
+Sequential(
+  (0): DaVit(
+    (stem): Stem(
+      (conv): Conv2d(3, 128, kernel_size=(7, 7), stride=(4, 4), padding=(3, 3))
+      (norm): LayerNorm2d((128,), eps=1e-05, elementwise_affine=True)
+    )
+    (stages): Sequential(
+      (0): DaVitStage(
+        (downsample): Identity()
+        (blocks): Sequential(
+          (0): Sequential(
+            (0): SpatialBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=128, out_features=384, bias=True)
+                (proj): Linear(in_features=128, out_features=128, bias=True)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path1): Identity()
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=128, out_features=512, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=512, out_features=128, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): Identity()
+            )
+            (1): ChannelBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+              (attn): ChannelAttention(
+                (qkv): Linear(in_features=128, out_features=384, bias=True)
+                (proj): Linear(in_features=128, out_features=128, bias=True)
+              )
+              (drop_path1): Identity()
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=128, out_features=512, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=512, out_features=128, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): Identity()
+            )
+          )
+        )
+      )
+      (1): DaVitStage(
+        (downsample): Downsample(
+          (norm): LayerNorm2d((128,), eps=1e-05, elementwise_affine=True)
+          (conv): Conv2d(128, 256, kernel_size=(2, 2), stride=(2, 2))
+        )
+        (blocks): Sequential(
+          (0): Sequential(
+            (0): SpatialBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=256, out_features=768, bias=True)
+                (proj): Linear(in_features=256, out_features=256, bias=True)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path1): DropPath(drop_prob=0.045)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=256, out_features=1024, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1024, out_features=256, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.045)
+            )
+            (1): ChannelBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+              (attn): ChannelAttention(
+                (qkv): Linear(in_features=256, out_features=768, bias=True)
+                (proj): Linear(in_features=256, out_features=256, bias=True)
+              )
+              (drop_path1): DropPath(drop_prob=0.045)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=256, out_features=1024, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1024, out_features=256, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.045)
+            )
+          )
+        )
+      )
+      (2): DaVitStage(
+        (downsample): Downsample(
+          (norm): LayerNorm2d((256,), eps=1e-05, elementwise_affine=True)
+          (conv): Conv2d(256, 512, kernel_size=(2, 2), stride=(2, 2))
+        )
+        (blocks): Sequential(
+          (0): Sequential(
+            (0): SpatialBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path1): DropPath(drop_prob=0.091)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.091)
+            )
+            (1): ChannelBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): ChannelAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+              )
+              (drop_path1): DropPath(drop_prob=0.091)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.091)
+            )
+          )
+          (1): Sequential(
+            (0): SpatialBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path1): DropPath(drop_prob=0.136)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.136)
+            )
+            (1): ChannelBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): ChannelAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+              )
+              (drop_path1): DropPath(drop_prob=0.136)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.136)
+            )
+          )
+          (2): Sequential(
+            (0): SpatialBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path1): DropPath(drop_prob=0.182)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.182)
+            )
+            (1): ChannelBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): ChannelAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+              )
+              (drop_path1): DropPath(drop_prob=0.182)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.182)
+            )
+          )
+          (3): Sequential(
+            (0): SpatialBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path1): DropPath(drop_prob=0.227)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.227)
+            )
+            (1): ChannelBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): ChannelAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+              )
+              (drop_path1): DropPath(drop_prob=0.227)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.227)
+            )
+          )
+          (4): Sequential(
+            (0): SpatialBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path1): DropPath(drop_prob=0.273)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.273)
+            )
+            (1): ChannelBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): ChannelAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+              )
+              (drop_path1): DropPath(drop_prob=0.273)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.273)
+            )
+          )
+          (5): Sequential(
+            (0): SpatialBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path1): DropPath(drop_prob=0.318)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.318)
+            )
+            (1): ChannelBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): ChannelAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+              )
+              (drop_path1): DropPath(drop_prob=0.318)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.318)
+            )
+          )
+          (6): Sequential(
+            (0): SpatialBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path1): DropPath(drop_prob=0.364)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.364)
+            )
+            (1): ChannelBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): ChannelAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+              )
+              (drop_path1): DropPath(drop_prob=0.364)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.364)
+            )
+          )
+          (7): Sequential(
+            (0): SpatialBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path1): DropPath(drop_prob=0.409)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.409)
+            )
+            (1): ChannelBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): ChannelAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+              )
+              (drop_path1): DropPath(drop_prob=0.409)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.409)
+            )
+          )
+          (8): Sequential(
+            (0): SpatialBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path1): DropPath(drop_prob=0.455)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.455)
+            )
+            (1): ChannelBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): ChannelAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+              )
+              (drop_path1): DropPath(drop_prob=0.455)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.455)
+            )
+          )
+        )
+      )
+      (3): DaVitStage(
+        (downsample): Downsample(
+          (norm): LayerNorm2d((512,), eps=1e-05, elementwise_affine=True)
+          (conv): Conv2d(512, 1024, kernel_size=(2, 2), stride=(2, 2))
+        )
+        (blocks): Sequential(
+          (0): Sequential(
+            (0): SpatialBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(1024, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=1024)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+                (proj): Linear(in_features=1024, out_features=1024, bias=True)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path1): DropPath(drop_prob=0.500)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(1024, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=1024)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.500)
+            )
+            (1): ChannelBlock(
+              (cpe1): ConvPosEnc(
+                (proj): Conv2d(1024, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=1024)
+                (act): Identity()
+              )
+              (norm1): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+              (attn): ChannelAttention(
+                (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+                (proj): Linear(in_features=1024, out_features=1024, bias=True)
+              )
+              (drop_path1): DropPath(drop_prob=0.500)
+              (cpe2): ConvPosEnc(
+                (proj): Conv2d(1024, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=1024)
+                (act): Identity()
+              )
+              (norm2): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+                (act): GELU(approximate='none')
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (drop_path2): DropPath(drop_prob=0.500)
+            )
+          )
+        )
+      )
+    )
+    (norm_pre): Identity()
+    (head): NormMlpClassifierHead(
+      (global_pool): SelectAdaptivePool2d(pool_type=avg, flatten=Identity())
+      (norm): LayerNorm2d((1024,), eps=1e-05, elementwise_affine=True)
+      (flatten): Flatten(start_dim=1, end_dim=-1)
+      (pre_logits): Identity()
+      (drop): Dropout(p=0.0, inplace=False)
+      (fc): Linear(in_features=1024, out_features=1, bias=True)
+    )
+  )
+  (1): Sigmoid()
+)
+Starting training...
+--------------------
+train for epoch 1
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:23<00:00,  3.01it/s]
+New threshold is 0.4319663345813751
+train F1 is 0.46066349744796753
+val for epoch 1
+New threshold is 0.3887031674385071
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  2.99it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.69it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+Epoch 1/62, learning rate: 1.989745091059581e-05
+Train Loss: 0.6845, Train Acc: 0.5120, Train f1: 0.4607, Train Precision: 0.4233, Train Recall: 0.5052, Train AUC: 0.4998
+Valitadion Loss: 0.6803, Validation Acc: 0.5574, Vall f1: 0.5714, Val Precision: 0.4865, Val Recall: 0.6923, Val AUC: 0.5066
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:23<00:00,  3.04it/s]
+New threshold is 0.42482414841651917
+train F1 is 0.4548286497592926
+val for epoch 2
+New threshold is 0.41937488317489624
+val F1 is 0.5161290168762207
+Epoch 2/62, learning rate: 1.9591906905635932e-05
+Train Loss: 0.6780, Train Acc: 0.5497, Train f1: 0.4548, Train Precision: 0.4544, Train Recall: 0.4553, Train AUC: 0.5328
+Valitadion Loss: 0.6811, Validation Acc: 0.5082, Vall f1: 0.5161, Val Precision: 0.4444, Val Recall: 0.6154, Val AUC: 0.5198
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  3.02it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.98it/s]
+
+
+
+
+
+
+
+
+
+
+
+ 95%|█████████████████████████████████████████████████████████████████████████████▌    | 69/73 [00:22<00:01,  3.06it/s]
+New threshold is 0.4188241958618164
+train F1 is 0.5118733644485474
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  3.03it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.79it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.34829768538475037
+val F1 is 0.5357142686843872
+Epoch 3/62, learning rate: 1.908963463733e-05
+Train Loss: 0.6753, Train Acc: 0.5240, Train f1: 0.5119, Train Precision: 0.4436, Train Recall: 0.6050, Train AUC: 0.5433
+Valitadion Loss: 0.6894, Validation Acc: 0.5738, Vall f1: 0.5357, Val Precision: 0.5000, Val Recall: 0.5769, Val AUC: 0.5747
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:23<00:00,  3.05it/s]
+  0%|                                                                                            | 0/4 [00:00<?, ?it/s]
+New threshold is 0.41421809792518616
+train F1 is 0.5044510364532471
+val for epoch 4
+New threshold is 0.41708746552467346
+val F1 is 0.4615384638309479
+Epoch 4/62, learning rate: 1.8400935618942642e-05
+Train Loss: 0.6686, Train Acc: 0.5703, Train f1: 0.5045, Train Precision: 0.4811, Train Recall: 0.5301, Train AUC: 0.5772
+Valitadion Loss: 0.6993, Validation Acc: 0.5410, Vall f1: 0.4615, Val Precision: 0.4615, Val Recall: 0.4615, Val AUC: 0.5121
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.94it/s]
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:23<00:00,  3.09it/s]
+New threshold is 0.4056413471698761
+train F1 is 0.5459558963775635
+val for epoch 5
+New threshold is 0.28683191537857056
+val F1 is 0.6769230961799622
+Epoch 5/62, learning rate: 1.7539934942621955e-05
+Train Loss: 0.6594, Train Acc: 0.5763, Train f1: 0.5460, Train Precision: 0.4893, Train Recall: 0.6175, Train AUC: 0.6089
+Valitadion Loss: 0.6697, Validation Acc: 0.6557, Vall f1: 0.6769, Val Precision: 0.5641, Val Recall: 0.8462, Val AUC: 0.6495
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:23<00:00,  3.06it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  7.06it/s]
+
+
+
+
+
+
+
+
+
+
+
+ 93%|████████████████████████████████████████████████████████████████████████████▍     | 68/73 [00:22<00:01,  3.06it/s]
+New threshold is 0.42110100388526917
+train F1 is 0.5938697457313538
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:23<00:00,  3.07it/s]
+ 75%|███████████████████████████████████████████████████████████████                     | 3/4 [00:00<00:00,  6.67it/s]
+New threshold is 0.41345274448394775
+val F1 is 0.6181818246841431
+Epoch 6/62, learning rate: 1.65242915763175e-05
+Train Loss: 0.6379, Train Acc: 0.6364, Train f1: 0.5939, Train Precision: 0.5506, Train Recall: 0.6445, Train AUC: 0.6726
+Valitadion Loss: 0.6359, Validation Acc: 0.6557, Vall f1: 0.6182, Val Precision: 0.5862, Val Recall: 0.6538, Val AUC: 0.6780
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  7.06it/s]
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:23<00:00,  3.07it/s]
+New threshold is 0.4294929802417755
+train F1 is 0.5821042060852051
+val for epoch 7
+New threshold is 0.476910799741745
+val F1 is 0.6428571343421936
+Epoch 7/62, learning rate: 1.5374836181545594e-05
+Train Loss: 0.6352, Train Acc: 0.6355, Train f1: 0.5821, Train Precision: 0.5522, Train Recall: 0.6154, Train AUC: 0.6701
+Valitadion Loss: 0.6232, Validation Acc: 0.6721, Vall f1: 0.6429, Val Precision: 0.6000, Val Recall: 0.6923, Val AUC: 0.6989
+train for epoch 8
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.89it/s]
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:23<00:00,  3.01it/s]
+New threshold is 0.42045488953590393
+train F1 is 0.6165556907653809
+val for epoch 8
+New threshold is 0.36295270919799805
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:23<00:00,  3.04it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.75it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+Epoch 8/62, learning rate: 1.411514388029391e-05
+Train Loss: 0.6239, Train Acc: 0.6544, Train f1: 0.6166, Train Precision: 0.5684, Train Recall: 0.6736, Train AUC: 0.6929
+Valitadion Loss: 0.5708, Validation Acc: 0.7213, Vall f1: 0.7213, Val Precision: 0.6286, Val Recall: 0.8462, Val AUC: 0.7385
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  3.03it/s]
+New threshold is 0.42641881108283997
+train F1 is 0.643062174320221
+val for epoch 9
+New threshold is 0.422836035490036
+val F1 is 0.7118644118309021
+Epoch 9/62, learning rate: 1.277105073353882e-05
+Train Loss: 0.5927, Train Acc: 0.6801, Train f1: 0.6431, Train Precision: 0.5957, Train Recall: 0.6985, Train AUC: 0.7361
+Valitadion Loss: 0.5513, Validation Acc: 0.7213, Vall f1: 0.7119, Val Precision: 0.6364, Val Recall: 0.8077, Val AUC: 0.7604
+train for epoch 10
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.71it/s]
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:23<00:00,  3.01it/s]
+New threshold is 0.4101674258708954
+train F1 is 0.6517072916030884
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  3.02it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.70it/s]
+New threshold is 0.4803922772407532
+val F1 is 0.7333333492279053
+Epoch 10/62, learning rate: 1.137012384831351e-05
+Train Loss: 0.5936, Train Acc: 0.6938, Train f1: 0.6517, Train Precision: 0.6140, Train Recall: 0.6944, Train AUC: 0.7378
+Valitadion Loss: 0.5693, Validation Acc: 0.7377, Vall f1: 0.7333, Val Precision: 0.6471, Val Recall: 0.8462, Val AUC: 0.7560
+train for epoch 11
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:23<00:00,  3.03it/s]
+New threshold is 0.4721050560474396
+train F1 is 0.6380000114440918
+val for epoch 11
+New threshold is 0.3778479993343353
+val F1 is 0.6545454263687134
+Epoch 11/62, learning rate: 9.941095981334956e-06
+Train Loss: 0.5890, Train Acc: 0.6895, Train f1: 0.6380, Train Precision: 0.6146, Train Recall: 0.6632, Train AUC: 0.7406
+Valitadion Loss: 0.6400, Validation Acc: 0.6885, Vall f1: 0.6545, Val Precision: 0.6207, Val Recall: 0.6923, Val AUC: 0.7187
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  3.00it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.88it/s]
+
+
+
+
+
+
+
+
+
+
+
+ 93%|████████████████████████████████████████████████████████████████████████████▍     | 68/73 [00:22<00:01,  3.03it/s]
+New threshold is 0.43516528606414795
+train F1 is 0.6574802994728088
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  2.99it/s]
+ 25%|█████████████████████                                                               | 1/4 [00:00<00:00,  5.88it/s]
+New threshold is 0.47888612747192383
+val F1 is 0.6785714030265808
+Epoch 12/62, learning rate: 8.513276235366988e-06
+Train Loss: 0.5649, Train Acc: 0.7015, Train f1: 0.6575, Train Precision: 0.6243, Train Recall: 0.6944, Train AUC: 0.7705
+Valitadion Loss: 0.5600, Validation Acc: 0.7049, Vall f1: 0.6786, Val Precision: 0.6333, Val Recall: 0.7308, Val AUC: 0.7692
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.60it/s]
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:23<00:00,  3.01it/s]
+New threshold is 0.4176723062992096
+train F1 is 0.6772388219833374
+val for epoch 13
+New threshold is 0.3596617877483368
+val F1 is 0.7241379022598267
+Epoch 13/62, learning rate: 7.115948934830289e-06
+Train Loss: 0.5675, Train Acc: 0.7033, Train f1: 0.6772, Train Precision: 0.6142, Train Recall: 0.7547, Train AUC: 0.7646
+Valitadion Loss: 0.5249, Validation Acc: 0.7377, Vall f1: 0.7241, Val Precision: 0.6562, Val Recall: 0.8077, Val AUC: 0.7956
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  3.00it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.60it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:24<00:00,  3.00it/s]
+New threshold is 0.41643837094306946
+train F1 is 0.6842601299285889
+val for epoch 14
+New threshold is 0.40614694356918335
+val F1 is 0.7333333492279053
+Epoch 14/62, learning rate: 5.777773009611733e-06
+Train Loss: 0.5571, Train Acc: 0.7127, Train f1: 0.6843, Train Precision: 0.6259, Train Recall: 0.7547, Train AUC: 0.7758
+Valitadion Loss: 0.5294, Validation Acc: 0.7377, Vall f1: 0.7333, Val Precision: 0.6471, Val Recall: 0.8462, Val AUC: 0.7868
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  2.99it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.60it/s]
+
+
+
+
+
+
+
+
+
+
+
+ 93%|████████████████████████████████████████████████████████████████████████████▍     | 68/73 [00:22<00:01,  2.99it/s]
+New threshold is 0.4586324691772461
+train F1 is 0.6732283234596252
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  2.97it/s]
+ 50%|██████████████████████████████████████████                                          | 2/4 [00:00<00:00,  6.02it/s]
+New threshold is 0.2846122086048126
+val F1 is 0.6666666865348816
+Epoch 15/62, learning rate: 4.526194205602367e-06
+Train Loss: 0.5517, Train Acc: 0.7153, Train f1: 0.6732, Train Precision: 0.6393, Train Recall: 0.7110, Train AUC: 0.7828
+Valitadion Loss: 0.6081, Validation Acc: 0.6721, Vall f1: 0.6667, Val Precision: 0.5882, Val Recall: 0.7692, Val AUC: 0.7473
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.40it/s]
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:23<00:01,  3.00it/s]
+New threshold is 0.44475066661834717
+train F1 is 0.6911196708679199
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  2.97it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.20it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.5637428760528564
+val F1 is 0.6909090876579285
+Epoch 16/62, learning rate: 3.3868821774194157e-06
+Train Loss: 0.5481, Train Acc: 0.7256, Train f1: 0.6911, Train Precision: 0.6450, Train Recall: 0.7443, Train AUC: 0.7858
+Valitadion Loss: 0.5269, Validation Acc: 0.7213, Vall f1: 0.6909, Val Precision: 0.6552, Val Recall: 0.7308, Val AUC: 0.7967
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:24<00:00,  2.97it/s]
+New threshold is 0.42053237557411194
+train F1 is 0.6973684430122375
+val for epoch 17
+New threshold is 0.17789147794246674
+val F1 is 0.7301587462425232
+Epoch 17/62, learning rate: 2.383204008438719e-06
+Train Loss: 0.5428, Train Acc: 0.7238, Train f1: 0.6974, Train Precision: 0.6364, Train Recall: 0.7713, Train AUC: 0.7937
+Valitadion Loss: 0.5553, Validation Acc: 0.7213, Vall f1: 0.7302, Val Precision: 0.6216, Val Recall: 0.8846, Val AUC: 0.7857
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  2.95it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.28it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:24<00:00,  2.94it/s]
+New threshold is 0.4018069803714752
+train F1 is 0.7010309100151062
+val for epoch 18
+New threshold is 0.4090275168418884
+val F1 is 0.6785714030265808
+Epoch 18/62, learning rate: 1.5357449561463067e-06
+Train Loss: 0.5353, Train Acc: 0.7264, Train f1: 0.7010, Train Precision: 0.6382, Train Recall: 0.7775, Train AUC: 0.8010
+Valitadion Loss: 0.5778, Validation Acc: 0.7049, Vall f1: 0.6786, Val Precision: 0.6333, Val Recall: 0.7308, Val AUC: 0.7791
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  2.93it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.26it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:24<00:00,  2.95it/s]
+New threshold is 0.4335300922393799
+train F1 is 0.6957364082336426
+val for epoch 19
+New threshold is 0.3382667005062103
+val F1 is 0.7017543911933899
+Epoch 19/62, learning rate: 8.618862522352262e-07
+Train Loss: 0.5448, Train Acc: 0.7307, Train f1: 0.6957, Train Precision: 0.6515, Train Recall: 0.7464, Train AUC: 0.7894
+Valitadion Loss: 0.5612, Validation Acc: 0.7213, Vall f1: 0.7018, Val Precision: 0.6452, Val Recall: 0.7692, Val AUC: 0.7890
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:25<00:00,  2.91it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.17it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:24<00:00,  2.96it/s]
+New threshold is 0.42783308029174805
+train F1 is 0.6869648098945618
+val for epoch 20
+New threshold is 0.3246316909790039
+val F1 is 0.7333333492279053
+Epoch 20/62, learning rate: 3.754486166911455e-07
+Train Loss: 0.5391, Train Acc: 0.7178, Train f1: 0.6870, Train Precision: 0.6333, Train Recall: 0.7505, Train AUC: 0.7951
+Valitadion Loss: 0.5449, Validation Acc: 0.7377, Vall f1: 0.7333, Val Precision: 0.6471, Val Recall: 0.8462, Val AUC: 0.7945
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  2.93it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.51it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:24<00:00,  2.95it/s]
+New threshold is 0.4244227111339569
+train F1 is 0.6959008574485779
+val for epoch 21
+New threshold is 0.3501967191696167
+val F1 is 0.7118644118309021
+Epoch 21/62, learning rate: 8.640879732829682e-08
+Train Loss: 0.5349, Train Acc: 0.7264, Train f1: 0.6959, Train Precision: 0.6426, Train Recall: 0.7588, Train AUC: 0.8017
+Valitadion Loss: 0.5329, Validation Acc: 0.7213, Vall f1: 0.7119, Val Precision: 0.6364, Val Recall: 0.8077, Val AUC: 0.8033
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:24<00:00,  2.93it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.29it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:24<00:00,  2.91it/s]
+New threshold is 0.4356413185596466
+train F1 is 0.697718620300293
+val for epoch 22
+New threshold is 0.4317261278629303
+val F1 is 0.6545454263687134
+Epoch 22/62, learning rate: 1.9999826511370455e-05
+Train Loss: 0.5387, Train Acc: 0.7273, Train f1: 0.6977, Train Precision: 0.6427, Train Recall: 0.7630, Train AUC: 0.7988
+Valitadion Loss: 0.5682, Validation Acc: 0.6885, Vall f1: 0.6545, Val Precision: 0.6207, Val Recall: 0.6923, Val AUC: 0.7780
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:25<00:00,  2.91it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.22it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:24<00:00,  2.92it/s]
+New threshold is 0.45205026865005493
+train F1 is 0.668633222579956
+val for epoch 23
+New threshold is 0.30501219630241394
+val F1 is 0.7213114500045776
+Epoch 23/62, learning rate: 1.9969938804795108e-05
+Train Loss: 0.5482, Train Acc: 0.7110, Train f1: 0.6686, Train Precision: 0.6343, Train Recall: 0.7069, Train AUC: 0.7855
+Valitadion Loss: 0.5808, Validation Acc: 0.7213, Vall f1: 0.7213, Val Precision: 0.6286, Val Recall: 0.8462, Val AUC: 0.7626
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:25<00:00,  2.89it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.10it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:24<00:01,  2.87it/s]
+New threshold is 0.44609230756759644
+train F1 is 0.6772277355194092
+val for epoch 24
+New threshold is 0.5235416889190674
+val F1 is 0.699999988079071
+Epoch 24/62, learning rate: 1.98888649930018e-05
+Train Loss: 0.5358, Train Acc: 0.7204, Train f1: 0.6772, Train Precision: 0.6465, Train Recall: 0.7110, Train AUC: 0.7975
+Valitadion Loss: 0.5963, Validation Acc: 0.7049, Vall f1: 0.7000, Val Precision: 0.6176, Val Recall: 0.8077, Val AUC: 0.7923
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:25<00:00,  2.86it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.10it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 93%|████████████████████████████████████████████████████████████████████████████▍     | 68/73 [00:23<00:01,  2.86it/s]
+New threshold is 0.44094935059547424
+train F1 is 0.6772592067718506
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:25<00:00,  2.85it/s]
+ 50%|██████████████████████████████████████████                                          | 2/4 [00:00<00:00,  5.72it/s]
+New threshold is 0.6030915379524231
+val F1 is 0.6938775777816772
+Epoch 25/62, learning rate: 1.975702131253422e-05
+Train Loss: 0.5360, Train Acc: 0.7213, Train f1: 0.6773, Train Precision: 0.6483, Train Recall: 0.7089, Train AUC: 0.7964
+Valitadion Loss: 0.5394, Validation Acc: 0.7541, Vall f1: 0.6939, Val Precision: 0.7391, Val Recall: 0.6538, Val AUC: 0.8066
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.97it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:25<00:00,  2.86it/s]
+New threshold is 0.46881893277168274
+train F1 is 0.6916996240615845
+val for epoch 26
+New threshold is 0.4780259132385254
+val F1 is 0.7142857313156128
+Epoch 26/62, learning rate: 1.9575084654692447e-05
+Train Loss: 0.5388, Train Acc: 0.7324, Train f1: 0.6917, Train Precision: 0.6591, Train Recall: 0.7277, Train AUC: 0.7957
+Valitadion Loss: 0.4878, Validation Acc: 0.7377, Vall f1: 0.7143, Val Precision: 0.6667, Val Recall: 0.7692, Val AUC: 0.8308
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:25<00:00,  2.84it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  6.05it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:24<00:01,  2.86it/s]
+New threshold is 0.4572232961654663
+train F1 is 0.7117296457290649
+val for epoch 27
+New threshold is 0.5038079619407654
+val F1 is 0.7692307829856873
+Epoch 27/62, learning rate: 1.9343989090342975e-05
+Train Loss: 0.5102, Train Acc: 0.7513, Train f1: 0.7117, Train Precision: 0.6819, Train Recall: 0.7443, Train AUC: 0.8207
+Valitadion Loss: 0.4788, Validation Acc: 0.8033, Vall f1: 0.7692, Val Precision: 0.7692, Val Recall: 0.7692, Val AUC: 0.8593
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:25<00:00,  2.84it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.85it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 93%|████████████████████████████████████████████████████████████████████████████▍     | 68/73 [00:24<00:01,  2.87it/s]
+New threshold is 0.42051541805267334
+train F1 is 0.7235293984413147
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:25<00:00,  2.83it/s]
+ 25%|█████████████████████                                                               | 1/4 [00:00<00:00,  5.50it/s]
+New threshold is 0.4839317202568054
+val F1 is 0.7111111283302307
+Epoch 28/62, learning rate: 1.9064921074357497e-05
+Train Loss: 0.5120, Train Acc: 0.7581, Train f1: 0.7235, Train Precision: 0.6846, Train Recall: 0.7672, Train AUC: 0.8186
+Valitadion Loss: 0.5654, Validation Acc: 0.7869, Vall f1: 0.7111, Val Precision: 0.8421, Val Recall: 0.6154, Val AUC: 0.8055
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.92it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:25<00:00,  2.83it/s]
+New threshold is 0.48220545053482056
+train F1 is 0.7104983925819397
+val for epoch 29
+New threshold is 0.47582319378852844
+val F1 is 0.6800000071525574
+Epoch 29/62, learning rate: 1.873931335430099e-05
+Train Loss: 0.4909, Train Acc: 0.7659, Train f1: 0.7105, Train Precision: 0.7251, Train Recall: 0.6965, Train AUC: 0.8354
+Valitadion Loss: 0.5961, Validation Acc: 0.7377, Vall f1: 0.6800, Val Precision: 0.7083, Val Recall: 0.6538, Val AUC: 0.7923
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:25<00:00,  2.82it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.87it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 95%|█████████████████████████████████████████████████████████████████████████████▌    | 69/73 [00:24<00:01,  2.84it/s]
+New threshold is 0.3946337401866913
+train F1 is 0.7078109979629517
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:25<00:00,  2.81it/s]
+ 75%|███████████████████████████████████████████████████████████████                     | 3/4 [00:00<00:00,  5.65it/s]
+New threshold is 0.13654407858848572
+val F1 is 0.6984127163887024
+Epoch 30/62, learning rate: 1.836883761464222e-05
+Train Loss: 0.5114, Train Acc: 0.7401, Train f1: 0.7078, Train Precision: 0.6601, Train Recall: 0.7630, Train AUC: 0.8168
+Valitadion Loss: 0.6031, Validation Acc: 0.6885, Vall f1: 0.6984, Val Precision: 0.5946, Val Recall: 0.8462, Val AUC: 0.7648
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.83it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:25<00:00,  2.81it/s]
+New threshold is 0.46903496980667114
+train F1 is 0.7383660674095154
+val for epoch 31
+New threshold is 0.37031087279319763
+val F1 is 0.7083333134651184
+Epoch 31/62, learning rate: 1.7955395894251545e-05
+Train Loss: 0.4763, Train Acc: 0.7830, Train f1: 0.7384, Train Precision: 0.7346, Train Recall: 0.7422, Train AUC: 0.8502
+Valitadion Loss: 0.5616, Validation Acc: 0.7705, Vall f1: 0.7083, Val Precision: 0.7727, Val Recall: 0.6538, Val AUC: 0.8165
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.80it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.65it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.79it/s]
+ 25%|█████████████████████                                                               | 1/4 [00:00<00:00,  5.35it/s]
+New threshold is 0.4114137589931488
+train F1 is 0.7365328073501587
+val for epoch 32
+New threshold is 0.16458037495613098
+val F1 is 0.6779661178588867
+Epoch 32/62, learning rate: 1.7501110821249063e-05
+Train Loss: 0.4682, Train Acc: 0.7693, Train f1: 0.7365, Train Precision: 0.6963, Train Recall: 0.7817, Train AUC: 0.8516
+Valitadion Loss: 0.6346, Validation Acc: 0.6885, Vall f1: 0.6780, Val Precision: 0.6061, Val Recall: 0.7692, Val AUC: 0.7758
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.81it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:25<00:01,  2.77it/s]
+New threshold is 0.464684396982193
+train F1 is 0.7326315641403198
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.77it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.59it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.3163309097290039
+val F1 is 0.6538461446762085
+Epoch 33/62, learning rate: 1.7008314715337748e-05
+Train Loss: 0.4610, Train Acc: 0.7822, Train f1: 0.7326, Train Precision: 0.7420, Train Recall: 0.7235, Train AUC: 0.8547
+Valitadion Loss: 0.6041, Validation Acc: 0.7049, Vall f1: 0.6538, Val Precision: 0.6538, Val Recall: 0.6538, Val AUC: 0.7912
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:26<00:00,  2.77it/s]
+New threshold is 0.40579143166542053
+train F1 is 0.7601184844970703
+val for epoch 34
+New threshold is 0.5726183652877808
+val F1 is 0.6938775777816772
+Epoch 34/62, learning rate: 1.6479537613570692e-05
+Train Loss: 0.4358, Train Acc: 0.7916, Train f1: 0.7601, Train Precision: 0.7237, Train Recall: 0.8004, Train AUC: 0.8736
+Valitadion Loss: 0.6100, Validation Acc: 0.7541, Vall f1: 0.6939, Val Precision: 0.7391, Val Recall: 0.6538, Val AUC: 0.7879
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.76it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.58it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.75it/s]
+ 25%|█████████████████████                                                               | 1/4 [00:00<00:00,  5.41it/s]
+New threshold is 0.387270450592041
+train F1 is 0.7665706276893616
+val for epoch 35
+New threshold is 0.48032960295677185
+val F1 is 0.6938775777816772
+Epoch 35/62, learning rate: 1.5917494281028725e-05
+Train Loss: 0.4425, Train Acc: 0.7916, Train f1: 0.7666, Train Precision: 0.7125, Train Recall: 0.8295, Train AUC: 0.8712
+Valitadion Loss: 0.5160, Validation Acc: 0.7541, Vall f1: 0.6939, Val Precision: 0.7391, Val Recall: 0.6538, Val AUC: 0.8363
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.58it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 95%|█████████████████████████████████████████████████████████████████████████████▌    | 69/73 [00:25<00:01,  2.74it/s]
+New threshold is 0.37330320477485657
+train F1 is 0.7595682144165039
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.74it/s]
+ 75%|███████████████████████████████████████████████████████████████                     | 3/4 [00:00<00:00,  5.19it/s]
+New threshold is 0.365089476108551
+val F1 is 0.7142857313156128
+Epoch 36/62, learning rate: 1.532507027309615e-05
+Train Loss: 0.4480, Train Acc: 0.7899, Train f1: 0.7596, Train Precision: 0.7193, Train Recall: 0.8046, Train AUC: 0.8666
+Valitadion Loss: 0.5556, Validation Acc: 0.7377, Vall f1: 0.7143, Val Precision: 0.6667, Val Recall: 0.7692, Val AUC: 0.8187
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.45it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:25<00:01,  2.74it/s]
+New threshold is 0.3795061707496643
+train F1 is 0.7667984366416931
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.73it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.52it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.6193900108337402
+val F1 is 0.7234042286872864
+Epoch 37/62, learning rate: 1.470530712089148e-05
+Train Loss: 0.4258, Train Acc: 0.7976, Train f1: 0.7668, Train Precision: 0.7307, Train Recall: 0.8067, Train AUC: 0.8815
+Valitadion Loss: 0.4647, Validation Acc: 0.7869, Vall f1: 0.7234, Val Precision: 0.8095, Val Recall: 0.6538, Val AUC: 0.8692
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:25<00:01,  2.73it/s]
+New threshold is 0.4125397503376007
+train F1 is 0.7636363506317139
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.73it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.34it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.3535018563270569
+val F1 is 0.6530612111091614
+Epoch 38/62, learning rate: 1.4061386715911841e-05
+Train Loss: 0.4187, Train Acc: 0.7993, Train f1: 0.7636, Train Precision: 0.7426, Train Recall: 0.7859, Train AUC: 0.8841
+Valitadion Loss: 0.6689, Validation Acc: 0.7213, Vall f1: 0.6531, Val Precision: 0.6957, Val Recall: 0.6154, Val AUC: 0.7846
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:26<00:00,  2.72it/s]
+New threshold is 0.37840017676353455
+train F1 is 0.772549033164978
+val for epoch 39
+New threshold is 0.29220864176750183
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.73it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.57it/s]
+  1%|█▏                                                                                 | 1/73 [00:00<00:37,  1.89it/s]
+Epoch 39/62, learning rate: 1.3396614974060996e-05
+Train Loss: 0.4144, Train Acc: 0.8010, Train f1: 0.7725, Train Precision: 0.7310, Train Recall: 0.8191, Train AUC: 0.8866
+Valitadion Loss: 0.6760, Validation Acc: 0.7213, Vall f1: 0.6531, Val Precision: 0.6957, Val Recall: 0.6154, Val AUC: 0.7868
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:26<00:00,  2.73it/s]
+New threshold is 0.4306179881095886
+train F1 is 0.7878172397613525
+val for epoch 40
+New threshold is 0.24674077332019806
+val F1 is 0.7307692170143127
+Epoch 40/62, learning rate: 1.2714404862930523e-05
+Train Loss: 0.4039, Train Acc: 0.8208, Train f1: 0.7878, Train Precision: 0.7698, Train Recall: 0.8067, Train AUC: 0.8929
+Valitadion Loss: 0.5839, Validation Acc: 0.7705, Vall f1: 0.7308, Val Precision: 0.7308, Val Recall: 0.7308, Val AUC: 0.8297
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.71it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.46it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:26<00:00,  2.73it/s]
+New threshold is 0.4426591098308563
+train F1 is 0.7884417176246643
+val for epoch 41
+New threshold is 0.41168496012687683
+val F1 is 0.625
+Epoch 41/62, learning rate: 1.2018258879472905e-05
+Train Loss: 0.3976, Train Acc: 0.8242, Train f1: 0.7884, Train Precision: 0.7828, Train Recall: 0.7942, Train AUC: 0.8961
+Valitadion Loss: 0.7673, Validation Acc: 0.7049, Vall f1: 0.6250, Val Precision: 0.6818, Val Recall: 0.5769, Val AUC: 0.7703
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.72it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.49it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:26<00:00,  2.72it/s]
+New threshold is 0.3881571292877197
+train F1 is 0.7906976938247681
+val for epoch 42
+New threshold is 0.34975752234458923
+val F1 is 0.7307692170143127
+Epoch 42/62, learning rate: 1.1311751068026944e-05
+Train Loss: 0.3843, Train Acc: 0.8225, Train f1: 0.7907, Train Precision: 0.7697, Train Recall: 0.8129, Train AUC: 0.9035
+Valitadion Loss: 0.5838, Validation Acc: 0.7705, Vall f1: 0.7308, Val Precision: 0.7308, Val Recall: 0.7308, Val AUC: 0.8341
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:26<00:00,  2.71it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.43it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:26<00:01,  2.70it/s]
+New threshold is 0.38195496797561646
+train F1 is 0.8075772523880005
+val for epoch 43
+New threshold is 0.4110044836997986
+val F1 is 0.6122449040412903
+Epoch 43/62, learning rate: 1.0598508671015642e-05
+Train Loss: 0.3670, Train Acc: 0.8345, Train f1: 0.8076, Train Precision: 0.7759, Train Recall: 0.8420, Train AUC: 0.9129
+Valitadion Loss: 0.7436, Validation Acc: 0.6885, Vall f1: 0.6122, Val Precision: 0.6522, Val Recall: 0.5769, Val AUC: 0.7516
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:27<00:00,  2.69it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.44it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:26<00:01,  2.67it/s]
+New threshold is 0.39302197098731995
+train F1 is 0.7783349752426147
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:27<00:00,  2.68it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.17it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.2612406611442566
+val F1 is 0.7037037014961243
+Epoch 44/62, learning rate: 9.882193506522859e-06
+Train Loss: 0.3916, Train Acc: 0.8105, Train f1: 0.7783, Train Precision: 0.7519, Train Recall: 0.8067, Train AUC: 0.8981
+Valitadion Loss: 0.6328, Validation Acc: 0.7377, Vall f1: 0.7037, Val Precision: 0.6786, Val Recall: 0.7308, Val AUC: 0.8165
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 95%|█████████████████████████████████████████████████████████████████████████████▌    | 69/73 [00:25<00:01,  2.65it/s]
+New threshold is 0.4141034483909607
+train F1 is 0.8020725250244141
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:27<00:00,  2.67it/s]
+ 50%|██████████████████████████████████████████                                          | 2/4 [00:00<00:00,  4.97it/s]
+New threshold is 0.3024088442325592
+val F1 is 0.6792452931404114
+Epoch 45/62, learning rate: 9.166483168356895e-06
+Train Loss: 0.3524, Train Acc: 0.8362, Train f1: 0.8021, Train Precision: 0.7996, Train Recall: 0.8046, Train AUC: 0.9207
+Valitadion Loss: 0.7474, Validation Acc: 0.7213, Vall f1: 0.6792, Val Precision: 0.6667, Val Recall: 0.6923, Val AUC: 0.7495
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.27it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+ 93%|████████████████████████████████████████████████████████████████████████████▍     | 68/73 [00:25<00:01,  2.67it/s]
+New threshold is 0.4154258966445923
+train F1 is 0.8164102435112
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:27<00:00,  2.67it/s]
+  0%|                                                                                            | 0/4 [00:00<?, ?it/s]
+New threshold is 0.5063219666481018
+val F1 is 0.7777777910232544
+Epoch 46/62, learning rate: 8.455052145120891e-06
+Train Loss: 0.3570, Train Acc: 0.8465, Train f1: 0.8164, Train Precision: 0.8057, Train Recall: 0.8274, Train AUC: 0.9212
+Valitadion Loss: 0.6099, Validation Acc: 0.8033, Vall f1: 0.7778, Val Precision: 0.7500, Val Recall: 0.8077, Val AUC: 0.8462
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  4.93it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:26<00:00,  2.70it/s]
+New threshold is 0.4371998608112335
+train F1 is 0.8237747550010681
+val for epoch 47
+New threshold is 0.4556604027748108
+val F1 is 0.7234042286872864
+Epoch 47/62, learning rate: 7.751552955225432e-06
+Train Loss: 0.3515, Train Acc: 0.8551, Train f1: 0.8238, Train Precision: 0.8264, Train Recall: 0.8212, Train AUC: 0.9219
+Valitadion Loss: 0.6900, Validation Acc: 0.7869, Vall f1: 0.7234, Val Precision: 0.8095, Val Recall: 0.6538, Val AUC: 0.8044
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:27<00:00,  2.66it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.30it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:26<00:01,  2.64it/s]
+New threshold is 0.43565627932548523
+train F1 is 0.8387096524238586
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:27<00:00,  2.65it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.13it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.4571380317211151
+val F1 is 0.7200000286102295
+Epoch 48/62, learning rate: 7.059597394697126e-06
+Train Loss: 0.3274, Train Acc: 0.8671, Train f1: 0.8387, Train Precision: 0.8396, Train Recall: 0.8378, Train AUC: 0.9315
+Valitadion Loss: 0.6225, Validation Acc: 0.7705, Vall f1: 0.7200, Val Precision: 0.7500, Val Recall: 0.6923, Val AUC: 0.8341
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 93%|████████████████████████████████████████████████████████████████████████████▍     | 68/73 [00:25<00:01,  2.67it/s]
+New threshold is 0.38025492429733276
+train F1 is 0.8142856955528259
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:27<00:00,  2.65it/s]
+ 25%|█████████████████████                                                               | 1/4 [00:00<00:00,  4.59it/s]
+New threshold is 0.1221136674284935
+val F1 is 0.688524603843689
+Epoch 49/62, learning rate: 6.382737994057677e-06
+Train Loss: 0.3482, Train Acc: 0.8439, Train f1: 0.8143, Train Precision: 0.7996, Train Recall: 0.8295, Train AUC: 0.9215
+Valitadion Loss: 0.7149, Validation Acc: 0.6885, Vall f1: 0.6885, Val Precision: 0.6000, Val Recall: 0.8077, Val AUC: 0.7912
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.12it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:27<00:00,  2.63it/s]
+New threshold is 0.43161889910697937
+train F1 is 0.8290155529975891
+val for epoch 50
+New threshold is 0.30163663625717163
+val F1 is 0.6666666865348816
+Epoch 50/62, learning rate: 5.724449779474729e-06
+Train Loss: 0.3114, Train Acc: 0.8585, Train f1: 0.8290, Train Precision: 0.8264, Train Recall: 0.8316, Train AUC: 0.9381
+Valitadion Loss: 0.7167, Validation Acc: 0.7049, Vall f1: 0.6667, Val Precision: 0.6429, Val Recall: 0.6923, Val AUC: 0.7989
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:27<00:00,  2.65it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.26it/s]
+ 10%|███████▉                                                                           | 7/73 [00:02<00:25,  2.60it/s]
+ 16%|█████████████▍                                                                    | 12/73 [00:04<00:22,  2.66it/s]
+ 23%|███████████████████                                                               | 17/73 [00:06<00:20,  2.67it/s]
+ 32%|█████████████████████████▊                                                        | 23/73 [00:08<00:19,  2.63it/s]
+ 38%|███████████████████████████████▍                                                  | 28/73 [00:10<00:16,  2.66it/s]
+ 45%|█████████████████████████████████████                                             | 33/73 [00:12<00:15,  2.65it/s]
+ 53%|███████████████████████████████████████████▊                                      | 39/73 [00:14<00:12,  2.63it/s]
+ 60%|█████████████████████████████████████████████████▍                                | 44/73 [00:16<00:11,  2.63it/s]
+ 67%|███████████████████████████████████████████████████████                           | 49/73 [00:18<00:09,  2.66it/s]
+ 75%|█████████████████████████████████████████████████████████████▊                    | 55/73 [00:20<00:06,  2.64it/s]
+ 82%|███████████████████████████████████████████████████████████████████▍              | 60/73 [00:22<00:04,  2.64it/s]
+ 89%|█████████████████████████████████████████████████████████████████████████         | 65/73 [00:24<00:03,  2.67it/s]
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:26<00:00,  2.64it/s]
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:26<00:00,  2.64it/s]
+New threshold is 0.37433281540870667
+train F1 is 0.8388388156890869
+val for epoch 51
+New threshold is 0.2044314295053482
+val F1 is 0.6666666865348816
+Epoch 51/62, learning rate: 5.088112431823452e-06
+Train Loss: 0.3101, Train Acc: 0.8619, Train f1: 0.8388, Train Precision: 0.8089, Train Recall: 0.8711, Train AUC: 0.9392
+Valitadion Loss: 0.8013, Validation Acc: 0.7213, Vall f1: 0.6667, Val Precision: 0.6800, Val Recall: 0.6538, Val AUC: 0.7780
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+  7%|█████▋                                                                             | 5/73 [00:02<00:26,  2.55it/s]
+ 14%|███████████▏                                                                      | 10/73 [00:03<00:24,  2.62it/s]
+ 22%|█████████████████▉                                                                | 16/73 [00:06<00:21,  2.65it/s]
+ 29%|███████████████████████▌                                                          | 21/73 [00:08<00:19,  2.65it/s]
+ 36%|█████████████████████████████▏                                                    | 26/73 [00:09<00:17,  2.66it/s]
+ 44%|███████████████████████████████████▉                                              | 32/73 [00:12<00:15,  2.64it/s]
+ 51%|█████████████████████████████████████████▌                                        | 37/73 [00:14<00:13,  2.64it/s]
+ 58%|███████████████████████████████████████████████▏                                  | 42/73 [00:16<00:11,  2.66it/s]
+ 66%|█████████████████████████████████████████████████████▉                            | 48/73 [00:18<00:09,  2.64it/s]
+ 73%|███████████████████████████████████████████████████████████▌                      | 53/73 [00:20<00:07,  2.64it/s]
+ 79%|█████████████████████████████████████████████████████████████████▏                | 58/73 [00:22<00:05,  2.67it/s]
+ 88%|███████████████████████████████████████████████████████████████████████▉          | 64/73 [00:24<00:03,  2.65it/s]
+ 95%|█████████████████████████████████████████████████████████████████████████████▌    | 69/73 [00:26<00:01,  2.66it/s]
+ 95%|█████████████████████████████████████████████████████████████████████████████▌    | 69/73 [00:26<00:01,  2.66it/s]
+New threshold is 0.4358832836151123
+train F1 is 0.8419958353042603
+ 50%|██████████████████████████████████████████                                          | 2/4 [00:00<00:00,  4.87it/s]
+ 50%|██████████████████████████████████████████                                          | 2/4 [00:00<00:00,  4.87it/s]
+New threshold is 0.6601738929748535
+val F1 is 0.6808510422706604
+Epoch 52/62, learning rate: 4.476992935255127e-06
+Train Loss: 0.3136, Train Acc: 0.8696, Train f1: 0.8420, Train Precision: 0.8420, Train Recall: 0.8420, Train AUC: 0.9377
+Valitadion Loss: 0.7769, Validation Acc: 0.7541, Vall f1: 0.6809, Val Precision: 0.7619, Val Recall: 0.6154, Val AUC: 0.7879
+  4%|███▍                                                                               | 3/73 [00:01<00:29,  2.39it/s]
+ 12%|██████████▏                                                                        | 9/73 [00:03<00:24,  2.63it/s]
+ 19%|███████████████▋                                                                  | 14/73 [00:05<00:22,  2.64it/s]
+ 26%|█████████████████████▎                                                            | 19/73 [00:07<00:20,  2.64it/s]
+ 34%|████████████████████████████                                                      | 25/73 [00:09<00:18,  2.64it/s]
+ 41%|█████████████████████████████████▋                                                | 30/73 [00:11<00:16,  2.63it/s]
+ 48%|███████████████████████████████████████▎                                          | 35/73 [00:13<00:14,  2.61it/s]
+ 55%|████████████████████████████████████████████▉                                     | 40/73 [00:15<00:12,  2.63it/s]
+ 63%|███████████████████████████████████████████████████▋                              | 46/73 [00:17<00:10,  2.63it/s]
+ 70%|█████████████████████████████████████████████████████████▎                        | 51/73 [00:19<00:08,  2.62it/s]
+ 77%|██████████████████████████████████████████████████████████████▉                   | 56/73 [00:21<00:06,  2.64it/s]
+ 84%|████████████████████████████████████████████████████████████████████▌             | 61/73 [00:23<00:04,  2.64it/s]
+ 92%|███████████████████████████████████████████████████████████████████████████▎      | 67/73 [00:25<00:02,  2.64it/s]
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:27<00:00,  2.62it/s]
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:27<00:00,  2.62it/s]
+New threshold is 0.4142504036426544
+train F1 is 0.8238866329193115
+val for epoch 53
+New threshold is 0.5245670080184937
+val F1 is 0.6808510422706604
+Epoch 53/62, learning rate: 3.894228804355683e-06
+Train Loss: 0.3196, Train Acc: 0.8508, Train f1: 0.8239, Train Precision: 0.8028, Train Recall: 0.8462, Train AUC: 0.9350
+Valitadion Loss: 0.6700, Validation Acc: 0.7541, Vall f1: 0.6809, Val Precision: 0.7619, Val Recall: 0.6154, Val AUC: 0.8176
+  1%|█▏                                                                                 | 1/73 [00:00<00:40,  1.77it/s]
+  8%|██████▊                                                                            | 6/73 [00:02<00:26,  2.57it/s]
+ 16%|█████████████▍                                                                    | 12/73 [00:04<00:23,  2.63it/s]
+ 23%|███████████████████                                                               | 17/73 [00:06<00:21,  2.63it/s]
+ 30%|████████████████████████▋                                                         | 22/73 [00:08<00:19,  2.64it/s]
+ 38%|███████████████████████████████▍                                                  | 28/73 [00:10<00:17,  2.63it/s]
+ 45%|█████████████████████████████████████                                             | 33/73 [00:12<00:15,  2.65it/s]
+ 52%|██████████████████████████████████████████▋                                       | 38/73 [00:14<00:13,  2.64it/s]
+ 59%|████████████████████████████████████████████████▎                                 | 43/73 [00:16<00:11,  2.66it/s]
+ 67%|███████████████████████████████████████████████████████                           | 49/73 [00:18<00:09,  2.61it/s]
+ 74%|████████████████████████████████████████████████████████████▋                     | 54/73 [00:20<00:07,  2.66it/s]
+ 81%|██████████████████████████████████████████████████████████████████▎               | 59/73 [00:22<00:05,  2.65it/s]
+ 89%|█████████████████████████████████████████████████████████████████████████         | 65/73 [00:24<00:03,  2.65it/s]
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:26<00:01,  2.65it/s]
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:26<00:01,  2.65it/s]
+New threshold is 0.39797183871269226
+train F1 is 0.8406091332435608
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.09it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  5.09it/s]
+New threshold is 0.16353271901607513
+val F1 is 0.6792452931404114
+Epoch 54/62, learning rate: 3.3428119760067316e-06
+Train Loss: 0.3077, Train Acc: 0.8654, Train f1: 0.8406, Train Precision: 0.8214, Train Recall: 0.8607, Train AUC: 0.9410
+Valitadion Loss: 0.7172, Validation Acc: 0.7213, Vall f1: 0.6792, Val Precision: 0.6667, Val Recall: 0.6923, Val AUC: 0.8121
+  5%|████▌                                                                              | 4/73 [00:01<00:27,  2.48it/s]
+ 12%|██████████▏                                                                        | 9/73 [00:03<00:24,  2.59it/s]
+ 21%|████████████████▊                                                                 | 15/73 [00:05<00:22,  2.61it/s]
+ 27%|██████████████████████▍                                                           | 20/73 [00:07<00:20,  2.61it/s]
+ 34%|████████████████████████████                                                      | 25/73 [00:09<00:18,  2.64it/s]
+ 41%|█████████████████████████████████▋                                                | 30/73 [00:11<00:16,  2.61it/s]
+ 49%|████████████████████████████████████████▍                                         | 36/73 [00:13<00:14,  2.61it/s]
+ 56%|██████████████████████████████████████████████                                    | 41/73 [00:15<00:12,  2.64it/s]
+ 63%|███████████████████████████████████████████████████▋                              | 46/73 [00:17<00:10,  2.65it/s]
+ 70%|█████████████████████████████████████████████████████████▎                        | 51/73 [00:19<00:08,  2.65it/s]
+ 78%|████████████████████████████████████████████████████████████████                  | 57/73 [00:21<00:06,  2.62it/s]
+ 85%|█████████████████████████████████████████████████████████████████████▋            | 62/73 [00:23<00:04,  2.65it/s]
+ 92%|███████████████████████████████████████████████████████████████████████████▎      | 67/73 [00:25<00:02,  2.61it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:27<00:00,  2.61it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:27<00:00,  2.61it/s]
+New threshold is 0.44411230087280273
+train F1 is 0.8491154909133911
+val for epoch 55
+New threshold is 0.5700784921646118
+val F1 is 0.7083333134651184
+Epoch 55/62, learning rate: 2.8255734486489703e-06
+Train Loss: 0.3107, Train Acc: 0.8756, Train f1: 0.8491, Train Precision: 0.8500, Train Recall: 0.8482, Train AUC: 0.9380
+Valitadion Loss: 0.7120, Validation Acc: 0.7705, Vall f1: 0.7083, Val Precision: 0.7727, Val Recall: 0.6538, Val AUC: 0.8220
+  3%|██▎                                                                                | 2/73 [00:00<00:32,  2.21it/s]
+ 10%|███████▉                                                                           | 7/73 [00:02<00:25,  2.59it/s]
+ 16%|█████████████▍                                                                    | 12/73 [00:04<00:23,  2.61it/s]
+ 25%|████████████████████▏                                                             | 18/73 [00:07<00:20,  2.63it/s]
+ 32%|█████████████████████████▊                                                        | 23/73 [00:08<00:19,  2.62it/s]
+ 38%|███████████████████████████████▍                                                  | 28/73 [00:10<00:17,  2.62it/s]
+ 45%|█████████████████████████████████████                                             | 33/73 [00:12<00:15,  2.63it/s]
+ 53%|███████████████████████████████████████████▊                                      | 39/73 [00:15<00:13,  2.61it/s]
+ 60%|█████████████████████████████████████████████████▍                                | 44/73 [00:16<00:10,  2.65it/s]
+ 67%|███████████████████████████████████████████████████████                           | 49/73 [00:18<00:09,  2.59it/s]
+ 74%|████████████████████████████████████████████████████████████▋                     | 54/73 [00:20<00:07,  2.64it/s]
+ 81%|██████████████████████████████████████████████████████████████████▎               | 59/73 [00:22<00:05,  2.61it/s]
+ 89%|█████████████████████████████████████████████████████████████████████████         | 65/73 [00:24<00:03,  2.60it/s]
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:26<00:01,  2.62it/s]
+ 96%|██████████████████████████████████████████████████████████████████████████████▋   | 70/73 [00:26<00:01,  2.62it/s]
+New threshold is 0.39681994915008545
+train F1 is 0.8493427634239197
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.18369804322719574
+val F1 is 0.7272727489471436
+Epoch 56/62, learning rate: 2.3451687478107256e-06
+Train Loss: 0.2995, Train Acc: 0.8722, Train f1: 0.8493, Train Precision: 0.8268, Train Recall: 0.8732, Train AUC: 0.9443
+Valitadion Loss: 0.6979, Validation Acc: 0.7541, Vall f1: 0.7273, Val Precision: 0.6897, Val Recall: 0.7692, Val AUC: 0.8154
+  5%|████▌                                                                              | 4/73 [00:01<00:28,  2.45it/s]
+ 12%|██████████▏                                                                        | 9/73 [00:03<00:24,  2.57it/s]
+ 21%|████████████████▊                                                                 | 15/73 [00:05<00:22,  2.62it/s]
+ 27%|██████████████████████▍                                                           | 20/73 [00:07<00:20,  2.64it/s]
+ 34%|████████████████████████████                                                      | 25/73 [00:09<00:18,  2.62it/s]
+ 41%|█████████████████████████████████▋                                                | 30/73 [00:11<00:16,  2.63it/s]
+ 49%|████████████████████████████████████████▍                                         | 36/73 [00:13<00:14,  2.59it/s]
+ 56%|██████████████████████████████████████████████                                    | 41/73 [00:15<00:12,  2.61it/s]
+ 63%|███████████████████████████████████████████████████▋                              | 46/73 [00:17<00:10,  2.60it/s]
+ 70%|█████████████████████████████████████████████████████████▎                        | 51/73 [00:19<00:08,  2.62it/s]
+ 78%|████████████████████████████████████████████████████████████████                  | 57/73 [00:22<00:06,  2.63it/s]
+ 85%|█████████████████████████████████████████████████████████████████████▋            | 62/73 [00:23<00:04,  2.59it/s]
+ 92%|███████████████████████████████████████████████████████████████████████████▎      | 67/73 [00:25<00:02,  2.59it/s]
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:27<00:00,  2.59it/s]
+ 99%|████████████████████████████████████████████████████████████████████████████████▉ | 72/73 [00:27<00:00,  2.59it/s]
+New threshold is 0.3805845081806183
+train F1 is 0.8441295623779297
+val for epoch 57
+New threshold is 0.16289961338043213
+val F1 is 0.6206896305084229
+Epoch 57/62, learning rate: 1.9040642925221363e-06
+Train Loss: 0.2981, Train Acc: 0.8679, Train f1: 0.8441, Train Precision: 0.8225, Train Recall: 0.8669, Train AUC: 0.9447
+Valitadion Loss: 0.9215, Validation Acc: 0.6393, Vall f1: 0.6207, Val Precision: 0.5625, Val Recall: 0.6923, Val AUC: 0.7516
+  1%|█▏                                                                                 | 1/73 [00:00<00:39,  1.81it/s]
+  8%|██████▊                                                                            | 6/73 [00:02<00:26,  2.53it/s]
+ 16%|█████████████▍                                                                    | 12/73 [00:04<00:23,  2.59it/s]
+ 23%|███████████████████                                                               | 17/73 [00:06<00:21,  2.60it/s]
+ 30%|████████████████████████▋                                                         | 22/73 [00:08<00:19,  2.62it/s]
+ 37%|██████████████████████████████▎                                                   | 27/73 [00:10<00:17,  2.61it/s]
+ 45%|█████████████████████████████████████                                             | 33/73 [00:12<00:15,  2.61it/s]
+ 52%|██████████████████████████████████████████▋                                       | 38/73 [00:14<00:13,  2.62it/s]
+ 59%|████████████████████████████████████████████████▎                                 | 43/73 [00:16<00:11,  2.60it/s]
+ 66%|█████████████████████████████████████████████████████▉                            | 48/73 [00:18<00:09,  2.61it/s]
+ 73%|███████████████████████████████████████████████████████████▌                      | 53/73 [00:20<00:07,  2.60it/s]
+ 81%|██████████████████████████████████████████████████████████████████▎               | 59/73 [00:22<00:05,  2.58it/s]
+ 88%|███████████████████████████████████████████████████████████████████████▉          | 64/73 [00:24<00:03,  2.58it/s]
+ 95%|█████████████████████████████████████████████████████████████████████████████▌    | 69/73 [00:26<00:01,  2.60it/s]
+ 50%|██████████████████████████████████████████                                          | 2/4 [00:00<00:00,  4.73it/s]
+ 50%|██████████████████████████████████████████                                          | 2/4 [00:00<00:00,  4.73it/s]
+New threshold is 0.4069105088710785
+train F1 is 0.8487309813499451
+val for epoch 58
+New threshold is 0.28119537234306335
+val F1 is 0.6666666865348816
+Epoch 58/62, learning rate: 1.5045247326105404e-06
+Train Loss: 0.2978, Train Acc: 0.8722, Train f1: 0.8487, Train Precision: 0.8294, Train Recall: 0.8690, Train AUC: 0.9449
+Valitadion Loss: 0.7595, Validation Acc: 0.7213, Vall f1: 0.6667, Val Precision: 0.6800, Val Recall: 0.6538, Val AUC: 0.7945
+  4%|███▍                                                                               | 3/73 [00:01<00:29,  2.36it/s]
+ 11%|█████████                                                                          | 8/73 [00:03<00:25,  2.58it/s]
+ 19%|███████████████▋                                                                  | 14/73 [00:05<00:22,  2.59it/s]
+ 26%|█████████████████████▎                                                            | 19/73 [00:07<00:20,  2.60it/s]
+ 33%|██████████████████████████▉                                                       | 24/73 [00:09<00:18,  2.61it/s]
+ 40%|████████████████████████████████▌                                                 | 29/73 [00:11<00:16,  2.59it/s]
+ 47%|██████████████████████████████████████▏                                           | 34/73 [00:13<00:14,  2.62it/s]
+ 55%|████████████████████████████████████████████▉                                     | 40/73 [00:15<00:12,  2.58it/s]
+ 62%|██████████████████████████████████████████████████▌                               | 45/73 [00:17<00:10,  2.59it/s]
+ 68%|████████████████████████████████████████████████████████▏                         | 50/73 [00:19<00:08,  2.62it/s]
+ 75%|█████████████████████████████████████████████████████████████▊                    | 55/73 [00:21<00:06,  2.60it/s]
+ 82%|███████████████████████████████████████████████████████████████████▍              | 60/73 [00:23<00:05,  2.59it/s]
+ 90%|██████████████████████████████████████████████████████████████████████████▏       | 66/73 [00:25<00:02,  2.59it/s]
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:27<00:00,  2.60it/s]
+ 97%|███████████████████████████████████████████████████████████████████████████████▊  | 71/73 [00:27<00:00,  2.60it/s]
+New threshold is 0.35179316997528076
+train F1 is 0.8433734774589539
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+  0%|                                                                                           | 0/73 [00:00<?, ?it/s]
+New threshold is 0.45144781470298767
+val F1 is 0.6666666865348816
+Epoch 59/62, learning rate: 1.1486013218878658e-06
+Train Loss: 0.2960, Train Acc: 0.8662, Train f1: 0.8434, Train Precision: 0.8155, Train Recall: 0.8732, Train AUC: 0.9435
+Valitadion Loss: 0.6882, Validation Acc: 0.7377, Vall f1: 0.6667, Val Precision: 0.7273, Val Recall: 0.6154, Val AUC: 0.8165
+  7%|█████▋                                                                             | 5/73 [00:02<00:27,  2.49it/s]
+ 14%|███████████▏                                                                      | 10/73 [00:04<00:24,  2.59it/s]
+ 22%|█████████████████▉                                                                | 16/73 [00:06<00:21,  2.59it/s]
+ 29%|███████████████████████▌                                                          | 21/73 [00:08<00:20,  2.59it/s]
+ 36%|█████████████████████████████▏                                                    | 26/73 [00:10<00:18,  2.59it/s]
+ 42%|██████████████████████████████████▊                                               | 31/73 [00:12<00:16,  2.59it/s]
+ 49%|████████████████████████████████████████▍                                         | 36/73 [00:14<00:14,  2.59it/s]
+ 58%|███████████████████████████████████████████████▏                                  | 42/73 [00:16<00:11,  2.60it/s]
+ 64%|████████████████████████████████████████████████████▊                             | 47/73 [00:18<00:10,  2.58it/s]
+ 71%|██████████████████████████████████████████████████████████▍                       | 52/73 [00:20<00:08,  2.58it/s]
+ 78%|████████████████████████████████████████████████████████████████                  | 57/73 [00:22<00:06,  2.63it/s]
+ 85%|█████████████████████████████████████████████████████████████████████▋            | 62/73 [00:24<00:04,  2.58it/s]
+ 92%|███████████████████████████████████████████████████████████████████████████▎      | 67/73 [00:26<00:02,  2.58it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:28<00:00,  2.57it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:28<00:00,  2.57it/s]
+New threshold is 0.3686240017414093
+train F1 is 0.8385826945304871
+val for epoch 60
+New threshold is 0.5919127464294434
+val F1 is 0.695652186870575
+Epoch 60/62, learning rate: 8.381213869226201e-07
+Train Loss: 0.3099, Train Acc: 0.8593, Train f1: 0.8386, Train Precision: 0.7963, Train Recall: 0.8857, Train AUC: 0.9402
+Valitadion Loss: 0.6183, Validation Acc: 0.7705, Vall f1: 0.6957, Val Precision: 0.8000, Val Recall: 0.6154, Val AUC: 0.8396
+  3%|██▎                                                                                | 2/73 [00:00<00:33,  2.15it/s]
+ 10%|███████▉                                                                           | 7/73 [00:02<00:26,  2.52it/s]
+ 16%|█████████████▍                                                                    | 12/73 [00:04<00:23,  2.56it/s]
+ 23%|███████████████████                                                               | 17/73 [00:06<00:21,  2.60it/s]
+ 30%|████████████████████████▋                                                         | 22/73 [00:08<00:19,  2.60it/s]
+ 37%|██████████████████████████████▎                                                   | 27/73 [00:10<00:17,  2.59it/s]
+ 42%|██████████████████████████████████▊                                               | 31/73 [00:12<00:16,  2.60it/s]
+ 49%|████████████████████████████████████████▍                                         | 36/73 [00:14<00:14,  2.58it/s]
+ 58%|███████████████████████████████████████████████▏                                  | 42/73 [00:16<00:12,  2.56it/s]
+ 64%|████████████████████████████████████████████████████▊                             | 47/73 [00:18<00:09,  2.61it/s]
+ 71%|██████████████████████████████████████████████████████████▍                       | 52/73 [00:20<00:08,  2.61it/s]
+ 78%|████████████████████████████████████████████████████████████████                  | 57/73 [00:22<00:06,  2.57it/s]
+ 85%|█████████████████████████████████████████████████████████████████████▋            | 62/73 [00:24<00:04,  2.59it/s]
+ 93%|████████████████████████████████████████████████████████████████████████████▍     | 68/73 [00:26<00:01,  2.60it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:28<00:00,  2.57it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 73/73 [00:28<00:00,  2.57it/s]
+New threshold is 0.42199334502220154
+train F1 is 0.8511087894439697
+val for epoch 61
+New threshold is 0.19510948657989502
+val F1 is 0.7407407164573669
+Epoch 61/62, learning rate: 5.746789454643014e-07
+Train Loss: 0.2947, Train Acc: 0.8791, Train f1: 0.8511, Train Precision: 0.8648, Train Recall: 0.8378, Train AUC: 0.9461
+Valitadion Loss: 0.6641, Validation Acc: 0.7705, Vall f1: 0.7407, Val Precision: 0.7143, Val Recall: 0.7692, Val AUC: 0.8264
+  3%|██▎                                                                                | 2/73 [00:00<00:32,  2.16it/s]
+ 10%|███████▉                                                                           | 7/73 [00:02<00:26,  2.53it/s]
+ 16%|█████████████▍                                                                    | 12/73 [00:04<00:23,  2.57it/s]
+ 23%|███████████████████                                                               | 17/73 [00:06<00:21,  2.58it/s]
+ 30%|████████████████████████▋                                                         | 22/73 [00:08<00:19,  2.58it/s]
+ 38%|███████████████████████████████▍                                                  | 28/73 [00:11<00:17,  2.59it/s]
+ 45%|█████████████████████████████████████                                             | 33/73 [00:12<00:15,  2.59it/s]
+ 52%|██████████████████████████████████████████▋                                       | 38/73 [00:14<00:13,  2.58it/s]
+ 59%|████████████████████████████████████████████████▎                                 | 43/73 [00:16<00:11,  2.58it/s]
+ 66%|█████████████████████████████████████████████████████▉                            | 48/73 [00:18<00:09,  2.58it/s]
+ 74%|████████████████████████████████████████████████████████████▋                     | 54/73 [00:21<00:07,  2.61it/s]
+ 81%|██████████████████████████████████████████████████████████████████▎               | 59/73 [00:23<00:05,  2.56it/s]
+ 88%|███████████████████████████████████████████████████████████████████████▉          | 64/73 [00:24<00:03,  2.62it/s]
+ 95%|█████████████████████████████████████████████████████████████████████████████▌    | 69/73 [00:26<00:01,  2.58it/s]
+ 95%|█████████████████████████████████████████████████████████████████████████████▌    | 69/73 [00:26<00:01,  2.58it/s]
+New threshold is 0.39944252371788025
+train F1 is 0.8533057570457458
+ 50%|██████████████████████████████████████████                                          | 2/4 [00:00<00:00,  4.77it/s]
+ 50%|██████████████████████████████████████████                                          | 2/4 [00:00<00:00,  4.77it/s]
+New threshold is 0.09960668534040451
+val F1 is 0.6785714030265808
+Epoch 62/62, learning rate: 3.596265226855932e-07
+Train Loss: 0.2845, Train Acc: 0.8782, Train f1: 0.8533, Train Precision: 0.8480, Train Recall: 0.8586, Train AUC: 0.9492
+Valitadion Loss: 0.7472, Validation Acc: 0.7049, Vall f1: 0.6786, Val Precision: 0.6333, Val Recall: 0.7308, Val AUC: 0.8099
+Training complete in 27m 59s
+Best val auc: 0.777778
+  0%|                                                                                           | 0/18 [00:00<?, ?it/s]
+ 33%|███████████████████████████▋                                                       | 6/18 [00:07<00:07,  1.68it/s]
+ 78%|███████████████████████████████████████████████████████████████▊                  | 14/18 [00:09<00:01,  3.76it/s]
+ 78%|███████████████████████████████████████████████████████████████▊                  | 14/18 [00:09<00:01,  3.76it/s]
+New threshold is 0.3887214660644531
+Inference complete in 0m 10s
+F1 Score = : 0.693878
+AUC Score = : 0.794495
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:10<00:00,  1.73it/s]
+100%|██████████████████████████████████████████████████████████████████████████████████| 18/18 [00:10<00:00,  1.73it/s]

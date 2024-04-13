@@ -1,0 +1,19 @@
+2024-04-10 21:34:14,252 INFO    StreamThr :13484 [internal.py:wandb_internal():86] W&B internal server running at pid: 13484, started at: 2024-04-10 21:34:14.251269
+2024-04-10 21:34:14,252 DEBUG   HandlerThread:13484 [handler.py:handle_request():146] handle_request: status
+2024-04-10 21:34:14,253 INFO    WriterThread:13484 [datastore.py:open_for_write():87] open: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_213414-bk5emp8w\run-bk5emp8w.wandb
+2024-04-10 21:34:14,253 DEBUG   SenderThread:13484 [sender.py:send():379] send: header
+2024-04-10 21:34:14,271 DEBUG   SenderThread:13484 [sender.py:send():379] send: run
+2024-04-10 21:34:14,629 INFO    SenderThread:13484 [dir_watcher.py:__init__():211] watching files in: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_213414-bk5emp8w\files
+2024-04-10 21:34:14,629 INFO    SenderThread:13484 [sender.py:_start_run_threads():1124] run started: bk5emp8w with start time 1712810054.251269
+2024-04-10 21:34:14,648 DEBUG   HandlerThread:13484 [handler.py:handle_request():146] handle_request: shutdown
+2024-04-10 21:34:14,648 INFO    HandlerThread:13484 [handler.py:finish():866] shutting down handler
+2024-04-10 21:34:15,276 INFO    WriterThread:13484 [datastore.py:close():296] close: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_213414-bk5emp8w\run-bk5emp8w.wandb
+2024-04-10 21:34:15,641 INFO    SenderThread:13484 [sender.py:finish():1546] shutting down sender
+2024-04-10 21:34:15,641 INFO    SenderThread:13484 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-04-10 21:34:16,653 INFO    SenderThread:13484 [dir_watcher.py:finish():388] scan: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_213414-bk5emp8w\files
+2024-04-10 21:34:16,653 INFO    SenderThread:13484 [dir_watcher.py:finish():402] scan save: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_213414-bk5emp8w\files\config.yaml config.yaml
+2024-04-10 21:34:16,653 INFO    SenderThread:13484 [file_pusher.py:finish():172] shutting down file pusher
+2024-04-10 21:34:16,653 INFO    SenderThread:13484 [file_pusher.py:join():178] waiting for file pusher
+2024-04-10 21:34:17,190 INFO    wandb-upload_0:13484 [upload_job.py:push():131] Uploaded file C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240410_213414-bk5emp8w\files\config.yaml
+2024-04-10 21:34:17,654 INFO    SenderThread:13484 [file_stream.py:finish():614] file stream finish called
+2024-04-10 21:34:17,869 INFO    SenderThread:13484 [file_stream.py:finish():618] file stream finish is done

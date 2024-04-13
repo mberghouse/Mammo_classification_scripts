@@ -1,0 +1,95 @@
+2024-04-11 19:37:35,232 INFO    StreamThr :22904 [internal.py:wandb_internal():86] W&B internal server running at pid: 22904, started at: 2024-04-11 19:37:35.232193
+2024-04-11 19:37:35,232 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: status
+2024-04-11 19:37:35,248 INFO    WriterThread:22904 [datastore.py:open_for_write():87] open: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240411_193735-7vlor807\run-7vlor807.wandb
+2024-04-11 19:37:35,248 DEBUG   SenderThread:22904 [sender.py:send():379] send: header
+2024-04-11 19:37:35,256 DEBUG   SenderThread:22904 [sender.py:send():379] send: run
+2024-04-11 19:37:35,720 INFO    SenderThread:22904 [dir_watcher.py:__init__():211] watching files in: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240411_193735-7vlor807\files
+2024-04-11 19:37:35,720 INFO    SenderThread:22904 [sender.py:_start_run_threads():1124] run started: 7vlor807 with start time 1712889455.232193
+2024-04-11 19:37:35,728 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: check_version
+2024-04-11 19:37:35,728 DEBUG   SenderThread:22904 [sender.py:send_request():406] send_request: check_version
+2024-04-11 19:37:35,929 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: run_start
+2024-04-11 19:37:35,948 DEBUG   HandlerThread:22904 [system_info.py:__init__():26] System info init
+2024-04-11 19:37:35,948 DEBUG   HandlerThread:22904 [system_info.py:__init__():41] System info init done
+2024-04-11 19:37:35,948 INFO    HandlerThread:22904 [system_monitor.py:start():194] Starting system monitor
+2024-04-11 19:37:35,948 INFO    SystemMonitor:22904 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-11 19:37:35,948 INFO    HandlerThread:22904 [system_monitor.py:probe():214] Collecting system info
+2024-04-11 19:37:35,957 INFO    SystemMonitor:22904 [interfaces.py:start():190] Started cpu monitoring
+2024-04-11 19:37:35,957 INFO    SystemMonitor:22904 [interfaces.py:start():190] Started disk monitoring
+2024-04-11 19:37:35,957 INFO    SystemMonitor:22904 [interfaces.py:start():190] Started gpu monitoring
+2024-04-11 19:37:35,957 INFO    SystemMonitor:22904 [interfaces.py:start():190] Started memory monitoring
+2024-04-11 19:37:35,964 INFO    SystemMonitor:22904 [interfaces.py:start():190] Started network monitoring
+2024-04-11 19:37:35,972 DEBUG   HandlerThread:22904 [system_info.py:probe():150] Probing system
+2024-04-11 19:37:35,972 DEBUG   HandlerThread:22904 [system_info.py:_probe_git():135] Probing git
+2024-04-11 19:37:36,005 DEBUG   HandlerThread:22904 [system_info.py:_probe_git():143] Probing git done
+2024-04-11 19:37:36,005 DEBUG   HandlerThread:22904 [system_info.py:probe():198] Probing system done
+2024-04-11 19:37:36,005 DEBUG   HandlerThread:22904 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.22631-SP0', 'python': '3.11.4', 'heartbeatAt': '2024-04-12T02:37:35.972787', 'startedAt': '2024-04-12T02:37:35.232193', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'C:\\Users\\marcb\\OneDrive\\Desktop\\mberghouse\\Mammo_classification_scripts\\cbisddsm_classification_300x500_old.py', 'codePathLocal': 'cbisddsm_classification_300x500_old.py', 'codePath': 'cbisddsm_classification_300x500_old.py', 'git': {'remote': 'https://github.com/mberghouse/Mammo_classification_scripts.git', 'commit': 'd59dc79d44f1c76da13cb87f081897c34b6e3bad'}, 'email': '55556564+mberghouse@users.noreply.github.com', 'root': 'C:/Users/marcb/OneDrive/Desktop/mberghouse/Mammo_classification_scripts', 'host': 'PC-4090', 'username': 'marcb', 'executable': 'C:\\Users\\marcb\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'cpu_count': 24, 'cpu_count_logical': 32, 'cpu_freq': {'current': 3200.0, 'min': 0.0, 'max': 3200.0}, 'cpu_freq_per_core': [{'current': 3200.0, 'min': 0.0, 'max': 3200.0}], 'disk': {'/': {'total': 1862.1513633728027, 'used': 1149.4169120788574}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 95.81729507446289}}
+2024-04-11 19:37:36,005 INFO    HandlerThread:22904 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-11 19:37:36,005 INFO    HandlerThread:22904 [system_monitor.py:probe():227] Publishing system info
+2024-04-11 19:37:36,005 INFO    HandlerThread:22904 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-11 19:37:36,005 DEBUG   SenderThread:22904 [sender.py:send():379] send: files
+2024-04-11 19:37:36,005 INFO    SenderThread:22904 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-04-11 19:37:36,069 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-11 19:37:36,069 DEBUG   SenderThread:22904 [sender.py:send_request():406] send_request: python_packages
+2024-04-11 19:37:36,069 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-11 19:37:36,069 DEBUG   SenderThread:22904 [sender.py:send_request():406] send_request: stop_status
+2024-04-11 19:37:36,069 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-11 19:37:36,271 DEBUG   SenderThread:22904 [sender.py:send():379] send: telemetry
+2024-04-11 19:37:36,542 INFO    wandb-upload_0:22904 [upload_job.py:push():131] Uploaded file C:\Users\marcb\AppData\Local\Temp\tmprbcchc6jwandb\pr38ufto-wandb-metadata.json
+2024-04-11 19:37:36,733 INFO    Thread-16 :22904 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240411_193735-7vlor807\files\requirements.txt
+2024-04-11 19:37:36,733 INFO    Thread-16 :22904 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240411_193735-7vlor807\files\wandb-metadata.json
+2024-04-11 19:37:36,733 INFO    Thread-16 :22904 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240411_193735-7vlor807\files\output.log
+2024-04-11 19:37:38,749 INFO    Thread-16 :22904 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240411_193735-7vlor807\files\output.log
+2024-04-11 19:37:40,315 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: status_report
+2024-04-11 19:37:40,533 INFO    StreamThr :22904 [internal.py:wandb_internal():86] W&B internal server running at pid: 22904, started at: 2024-04-11 19:37:40.533341
+2024-04-11 19:37:40,541 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: status
+2024-04-11 19:37:40,541 INFO    WriterThread:22904 [datastore.py:open_for_write():87] open: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240411_193740-wbbdibmy\run-wbbdibmy.wandb
+2024-04-11 19:37:40,541 DEBUG   SenderThread:22904 [sender.py:send():379] send: header
+2024-04-11 19:37:40,558 DEBUG   SenderThread:22904 [sender.py:send():379] send: run
+2024-04-11 19:37:40,889 INFO    SenderThread:22904 [dir_watcher.py:__init__():211] watching files in: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240411_193740-wbbdibmy\files
+2024-04-11 19:37:40,889 INFO    SenderThread:22904 [sender.py:_start_run_threads():1124] run started: wbbdibmy with start time 1712889460.533341
+2024-04-11 19:37:40,889 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: check_version
+2024-04-11 19:37:40,889 DEBUG   SenderThread:22904 [sender.py:send_request():406] send_request: check_version
+2024-04-11 19:37:41,073 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: run_start
+2024-04-11 19:37:41,073 DEBUG   HandlerThread:22904 [system_info.py:__init__():26] System info init
+2024-04-11 19:37:41,073 DEBUG   HandlerThread:22904 [system_info.py:__init__():41] System info init done
+2024-04-11 19:37:41,073 INFO    HandlerThread:22904 [system_monitor.py:start():194] Starting system monitor
+2024-04-11 19:37:41,073 INFO    SystemMonitor:22904 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-11 19:37:41,073 INFO    HandlerThread:22904 [system_monitor.py:probe():214] Collecting system info
+2024-04-11 19:37:41,073 DEBUG   HandlerThread:22904 [system_info.py:probe():150] Probing system
+2024-04-11 19:37:41,073 DEBUG   HandlerThread:22904 [system_info.py:_probe_git():135] Probing git
+2024-04-11 19:37:41,073 INFO    SystemMonitor:22904 [interfaces.py:start():190] Started cpu monitoring
+2024-04-11 19:37:41,073 INFO    SystemMonitor:22904 [interfaces.py:start():190] Started disk monitoring
+2024-04-11 19:37:41,088 INFO    SystemMonitor:22904 [interfaces.py:start():190] Started gpu monitoring
+2024-04-11 19:37:41,088 INFO    SystemMonitor:22904 [interfaces.py:start():190] Started memory monitoring
+2024-04-11 19:37:41,096 INFO    SystemMonitor:22904 [interfaces.py:start():190] Started network monitoring
+2024-04-11 19:37:41,120 DEBUG   HandlerThread:22904 [system_info.py:_probe_git():143] Probing git done
+2024-04-11 19:37:41,120 DEBUG   HandlerThread:22904 [system_info.py:probe():198] Probing system done
+2024-04-11 19:37:41,120 DEBUG   HandlerThread:22904 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.22631-SP0', 'python': '3.11.4', 'heartbeatAt': '2024-04-12T02:37:41.073165', 'startedAt': '2024-04-12T02:37:40.533341', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '<python with no main file>', 'codePathLocal': None, 'git': {'remote': 'https://github.com/mberghouse/Mammo_classification_scripts.git', 'commit': 'd59dc79d44f1c76da13cb87f081897c34b6e3bad'}, 'email': '55556564+mberghouse@users.noreply.github.com', 'root': 'C:/Users/marcb/OneDrive/Desktop/mberghouse/Mammo_classification_scripts', 'host': 'PC-4090', 'username': 'marcb', 'executable': 'C:\\Users\\marcb\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'cpu_count': 24, 'cpu_count_logical': 32, 'cpu_freq': {'current': 3200.0, 'min': 0.0, 'max': 3200.0}, 'cpu_freq_per_core': [{'current': 3200.0, 'min': 0.0, 'max': 3200.0}], 'disk': {'/': {'total': 1862.1513633728027, 'used': 1149.4172668457031}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 95.81729507446289}}
+2024-04-11 19:37:41,120 INFO    HandlerThread:22904 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-11 19:37:41,120 INFO    HandlerThread:22904 [system_monitor.py:probe():227] Publishing system info
+2024-04-11 19:37:41,120 INFO    HandlerThread:22904 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-11 19:37:41,120 DEBUG   SenderThread:22904 [sender.py:send():379] send: files
+2024-04-11 19:37:41,120 INFO    SenderThread:22904 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-04-11 19:37:41,185 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-11 19:37:41,185 DEBUG   SenderThread:22904 [sender.py:send_request():406] send_request: python_packages
+2024-04-11 19:37:41,185 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-11 19:37:41,185 DEBUG   SenderThread:22904 [sender.py:send_request():406] send_request: stop_status
+2024-04-11 19:37:41,191 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-11 19:37:41,401 DEBUG   SenderThread:22904 [sender.py:send():379] send: telemetry
+2024-04-11 19:37:41,638 INFO    wandb-upload_0:22904 [upload_job.py:push():131] Uploaded file C:\Users\marcb\AppData\Local\Temp\tmpggpirs7gwandb\xiwma0eu-wandb-metadata.json
+2024-04-11 19:37:41,892 INFO    Thread-31 :22904 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240411_193740-wbbdibmy\files\requirements.txt
+2024-04-11 19:37:41,892 INFO    Thread-31 :22904 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240411_193740-wbbdibmy\files\wandb-metadata.json
+2024-04-11 19:37:41,892 INFO    Thread-31 :22904 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240411_193740-wbbdibmy\files\output.log
+2024-04-11 19:37:43,090 INFO    cpu       :22904 [interfaces.py:monitor():140] Process cpu has exited.
+2024-04-11 19:37:43,090 DEBUG   SystemMonitor:22904 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-04-11 19:37:43,098 DEBUG   SystemMonitor:22904 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-04-11 19:37:43,098 DEBUG   SystemMonitor:22904 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-04-11 19:37:43,098 DEBUG   SenderThread:22904 [sender.py:send():379] send: stats
+2024-04-11 19:37:43,918 INFO    Thread-31 :22904 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\marcb\OneDrive\Desktop\mberghouse\Mammo_classification_scripts\wandb\run-20240411_193740-wbbdibmy\files\output.log
+2024-04-11 19:37:45,350 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: status_report
+2024-04-11 19:37:46,133 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: status_report
+2024-04-11 19:37:50,402 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: status_report
+2024-04-11 19:37:51,078 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-11 19:37:51,078 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-11 19:37:51,078 DEBUG   SenderThread:22904 [sender.py:send_request():406] send_request: stop_status
+2024-04-11 19:37:51,178 DEBUG   HandlerThread:22904 [handler.py:handle_request():146] handle_request: status_report
