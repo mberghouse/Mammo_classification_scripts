@@ -8,6 +8,8 @@
 
  Updated April 2024 to add scripts used for the upcoming companion paper "Exploring the Influence of Attention for Whole Image Mammogram Classification", currently under major revisions for *Image and Vision Computing*
 
+ The novel models created for this study can be found in the "timm_old" folder, and include CBAM-Regnetx, ECA-Regnetx, and CECA-Regnetx. 
+
  This repository is currently under development but will be cleaned before publication in IVC.
 
  
